@@ -188,3 +188,38 @@ font-size:30px;
 }
 
 }
+
+/* Categories */
+
+.categories{
+padding:70px 8%;
+}
+
+.categories h2{
+font-family:'Cinzel',serif;
+font-size:38px;
+margin-bottom:35px;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.category{
+background:#161B22;
+border:1px solid #30363D;
+padding:20px;
+text-align:center;
+border-radius:14px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.category:hover{
+background:#D32F2F;
+border-color:#D32F2F;
+transform:translateY(-5px);
+}
