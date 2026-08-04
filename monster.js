@@ -28,6 +28,34 @@ abilities:[
 
 },
 
+"slender-man":{
+
+name:"Slender Man",
+
+category:"Creepypasta",
+
+creator:"Victor Surge",
+
+year:"2009",
+
+threat:"🟠 High",
+
+status:"Active",
+
+image:"https://placehold.co/500x700/111111/990000?text=Slender+Man",
+
+description:"Slender Man is a supernatural entity that stalks and psychologically torments his victims.",
+
+abilities:[
+"Teleportation",
+"Mind Manipulation",
+"Tentacles",
+"Supernatural Strength",
+"Psychological Influence"
+]
+
+},
+
 "xenomorph":{
 
 name:"Xenomorph",
@@ -53,6 +81,34 @@ abilities:[
 "Extreme Speed"
 ]
 
+},
+
+"bigfoot":{
+
+name:"Bigfoot",
+
+category:"Cryptid",
+
+creator:"North American Folklore",
+
+year:"Ancient Legends",
+
+threat:"🟡 Unknown",
+
+status:"Unconfirmed",
+
+image:"https://placehold.co/500x700/111111/990000?text=Bigfoot",
+
+description:"Bigfoot is a legendary ape-like creature said to inhabit forests across North America.",
+
+abilities:[
+"Exceptional Strength",
+"Stealth",
+"Forest Survival",
+"Speed",
+"High Intelligence"
+]
+
 }
 
 };
@@ -65,32 +121,30 @@ const monster = monsters[id];
 
 if(monster){
 
-document.getElementById("monster-name").textContent=monster.name;
+document.getElementById("monster-name").textContent = monster.name;
+document.getElementById("monster-category").textContent = monster.category;
+document.getElementById("monster-creator").textContent = monster.creator;
+document.getElementById("monster-year").textContent = monster.year;
+document.getElementById("monster-threat").textContent = monster.threat;
+document.getElementById("monster-status").textContent = monster.status;
+document.getElementById("monster-description").textContent = monster.description;
+document.getElementById("monster-image").src = monster.image;
 
-document.getElementById("monster-category").textContent=monster.category;
+const list = document.getElementById("monster-abilities");
+list.innerHTML = "";
 
-document.getElementById("monster-creator").textContent=monster.creator;
+monster.abilities.forEach(ability => {
 
-document.getElementById("monster-year").textContent=monster.year;
+const li = document.createElement("li");
 
-document.getElementById("monster-threat").textContent=monster.threat;
-
-document.getElementById("monster-status").textContent=monster.status;
-
-document.getElementById("monster-description").textContent=monster.description;
-
-document.getElementById("monster-image").src=monster.image;
-
-const list=document.getElementById("monster-abilities");
-
-monster.abilities.forEach(ability=>{
-
-const li=document.createElement("li");
-
-li.textContent=ability;
+li.textContent = ability;
 
 list.appendChild(li);
 
 });
+
+}else{
+
+document.getElementById("monster-name").textContent="Monster Not Found";
 
 }
