@@ -1,6 +1,7 @@
 const monsters = [
 
 {
+id:"siren-head",
 name:"Siren Head",
 category:"Internet Horror",
 threat:"🔴 Extreme",
@@ -8,6 +9,7 @@ image:"https://placehold.co/400x500/161B22/D32F2F?text=Siren+Head"
 },
 
 {
+id:"slender-man"
 name:"Slender Man",
 category:"Creepypasta",
 threat:"🔴 High",
@@ -15,6 +17,7 @@ image:"https://placehold.co/400x500/161B22/D32F2F?text=Slender+Man"
 },
 
 {
+id:"xenomorph"
 name:"Xenomorph",
 category:"Movies",
 threat:"🔴 Extreme",
@@ -22,6 +25,7 @@ image:"https://placehold.co/400x500/161B22/D32F2F?text=Xenomorph"
 },
 
 {
+id:"bigfoot"
 name:"Bigfoot",
 category:"Cryptid",
 threat:"🟠 Unknown",
@@ -48,8 +52,7 @@ grid.innerHTML += `
 
 <p>${monster.threat}</p>
 
-<a href="#" class="button">View File</a>
-
+<a href="monster.html?id=${monster.id}" class="button">
 </div>
 
 </div>
