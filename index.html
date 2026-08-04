@@ -19,48 +19,53 @@
 
 <body>
 
-<nav>
+<nav class="navbar">
 
 <div class="logo">
+
 👁 MonsterCodex
+
 </div>
 
-<ul>
+<ul class="nav-links">
 
-<li>Home</li>
-<li>Monsters</li>
-<li>Categories</li>
-<li>Random</li>
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Monsters</a></li>
+
+<li><a href="#">Categories</a></li>
+
+<li><a href="#">Random</a></li>
 
 </ul>
 
 </nav>
 
-<section class="hero">
+<header class="hero">
 
-<h1>Every Monster.<br>Every Universe.</h1>
+<div class="hero-content">
+
+<h1>
+
+Every Monster.<br>
+Every Universe.
+
+</h1>
 
 <p>
 
-Search thousands of monsters from movies, games, TV, folklore,
-cryptids and internet horror.
+Search thousands of monsters from movies, games, television, folklore, cryptids and internet horror.
 
 </p>
 
+<input
+id="search"
+type="text"
+placeholder="Search MonsterCodex...">
 
-const value=search.value.toLowerCase();
+</div>
 
-const filtered=monsters.filter(monster=>
-
-monster.name.toLowerCase().includes(value) ||
-
-monster.category.toLowerCase().includes(value)
-
-);
-
-displayMonsters(filtered);
-
-});
+</header>
 
 <section class="categories">
 
@@ -74,13 +79,13 @@ displayMonsters(filtered);
 
 <div class="category">📺 Television</div>
 
-<div class="category">👻 Creepypasta</div>
+<div class="category">👻 Internet Horror</div>
 
-<div class="category">🌐 Internet Horror</div>
+<div class="category">📖 Creepypasta</div>
 
 <div class="category">🐺 Cryptids</div>
 
-<div class="category">📚 Folklore</div>
+<div class="category">🧙 Folklore</div>
 
 <div class="category">👽 Aliens</div>
 
@@ -94,13 +99,105 @@ displayMonsters(filtered);
 
 <div class="monster-grid">
 
+<div class="card">
+
+<img src="https://placehold.co/400x500/111111/990000?text=Siren+Head">
+
+<div class="card-content">
+
+<h3>Siren Head</h3>
+
+<p>Internet Horror</p>
+
+<span class="threat extreme">
+
+🔴 Extreme
+
+</span>
+
+<a href="#">View Profile →</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/400x500/111111/990000?text=Slender+Man">
+
+<div class="card-content">
+
+<h3>Slender Man</h3>
+
+<p>Creepypasta</p>
+
+<span class="threat high">
+
+🟠 High
+
+</span>
+
+<a href="#">View Profile →</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/400x500/111111/990000?text=Xenomorph">
+
+<div class="card-content">
+
+<h3>Xenomorph</h3>
+
+<p>Movies</p>
+
+<span class="threat extreme">
+
+🔴 Extreme
+
+</span>
+
+<a href="#">View Profile →</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://placehold.co/400x500/111111/990000?text=Bigfoot">
+
+<div class="card-content">
+
+<h3>Bigfoot</h3>
+
+<p>Cryptid</p>
+
+<span class="threat unknown">
+
+🟡 Unknown
+
+</span>
+
+<a href="#">View Profile →</a>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
 
 <footer>
 
+<p>
+
 MonsterCodex © 2026
+
+</p>
 
 </footer>
 
