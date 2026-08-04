@@ -1,190 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolSite - Free Online Tools</title>
 
-<title>ForgePilot</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-}
-
-body{
-background:#f5f7fb;
-color:#111827;
-}
-
-.hero{
-background:linear-gradient(135deg,#2563eb,#0f172a);
-padding:90px 20px;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:64px;
-font-weight:800;
-}
-
-.hero p{
-font-size:22px;
-margin-top:15px;
-opacity:.9;
-}
-
-.search{
-margin-top:40px;
-}
-
-.search input{
-width:90%;
-max-width:650px;
-padding:18px;
-border:none;
-border-radius:50px;
-font-size:18px;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:70px 20px;
-}
-
-.title{
-text-align:center;
-font-size:42px;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h2{
-margin-bottom:15px;
-}
-
-.card p{
-color:#64748b;
-line-height:1.7;
-}
-
-.button{
-display:inline-block;
-margin-top:20px;
-background:#2563eb;
-padding:12px 22px;
-border-radius:8px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-footer{
-margin-top:70px;
-background:#0f172a;
-padding:40px;
-text-align:center;
-color:white;
-}
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<section class="hero">
+<nav>
 
-<h1>ForgePilot</h1>
+    <div class="logo">
+        🛠 ToolSite
+    </div>
 
-<p>Discover • Compare • Choose • Create</p>
+    <ul>
+        <li>Home</li>
+        <li>Tools</li>
+        <li>Categories</li>
+        <li>About</li>
+    </ul>
 
-<div class="search">
+</nav>
 
-<input type="text" placeholder="Search AI & Creator Tools...">
+<header>
+
+    <h1>Free Online Tools</h1>
+
+    <p>
+        Fast, simple and free tools to make everyday tasks easier.
+    </p>
+
+    <input
+        type="text"
+        placeholder="Search tools..."
+    >
+
+</header>
+
+<section class="tools">
+
+<h2>Popular Tools</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📱 QR Code Generator</h3>
+
+<p>Create QR Codes instantly.</p>
+
+<button>Open Tool</button>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Password Generator</h3>
+
+<p>Generate secure passwords.</p>
+
+<button>Open Tool</button>
+
+</div>
+
+<div class="card">
+
+<h3>📝 Word Counter</h3>
+
+<p>Count words and characters.</p>
+
+<button>Open Tool</button>
+
+</div>
+
+<div class="card">
+
+<h3>🔤 Text Case Converter</h3>
+
+<p>Convert uppercase and lowercase.</p>
+
+<button>Open Tool</button>
+
+</div>
 
 </div>
 
 </section>
 
-<div class="container">
-
-<h2 class="title">Browse Categories</h2>
-
-<div class="grid">
-
-<div class="card">
-<h2>🤖 AI Tools</h2>
-<p>ChatGPT, Claude, Gemini, Midjourney and hundreds more.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-<div class="card">
-<h2>🎥 Video</h2>
-<p>CapCut, DaVinci Resolve, Premiere Pro and more.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-<div class="card">
-<h2>🎨 Design</h2>
-<p>Canva, Adobe Express, Figma and creative software.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-<div class="card">
-<h2>✍️ Writing</h2>
-<p>AI writers, grammar tools and blogging software.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-<div class="card">
-<h2>📈 Marketing</h2>
-<p>SEO, social media and email marketing tools.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-<div class="card">
-<h2>⚡ Productivity</h2>
-<p>Automation, note-taking and collaboration software.</p>
-<a href="#" class="button">Explore</a>
-</div>
-
-</div>
-
-</div>
-
 <footer>
 
-<h2>ForgePilot</h2>
-
-<p>Helping creators discover better tools.</p>
+© 2026 ToolSite
 
 </footer>
 
-</body>
+<script src="script.js"></script>
 
+</body>
 </html>
