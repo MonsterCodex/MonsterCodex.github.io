@@ -90,6 +90,8 @@ padding:30px;
 border-radius:18px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 transition:.3s;
+display:flex;
+flex-direction:column;
 }
 
 .card:hover{
@@ -97,6 +99,9 @@ transform:translateY(-8px);
 }
 
 .card h3{
+height:60px;
+display:flex;
+align-items:center;
 margin-bottom:15px;
 }
 
