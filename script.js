@@ -1,62 +1,67 @@
 const monsters = [
 
 {
-id:"siren-head",
-name:"Siren Head",
-category:"Internet Horror",
-threat:"🔴 Extreme",
-image:"https://placehold.co/400x500/161B22/D32F2F?text=Siren+Head"
+    id: "siren-head",
+    name: "Siren Head",
+    category: "Internet Horror",
+    threat: "🔴 Extreme",
+    image: "https://placehold.co/400x500/161B22/D32F2F?text=Siren+Head"
 },
 
 {
-id:"slender-man"
-name:"Slender Man",
-category:"Creepypasta",
-threat:"🔴 High",
-image:"https://placehold.co/400x500/161B22/D32F2F?text=Slender+Man"
+    id: "slender-man",
+    name: "Slender Man",
+    category: "Creepypasta",
+    threat: "🔴 High",
+    image: "https://placehold.co/400x500/161B22/D32F2F?text=Slender+Man"
 },
 
 {
-id:"xenomorph"
-name:"Xenomorph",
-category:"Movies",
-threat:"🔴 Extreme",
-image:"https://placehold.co/400x500/161B22/D32F2F?text=Xenomorph"
+    id: "xenomorph",
+    name: "Xenomorph",
+    category: "Movies",
+    threat: "🔴 Extreme",
+    image: "https://placehold.co/400x500/161B22/D32F2F?text=Xenomorph"
 },
 
 {
-id:"bigfoot"
-name:"Bigfoot",
-category:"Cryptid",
-threat:"🟠 Unknown",
-image:"https://placehold.co/400x500/161B22/D32F2F?text=Bigfoot"
+    id: "bigfoot",
+    name: "Bigfoot",
+    category: "Cryptid",
+    threat: "🟠 Unknown",
+    image: "https://placehold.co/400x500/161B22/D32F2F?text=Bigfoot"
 }
 
 ];
 
 const grid = document.querySelector(".monster-grid");
 
-monsters.forEach(monster=>{
+grid.innerHTML = "";
 
-grid.innerHTML += `
+monsters.forEach(monster => {
 
-<div class="card">
+    grid.innerHTML += `
 
-<img src="${monster.image}" alt="${monster.name}">
+    <div class="card">
 
-<div class="card-content">
+        <img src="${monster.image}" alt="${monster.name}">
 
-<h3>${monster.name}</h3>
+        <div class="card-content">
 
-<p>${monster.category}</p>
+            <h3>${monster.name}</h3>
 
-<p>${monster.threat}</p>
+            <p>${monster.category}</p>
 
-<a href="monster.html?id=${monster.id}" class="button">
-</div>
+            <p>${monster.threat}</p>
 
-</div>
+            <a href="monster.html?id=${monster.id}" class="button">
+                View Profile →
+            </a>
 
-`;
+        </div>
+
+    </div>
+
+    `;
 
 });
