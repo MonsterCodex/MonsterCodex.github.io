@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ForgePilot | Discover the Best AI & Creator Tools</title>
+<title>ForgePilot</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -14,157 +14,101 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:Inter,sans-serif;
 }
 
 body{
-background:#f8fafc;
-color:#0f172a;
+background:#f5f7fb;
+color:#111827;
 }
 
-header{
-
+.hero{
 background:linear-gradient(135deg,#2563eb,#0f172a);
-
-padding:80px 20px;
-
+padding:90px 20px;
 text-align:center;
-
 color:white;
 }
 
-header h1{
-
-font-size:60px;
-
+.hero h1{
+font-size:64px;
 font-weight:800;
 }
 
-header p{
-
-margin-top:20px;
-
+.hero p{
 font-size:22px;
-
+margin-top:15px;
 opacity:.9;
 }
 
 .search{
-
-max-width:700px;
-
-margin:40px auto 0;
+margin-top:40px;
 }
 
 .search input{
-
-width:100%;
-
+width:90%;
+max-width:650px;
 padding:18px;
-
-font-size:18px;
-
 border:none;
-
 border-radius:50px;
-
-outline:none;
+font-size:18px;
 }
 
-section{
-
+.container{
 max-width:1200px;
-
 margin:auto;
-
 padding:70px 20px;
 }
 
-h2{
-
-font-size:38px;
-
-margin-bottom:30px;
+.title{
+text-align:center;
+font-size:42px;
+margin-bottom:40px;
 }
 
 .grid{
-
 display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .card{
-
 background:white;
-
-border-radius:18px;
-
 padding:30px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 transition:.3s;
 }
 
 .card:hover{
-
 transform:translateY(-8px);
-
-box-shadow:0 20px 40px rgba(0,0,0,.12);
 }
 
-.icon{
-
-font-size:42px;
-
+.card h2{
 margin-bottom:15px;
 }
 
-.card h3{
-
-margin-bottom:10px;
-}
-
 .card p{
-
 color:#64748b;
-
-line-height:1.6;
+line-height:1.7;
 }
 
 .button{
-
 display:inline-block;
-
 margin-top:20px;
-
 background:#2563eb;
-
-color:white;
-
 padding:12px 22px;
-
 border-radius:8px;
-
+color:white;
 text-decoration:none;
-
-font-weight:700;
+font-weight:bold;
 }
 
 footer{
-
+margin-top:70px;
 background:#0f172a;
-
-color:white;
-
-text-align:center;
-
 padding:40px;
-
-margin-top:80px;
+text-align:center;
+color:white;
 }
 
 </style>
@@ -173,7 +117,7 @@ margin-top:80px;
 
 <body>
 
-<header>
+<section class="hero">
 
 <h1>ForgePilot</h1>
 
@@ -181,101 +125,66 @@ margin-top:80px;
 
 <div class="search">
 
-<input placeholder="🔍 Search AI tools...">
-
-</div>
-
-</header>
-
-<section>
-
-<h2>Browse Categories</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="icon">🤖</div>
-
-<h3>AI Tools</h3>
-
-<p>Discover the latest AI software for writing, coding, productivity and creativity.</p>
-
-<a class="button">Explore</a>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🎥</div>
-
-<h3>Video</h3>
-
-<p>Video editors, subtitle tools and YouTube software.</p>
-
-<a class="button">Explore</a>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🎨</div>
-
-<h3>Design</h3>
-
-<p>Graphic design, image editing and creative software.</p>
-
-<a class="button">Explore</a>
-
-</div>
-
-<div class="card">
-
-<div class="icon">✍️</div>
-
-<h3>Writing</h3>
-
-<p>AI writers, grammar checkers and content tools.</p>
-
-<a class="button">Explore</a>
-
-</div>
-
-<div class="card">
-
-<div class="icon">📈</div>
-
-<h3>Marketing</h3>
-
-<p>SEO, email marketing and social media software.</p>
-
-<a class="button">Explore</a>
-
-</div>
-
-<div class="card">
-
-<div class="icon">⚡</div>
-
-<h3>Productivity</h3>
-
-<p>Work smarter with note-taking and automation tools.</p>
-
-<a class="button">Explore</a>
-
-</div>
+<input type="text" placeholder="Search AI & Creator Tools...">
 
 </div>
 
 </section>
 
+<div class="container">
+
+<h2 class="title">Browse Categories</h2>
+
+<div class="grid">
+
+<div class="card">
+<h2>🤖 AI Tools</h2>
+<p>ChatGPT, Claude, Gemini, Midjourney and hundreds more.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+<div class="card">
+<h2>🎥 Video</h2>
+<p>CapCut, DaVinci Resolve, Premiere Pro and more.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+<div class="card">
+<h2>🎨 Design</h2>
+<p>Canva, Adobe Express, Figma and creative software.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+<div class="card">
+<h2>✍️ Writing</h2>
+<p>AI writers, grammar tools and blogging software.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+<div class="card">
+<h2>📈 Marketing</h2>
+<p>SEO, social media and email marketing tools.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+<div class="card">
+<h2>⚡ Productivity</h2>
+<p>Automation, note-taking and collaboration software.</p>
+<a href="#" class="button">Explore</a>
+</div>
+
+</div>
+
+</div>
+
 <footer>
 
-<h3>ForgePilot</h3>
+<h2>ForgePilot</h2>
 
 <p>Helping creators discover better tools.</p>
 
 </footer>
 
 </body>
+
 </html>
