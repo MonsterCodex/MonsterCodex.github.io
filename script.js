@@ -17,24 +17,21 @@ function createCard(monster){
 return `
 <div class="card">
 <img src="${monster.image}" alt="${monster.name}">
+
 <div class="card-content">
+
 <h3>${monster.name}</h3>
-<p>
-    ${monster.category === "Games" ? "🎮" :
-      monster.category === "Movies" ? "🎬" :
-      monster.category === "Television" ? "📺" :
-      monster.category === "Internet Horror" ? "👻" :
-      monster.category === "Creepypasta" ? "📖" :
-      monster.category === "Cryptids" ? "🐺" :
-      monster.category === "Folklore" ? "🧙" :
-      monster.category === "Aliens" ? "👽" : "🌍"}
-    ${monster.universe}
+
+<p style="color:red;font-weight:bold;">
+THIS IS A TEST
 </p>
 
-<p>✍️ ${monster.creator}</p>
-
 <span class="threat ${monster.threat.toLowerCase()}">${monster.threat}</span>
-<a href="monster.html?id=${monster.id}" class="button">View Profile →</a>
+
+<a href="monster.html?id=${monster.id}" class="button">
+View Profile →
+</a>
+
 </div>
 </div>
 `;
