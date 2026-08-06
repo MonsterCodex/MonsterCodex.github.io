@@ -12,30 +12,23 @@ revealSound.volume = 0.5;
 
 let currentCategory="All";
 
-function createCard(monster){
-
-return `
-<div class="card">
-<img src="${monster.image}" alt="${monster.name}">
-
-<div class="card-content">
-
-<h3>${monster.name}</h3>
-
-<p style="color:red;font-weight:bold;">
-THIS IS A TEST
-</p>
-
-<span class="threat ${monster.threat.toLowerCase()}">${monster.threat}</span>
-
-<a href="monster.html?id=${monster.id}" class="button">
-View Profile →
-</a>
-
-</div>
-</div>
-`;
-
+function createCard(monster) {
+    return `
+    <div class="card">
+        <p>
+        ${monster.category === "Games" ? "🎮" :
+monster.category === "Movies" ? "🎬" :
+monster.category === "Television" ? "📺" :
+monster.category === "Internet Horror" ? "👻" :
+monster.category === "Creepypasta" ? "📖" :
+monster.category === "Cryptids" ? "🐺" :
+monster.category === "Folklore" ? "🧙" :
+monster.category === "Aliens" ? "👽" : "🌍"}
+        ${monster.universe}
+        </p>
+        <p>✍️ ${monster.creator}</p>
+    </div>
+    `;
 }
 
 function displayMonsters(list) {
