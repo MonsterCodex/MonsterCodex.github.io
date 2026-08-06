@@ -1,0 +1,244 @@
+[1mdiff --git a/data.js b/data.js[m
+[1mindex 4546b16..e48c8ed 100644[m
+[1m--- a/data.js[m
+[1m+++ b/data.js[m
+[36m@@ -531,4 +531,430 @@[m [mweaknesses:[[m
+ gallery:[][m
+ [m
+ [m
+[31m-}];[m
+[32m+[m[32m},[m
+[32m+[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"freddy-fazbear",[m
+[32m+[m[32mname:"Freddy Fazbear",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Freddy Fazbear's Pizza",[m
+[32m+[m
+[32m+[m[32mheight:"2.1 m (7 ft)",[m
+[32m+[m[32mweight:"Unknown",[m
+[32m+[m
+[32m+[m[32mstatus:"Active",[m
+[32m+[m[32malignment:"Hostile",[m
+[32m+[m
+[32m+[m[32mthreat:"High",[m
+[32m+[m
+[32m+[m[32mdescription:"Freddy Fazbear is the lead animatronic mascot of Freddy Fazbear's Pizza. By day he entertains children, but after hours he becomes a relentless hunter that silently stalks anyone trapped inside the restaurant. Freddy grows more aggressive as the night progresses, making him one of the deadliest animatronics in the building.",[m
+[32m+[m
+[32m+[m[32mabilities:[[m
+[32m+[m[32m"Superhuman strength",[m
+[32m+[m[32m"Silent movement",[m
+[32m+[m[32m"Night vision",[m
+[32m+[m[32m"Mechanical durability",[m
+[32m+[m[32m"Advanced tracking",[m
+[32m+[m[32m"Jump scare attacks"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mweaknesses:[[m
+[32m+[m[32m"Power outage",[m
+[32m+[m[32m"Electrical failure",[m
+[32m+[m[32m"Mechanical damage"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mtags:[[m
+[32m+[m[32m"animatronic",[m
+[32m+[m[32m"robot",[m
+[32m+[m[32m"fnaf",[m
+[32m+[m[32m"freddy",[m
+[32m+[m[32m"horror",[m
+[32m+[m[32m"game",[m
+[32m+[m[32m"mascot"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mimage:"images/monsters/freddy-fazbear/profile.webp"[m
+[32m+[m[32m},[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"bonnie",[m
+[32m+[m[32mname:"Bonnie",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Freddy Fazbear's Pizza",[m
+[32m+[m
+[32m+[m[32mheight:"2.1 m (7 ft)",[m
+[32m+[m[32mweight:"Unknown",[m
+[32m+[m
+[32m+[m[32mstatus:"Active",[m
+[32m+[m[32malignment:"Hostile",[m
+[32m+[m
+[32m+[m[32mthreat:"High",[m
+[32m+[m
+[32m+[m[32mdescription:"Bonnie is the blue rabbit guitarist of Freddy Fazbear's Pizza. Often the first animatronic to leave the stage, Bonnie silently patrols the building and relentlessly pursues anyone remaining after hours.",[m
+[32m+[m
+[32m+[m[32mabilities:[[m
+[32m+[m[32m"Superhuman strength",[m
+[32m+[m[32m"Silent movement",[m
+[32m+[m[32m"High durability",[m
+[32m+[m[32m"Advanced tracking",[m
+[32m+[m[32m"Powerful grip"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mweaknesses:[[m
+[32m+[m[32m"Electrical failure",[m
+[32m+[m[32m"Mechanical damage",[m
+[32m+[m[32m"Power outage"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mtags:[[m
+[32m+[m[32m"animatronic","rabbit","bonnie","fnaf","game","horror"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mimage:"images/monsters/bonnie/profile.webp"[m
+[32m+[m[32m},[m
+[32m+[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"chica",[m
+[32m+[m[32mname:"Chica",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Freddy Fazbear's Pizza",[m
+[32m+[m
+[32m+[m[32mheight:"2.0 m (6 ft 7 in)",[m
+[32m+[m[32mweight:"Unknown",[m
+[32m+[m
+[32m+[m[32mstatus:"Active",[m
+[32m+[m[32malignment:"Hostile",[m
+[32m+[m
+[32m+[m[32mthreat:"High",[m
+[32m+[m
+[32m+[m[32mdescription:"Chica is the restaurant's chicken mascot. While carrying her trademark cupcake, she roams the pizzeria searching for intruders and is known for taking unpredictable routes through the building.",[m
+[32m+[m
+[32m+[m[32mabilities:[[m
+[32m+[m[32m"Superhuman strength",[m
+[32m+[m[32m"Relentless pursuit",[m
+[32m+[m[32m"Night patrol",[m
+[32m+[m[32m"Mechanical durability",[m
+[32m+[m[32m"Jump scare attacks"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mweaknesses:[[m
+[32m+[m[32m"Electrical failure",[m
+[32m+[m[32m"Mechanical damage",[m
+[32m+[m[32m"Power outage"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mtags:[[m
+[32m+[m[32m"animatronic","chicken","cupcake","fnaf","game","horror"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mimage:"images/monsters/chica/profile.webp"[m
+[32m+[m[32m},[m
+[32m+[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"foxy",[m
+[32m+[m[32mname:"Foxy",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Pirate Cove",[m
+[32m+[m
+[32m+[m[32mheight:"2.0 m (6 ft 8 in)",[m
+[32m+[m[32mweight:"Unknown",[m
+[32m+[m
+[32m+[m[32mstatus:"Active",[m
+[32m+[m[32malignment:"Hostile",[m
+[32m+[m
+[32m+[m[32mthreat:"Extreme",[m
+[32m+[m
+[32m+[m[32mdescription:"Foxy is a damaged pirate fox animatronic hidden inside Pirate Cove. Unlike the others, Foxy sprints directly toward his target, making him one of the fastest and most dangerous animatronics.",[m
+[32m+[m
+[32m+[m[32mabilities:[[m
+[32m+[m[32m"Extreme speed",[m
+[32m+[m[32m"Superhuman strength",[m
+[32m+[m[32m"Hook weapon",[m
+[32m+[m[32m"Night vision",[m
+[32m+[m[32m"Rapid pursuit"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mweaknesses:[[m
+[32m+[m[32m"Power outage",[m
+[32m+[m[32m"Mechanical damage",[m
+[32m+[m[32m"Electrical failure"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mtags:[[m
+[32m+[m[32m"animatronic","fox","pirate","foxy","fnaf","game"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mimage:"images/monsters/foxy/profile.webp"[m
+[32m+[m[32m},[m
+[32m+[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"golden-freddy",[m
+[32m+[m[32mname:"Golden Freddy",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Unknown",[m
+[32m+[m
+[32m+[m[32mheight:"Unknown",[m
+[32m+[m[32mweight:"Unknown",[m
+[32m+[m
+[32m+[m[32mstatus:"Unknown",[m
+[32m+[m[32malignment:"Hostile",[m
+[32m+[m
+[32m+[m[32mthreat:"Extreme",[m
+[32m+[m
+[32m+[m[32mdescription:"Golden Freddy is a mysterious spectral animatronic capable of appearing without warning. Unlike the other mascots, his behaviour defies normal mechanical rules, making him one of the franchise's most enigmatic entities.",[m
+[32m+[m
+[32m+[m[32mabilities:[[m
+[32m+[m[32m"Teleportation",[m
+[32m+[m[32m"Hallucination induction",[m
+[32m+[m[32m"Instant appearance",[m
+[32m+[m[32m"Psychological attacks",[m
+[32m+[m[32m"Supernatural presence"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mweaknesses:[[m
+[32m+[m[32m"Unknown"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mtags:[[m
+[32m+[m[32m"golden","freddy","ghost","animatronic","fnaf","game"[m
+[32m+[m[32m],[m
+[32m+[m
+[32m+[m[32mimage:"images/monsters/golden-freddy/profile.webp"[m
+[32m+[m[32m},[m
+[32m+[m
+[32m+[m[32m{[m
+[32m+[m[32mid:"endo-01",[m
+[32m+[m[32mname:"Endo-01",[m
+[32m+[m
+[32m+[m[32mcategory:"Game Monsters",[m
+[32m+[m[32muniverse:"Five Nights at Freddy's",[m
+[32m+[m
+[32m+[m[32mcreator:"Scott Cawthon",[m
+[32m+[m[32mfirstAppearance:"Five Nights at Freddy's (2014)",[m
+[32m+[m
+[32m+[m[32morigin:"Parts and Service",[m
+[32m+[m
+[32m+[m[32mheight:"2.0 m (6 ft 7 in)",[m
+[32m+[m[32mweight:"Unknown"
