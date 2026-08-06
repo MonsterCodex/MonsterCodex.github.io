@@ -22,15 +22,14 @@
 <nav class="navbar">
 
 <div class="logo">
-👁 MonsterCodex
+👁 FinnsMonsterCodex
 </div>
 
 <ul class="nav-links">
 <li><a href="#">Home</a></li>
 <li><a href="#">Monsters</a></li>
 <li><a href="#">Categories</a></li>
-<li><a href="#">Random</a></li>
-</ul>
+<li><a href="#" id="random-monster">🎲 Random</a></li></ul>
 
 </nav>
 
@@ -39,7 +38,7 @@
 <div class="hero-content">
 
 <h1>
-Every Monster Ever.<br>
+Every Monster.<br>
 Every Universe.
 </h1>
 
@@ -47,10 +46,14 @@ Every Universe.
 Search thousands of monsters from movies, games, television, folklore, cryptids and internet horror.
 </p>
 
+<div class="search-container">
+
 <input
 id="search"
 type="text"
 placeholder="Search MonsterCodex...">
+
+<div id="search-results"></div>
 
 </div>
 
@@ -65,14 +68,17 @@ placeholder="Search MonsterCodex...">
 
 <div class="category-grid">
 
-<div class="category">🎬 Movies</div>
-<div class="category">🎮 Games</div>
-<div class="category">📺 Television</div>
-<div class="category">👻 Internet Horror</div>
-<div class="category">📖 Creepypasta</div>
-<div class="category">🐺 Cryptids</div>
-<div class="category">🧙 Folklore</div>
-<div class="category">👽 Aliens</div>
+<div class="category active" data-category="All">🌍 All Monsters</div>
+
+
+<div class="category" data-category="Movies">🎬 Movies</div>
+<div class="category" data-category="Games">🎮 Games</div>
+<div class="category" data-category="Television">📺 Television</div>
+<div class="category" data-category="Internet Horror">👻 Internet Horror</div>
+<div class="category" data-category="Creepypasta">📖 Creepypasta</div>
+<div class="category" data-category="Cryptids">🐺 Cryptids</div>
+<div class="category" data-category="Folklore">🧙 Folklore</div>
+<div class="category" data-category="Aliens">👽 Aliens</div>
 
 </div>
 
@@ -97,6 +103,32 @@ FinleysMonsterCodex © 2026
 
 </footer>
 
+<div id="encounter-screen">
+
+<div class="encounter-box">
+
+<h2>🎲 Random Encounter</h2>
+
+<p>A monster has been discovered...</p>
+
+<div class="loading-bar">
+
+<div class="loading-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="random-popup" class="random-popup">
+<div class="random-box">
+<h2>🎲 Random Encounter</h2>
+<p id="random-text">A monster has appeared...</p>
+</div>
+</div>
+
+<script src="data.js"></script>
 <script src="script.js"></script>
 
 </body>

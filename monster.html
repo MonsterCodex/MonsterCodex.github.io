@@ -29,89 +29,132 @@
 <li><a href="index.html">Home</a></li>
 <li><a href="#">Monsters</a></li>
 <li><a href="#">Categories</a></li>
-<li><a href="#">Random</a></li>
+<li><a href="#" id="random-monster">🎲 Random</a></li>
 </ul>
 
 </nav>
 
-<section class="monster-profile">
+<main class="monster-profile">
 
-<div class="monster-image">
+<div class="profile-top">
+
+<div class="profile-left">
 
 <img
 id="monster-image"
-src="https://placehold.co/500x700/111111/990000?text=Monster"
+src=""
 alt="Monster">
 
+
+
 </div>
 
-<div class="monster-info">
+<div class="profile-right">
 
-<h1 id="monster-name">Loading...</h1>
+<h1 id="monster-name"></h1>
 
-<p class="subtitle" id="monster-category">
-Loading...
+<p
+id="monster-description"
+class="monster-intro">
 </p>
 
-<div class="info-grid">
+<div
+id="monster-threat"
+class="threat">
+</div>
 
-<div>
+<table class="monster-table">
 
-<strong>Creator</strong>
+<tr>
+<th>Creator</th>
+<td id="monster-creator"></td>
+</tr>
 
-<p id="monster-creator">Loading...</p>
+<tr>
+<th>First Appearance</th>
+<td id="monster-year"></td>
+</tr>
+
+<tr>
+<th>Universe</th>
+<td id="monster-universe"></td>
+</tr>
+
+<tr>
+<th>Origin</th>
+<td id="monster-origin"></td>
+</tr>
+
+<tr>
+<th>Height</th>
+<td id="monster-height"></td>
+</tr>
+
+<tr>
+<th>Weight</th>
+<td id="monster-weight"></td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td id="monster-status"></td>
+</tr>
+
+<tr>
+<th>Alignment</th>
+<td id="monster-alignment"></td>
+</tr>
+
+</table>
+
+<div class="profile-bottom">
+
+<div class="profile-section">
+
+<h2>💪 Abilities</h2>
+
+<ul id="monster-abilities"></ul>
 
 </div>
 
-<div>
+<div class="profile-section">
 
-<strong>First Appearance</strong>
+<h2>⚠ Weaknesses</h2>
 
-<p id="monster-year">Loading...</p>
-
-</div>
-
-<div>
-
-<strong>Threat Level</strong>
-
-<p id="monster-threat">Loading...</p>
-
-</div>
-
-<div>
-
-<strong>Status</strong>
-
-<p id="monster-status">Active</p>
+<ul id="monster-weaknesses"></ul>
 
 </div>
 
 </div>
 
-<h2>Description</h2>
+<section class="profile-section">
 
-<p id="monster-description">
+<h2>🔗 Related Monsters</h2>
 
-Loading...
+<div
+id="related-monsters"
+class="related-grid">
+</div>
 
-</p>
+</section>
 
-<h2>Abilities</h2>
+</div>
 
-<ul id="monster-abilities">
+</div>
 
-</ul>
+<div class="back-home">
 
-<a href="index.html" class="button">
+<a
+href="index.html"
+class="button">
 
-← Back to Homepage
+← Return Home
 
 </a>
 
 </div>
 
-</section>
+</main>
 
 <footer>
 
@@ -119,6 +162,27 @@ MonsterCodex © 2026
 
 </footer>
 
+<div id="encounter-screen">
+
+<div class="encounter-box">
+
+<h2>🎲 Random Encounter</h2>
+
+<p>
+A monster has been discovered...
+</p>
+
+<div class="loading-bar">
+
+<div class="loading-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="data.js"></script>
 <script src="monster.js"></script>
 
 </body>

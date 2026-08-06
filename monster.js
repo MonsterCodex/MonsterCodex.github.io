@@ -1,150 +1,231 @@
-const monsters = {
+const params=new URLSearchParams(window.location.search);
+const id=params.get("id");
+const monster=monsters.find(m=>m.id===id);
 
-"siren-head":{
+function getAbilityIcon(ability){
 
-name:"Siren Head",
+const text=ability.toLowerCase();
 
-category:"Internet Horror",
+if(text.includes("strength")) return "💪";
+if(text.includes("speed")) return "⚡";
+if(text.includes("voice")) return "🎭";
+if(text.includes("mimic")) return "🎭";
+if(text.includes("hearing")) return "👂";
+if(text.includes("sound")) return "🔊";
+if(text.includes("camouflage")) return "👁";
+if(text.includes("stealth")) return "🥷";
+if(text.includes("telepathy")) return "🧠";
+if(text.includes("mind")) return "🧠";
+if(text.includes("shape")) return "🌫";
+if(text.includes("regeneration")) return "🦴";
+if(text.includes("heal")) return "🩹";
+if(text.includes("climb")) return "🕷";
+if(text.includes("fire")) return "🔥";
+if(text.includes("ice")) return "❄";
+if(text.includes("poison")) return "☠";
+if(text.includes("acid")) return "🧪";
+if(text.includes("electric")) return "⚡";
+if(text.includes("lightning")) return "⚡";
+if(text.includes("flight")) return "🪽";
+if(text.includes("fly")) return "🪽";
+if(text.includes("teleport")) return "🌀";
+if(text.includes("invisible")) return "👻";
+if(text.includes("fear")) return "😱";
+if(text.includes("bite")) return "🦷";
+if(text.includes("claw")) return "🐾";
+if(text.includes("tentacle")) return "🐙";
+if(text.includes("water")) return "🌊";
+if(text.includes("plant")) return "🌿";
+if(text.includes("magic")) return "✨";
+if(text.includes("curse")) return "🔮";
 
-creator:"Trevor Henderson",
-
-year:"2018",
-
-threat:"🔴 Extreme",
-
-status:"Active",
-
-image:"https://placehold.co/500x700/111111/990000?text=Siren+Head",
-
-description:"Siren Head is a gigantic humanoid entity with two sirens where its head should be. It mimics voices and emergency broadcasts to lure victims.",
-
-abilities:[
-"Voice Mimicry",
-"Extreme Height",
-"Super Strength",
-"Camouflage",
-"Long Distance Sound Projection"
-]
-
-},
-
-"slender-man":{
-
-name:"Slender Man",
-
-category:"Creepypasta",
-
-creator:"Victor Surge",
-
-year:"2009",
-
-threat:"🟠 High",
-
-status:"Active",
-
-image:"https://placehold.co/500x700/111111/990000?text=Slender+Man",
-
-description:"Slender Man is a supernatural entity that stalks and psychologically torments his victims.",
-
-abilities:[
-"Teleportation",
-"Mind Manipulation",
-"Tentacles",
-"Supernatural Strength",
-"Psychological Influence"
-]
-
-},
-
-"xenomorph":{
-
-name:"Xenomorph",
-
-category:"Movies",
-
-creator:"H. R. Giger",
-
-year:"1979",
-
-threat:"🔴 Extreme",
-
-status:"Active",
-
-image:"https://placehold.co/500x700/111111/990000?text=Xenomorph",
-
-description:"The Xenomorph is an extraterrestrial lifeform featured in the Alien franchise.",
-
-abilities:[
-"Acid Blood",
-"Stealth",
-"Climbing",
-"Extreme Speed"
-]
-
-},
-
-"bigfoot":{
-
-name:"Bigfoot",
-
-category:"Cryptid",
-
-creator:"North American Folklore",
-
-year:"Ancient Legends",
-
-threat:"🟡 Unknown",
-
-status:"Unconfirmed",
-
-image:"https://placehold.co/500x700/111111/990000?text=Bigfoot",
-
-description:"Bigfoot is a legendary ape-like creature said to inhabit forests across North America.",
-
-abilities:[
-"Exceptional Strength",
-"Stealth",
-"Forest Survival",
-"Speed",
-"High Intelligence"
-]
+return "⭐";
 
 }
 
-};
+function getWeaknessIcon(weakness){
 
-const params = new URLSearchParams(window.location.search);
+const text=weakness.toLowerCase();
 
-const id = params.get("id");
+if(text.includes("fire")) return "🔥";
+if(text.includes("light")) return "☀";
+if(text.includes("sun")) return "☀";
+if(text.includes("silver")) return "🥈";
+if(text.includes("holy")) return "✝";
+if(text.includes("water")) return "💧";
+if(text.includes("cold")) return "❄";
+if(text.includes("ice")) return "❄";
+if(text.includes("sound")) return "🔊";
+if(text.includes("electric")) return "⚡";
+if(text.includes("magic")) return "✨";
+if(text.includes("human")) return "🧍";
+if(text.includes("unknown")) return "❓";
 
-const monster = monsters[id];
+return "⚠";
 
-if(monster){
+}
 
-document.getElementById("monster-name").textContent = monster.name;
-document.getElementById("monster-category").textContent = monster.category;
-document.getElementById("monster-creator").textContent = monster.creator;
-document.getElementById("monster-year").textContent = monster.year;
-document.getElementById("monster-threat").textContent = monster.threat;
-document.getElementById("monster-status").textContent = monster.status;
-document.getElementById("monster-description").textContent = monster.description;
-document.getElementById("monster-image").src = monster.image;
+if(!monster){
 
-const list = document.getElementById("monster-abilities");
-list.innerHTML = "";
+document.getElementById("monster-name").textContent="Monster Not Found";
 
-monster.abilities.forEach(ability => {
+}else{
 
-const li = document.createElement("li");
+document.getElementById("monster-name").textContent=monster.name||"Unknown";
+document.getElementById("monster-description").textContent=monster.description||"No description available.";
 
-li.textContent = ability;
+const image=document.getElementById("monster-image");
+image.src=monster.image;
+image.alt=monster.name;
 
-list.appendChild(li);
+document.getElementById("monster-creator").textContent=monster.creator||"Unknown";
+document.getElementById("monster-year").textContent=monster.firstAppearance||monster.year||"Unknown";
+document.getElementById("monster-universe").textContent=monster.universe||"Unknown";
+document.getElementById("monster-origin").textContent=monster.origin||"Unknown";
+document.getElementById("monster-height").textContent=monster.height||"Unknown";
+document.getElementById("monster-weight").textContent=monster.weight||"Unknown";
+document.getElementById("monster-status").textContent=monster.status||"Unknown";
+document.getElementById("monster-alignment").textContent=monster.alignment||"Unknown";
+
+const threat=document.getElementById("monster-threat");
+threat.textContent=monster.threat||"Unknown";
+threat.className="threat";
+
+if(monster.threat){
+
+const level=monster.threat.toLowerCase();
+
+if(level.includes("extreme")) threat.classList.add("extreme");
+else if(level.includes("high")) threat.classList.add("high");
+else if(level.includes("medium")) threat.classList.add("medium");
+else if(level.includes("low")) threat.classList.add("low");
+else threat.classList.add("unknown");
+
+}
+
+const abilities=document.getElementById("monster-abilities");
+abilities.innerHTML="";
+
+if(monster.abilities?.length){
+
+monster.abilities.forEach(ability=>{
+
+const li=document.createElement("li");
+
+li.innerHTML=`
+<span class="ability-icon">${getAbilityIcon(ability)}</span>
+<span>${ability}</span>
+`;
+
+abilities.appendChild(li);
 
 });
 
 }else{
 
-document.getElementById("monster-name").textContent="Monster Not Found";
+abilities.innerHTML=`
+<li>
+<span class="ability-icon">❓</span>
+<span>Unknown</span>
+</li>
+`;
+
+}
+
+const weaknesses=document.getElementById("monster-weaknesses");
+weaknesses.innerHTML="";
+
+if(monster.weaknesses?.length){
+
+monster.weaknesses.forEach(weakness=>{
+
+const li=document.createElement("li");
+
+li.innerHTML=`
+<span class="weakness-icon">${getWeaknessIcon(weakness)}</span>
+<span>${weakness}</span>
+`;
+
+weaknesses.appendChild(li);
+
+});
+
+}else{
+
+weaknesses.innerHTML=`
+<li>
+<span class="weakness-icon">❓</span>
+<span>Unknown</span>
+</li>
+`;
+
+}
+
+const related=document.getElementById("related-monsters");
+
+if(related){
+
+const relatedMonsters=monsters.filter(m=>
+m.id!==monster.id&&
+m.category===monster.category
+).slice(0,4);
+
+related.innerHTML="";
+
+if(relatedMonsters.length===0){
+
+related.innerHTML="<p>No related monsters found.</p>";
+
+}else{
+
+    
+
+relatedMonsters.forEach(m=>{
+
+related.innerHTML+=`
+<div class="related-card">
+
+<a href="monster.html?id=${m.id}">
+
+<img src="${m.image}" alt="${m.name}">
+
+<h3>${m.name}</h3>
+
+<p>${m.category}</p>
+
+</a>
+
+</div>
+`;
+
+});
+
+}
+
+}
+
+}
+
+const randomButton=document.getElementById("random-monster");
+
+const encounter=document.getElementById("encounter-screen");
+
+if(randomButton){
+
+randomButton.addEventListener("click",e=>{
+
+e.preventDefault();
+
+const random=monsters[Math.floor(Math.random()*monsters.length)];
+
+encounter.style.display="flex";
+
+setTimeout(()=>{
+
+window.location.href=`monster.html?id=${random.id}`;
+
+},2000);
+
+});
 
 }
