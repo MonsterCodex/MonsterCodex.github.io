@@ -28,26 +28,66 @@ return `
 
 }
 
-function displayMonsters(list){
+function displayMonsters(list) {
 
-grid.innerHTML="";
+    grid.innerHTML = "";
 
-if(list.length===0){
+    // Homepage - show one random monster from each category
+    if (currentCategory === "All" && search.value.trim() === "") {
 
-grid.innerHTML=`
-<div style="grid-column:1/-1;text-align:center;padding:60px;">
-<h2>No monsters found</h2>
-<p>Try another search.</p>
-</div>
-`;
+        const featuredCategories = [
+            "Movies",
+            "Games",
+            "Television",
+            "Internet Horror",
+            "Creepypasta",
+            "Cryptids",
+            "Folklore",
+            "Aliens"
+        ];
 
-return;
+        featuredCategories.forEach(category => {
 
-}
+            const categoryMonsters = monsters.filter(
+                monster => monster.category === category
+            );
 
-list.forEach(monster=>{
-grid.innerHTML+=createCard(monster);
-});
+            if (categoryMonsters.length > 0) {
+
+                const randomMonster =
+                    categoryMonsters[
+                        Math.floor(Math.random() * categoryMonsters.length)
+                    ];
+
+                grid.innerHTML += createCard(randomMonster);
+
+            }
+
+        });
+
+        return;
+
+    }
+
+    // Category/Search results
+    if (list.length === 0) {
+
+        grid.innerHTML = `
+        <div style="grid-column:1/-1;text-align:center;padding:60px;">
+            <h2>No monsters found</h2>
+            <p>Try another search.</p>
+        </div>
+        `;
+
+        return;
+
+    }
+
+    list.forEach(monster => {
+
+        grid.innerHTML += createCard(monster);
+
+    });
 
 }
 
