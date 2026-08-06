@@ -623,7 +623,7 @@ tags:[
 "animatronic","rabbit","bonnie","fnaf","game","horror"
 ],
 
-image:"images/monsters/bonnie/profile.webp"
+image:"images/monsters/bonnie/profile.png"
 },
 
 {
@@ -666,7 +666,7 @@ tags:[
 "animatronic","chicken","cupcake","fnaf","game","horror"
 ],
 
-image:"images/monsters/chica/profile.webp"
+image:"images/monsters/chica/profile.png"
 },
 
 {
@@ -709,7 +709,7 @@ tags:[
 "animatronic","fox","pirate","foxy","fnaf","game"
 ],
 
-image:"images/monsters/foxy/profile.webp"
+image:"images/monsters/foxy/profile.png"
 },
 
 {
@@ -750,7 +750,7 @@ tags:[
 "golden","freddy","ghost","animatronic","fnaf","game"
 ],
 
-image:"images/monsters/golden-freddy/profile.webp"
+image:"images/monsters/golden-freddy/profile.png"
 },
 
 {
@@ -791,7 +791,7 @@ tags:[
 "endo","endoskeleton","robot","fnaf","game"
 ],
 
-image:"images/monsters/endo-01/profile.webp"
+image:"images/monsters/endo-01/profile.png"
 },
 
 {
@@ -832,7 +832,7 @@ tags:[
 "toy","freddy","animatronic","fnaf2","game"
 ],
 
-image:"images/monsters/toy-freddy/profile.webp"
+image:"images/monsters/toy-freddy/profile.png"
 },
 
 {
@@ -873,7 +873,7 @@ tags:[
 "toy","bonnie","rabbit","animatronic","fnaf2"
 ],
 
-image:"images/monsters/toy-bonnie/profile.webp"
+image:"images/monsters/toy-bonnie/profile.png"
 },
 
 {
@@ -914,7 +914,7 @@ tags:[
 "toy","chica","animatronic","fnaf2","game"
 ],
 
-image:"images/monsters/toy-chica/profile.webp"
+image:"images/monsters/toy-chica/profile.png"
 },
 
 {
@@ -956,6 +956,6 @@ tags:[
 "mangle","fox","animatronic","fnaf2","game","horror"
 ],
 
-image:"images/monsters/mangle/profile.webp"
+image:"images/monsters/mangle/profile.png"
 }
 ];
