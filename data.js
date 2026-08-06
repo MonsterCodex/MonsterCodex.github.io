@@ -581,7 +581,7 @@ tags:[
 "mascot"
 ],
 
-image:"images/monsters/freddy-fazbear/profile.webp"
+image:"images/monsters/freddy-fazbear/profile.png"
 },
 {
 id:"bonnie",
