@@ -546,8 +546,9 @@ firstAppearance:"Five Nights at Freddy's (2014)",
 origin:"Freddy Fazbear's Pizza",
 
 height:"2.1 m (7 ft)",
-weight:"Unknown",
+image:"images/monsters/freddie-fazbear/profile.png",
 
+weight:"Unknown",
 status:"Active",
 alignment:"Hostile",
 
