@@ -531,4 +531,430 @@ weaknesses:[
 gallery:[]
 
 
-}];
+},
+
+{
+id:"freddy-fazbear",
+name:"Freddy Fazbear",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.1 m (7 ft)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Freddy Fazbear is the lead animatronic mascot of Freddy Fazbear's Pizza. By day he entertains children, but after hours he becomes a relentless hunter that silently stalks anyone trapped inside the restaurant. Freddy grows more aggressive as the night progresses, making him one of the deadliest animatronics in the building.",
+
+abilities:[
+"Superhuman strength",
+"Silent movement",
+"Night vision",
+"Mechanical durability",
+"Advanced tracking",
+"Jump scare attacks"
+],
+
+weaknesses:[
+"Power outage",
+"Electrical failure",
+"Mechanical damage"
+],
+
+tags:[
+"animatronic",
+"robot",
+"fnaf",
+"freddy",
+"horror",
+"game",
+"mascot"
+],
+
+image:"images/monsters/freddy-fazbear/profile.webp"
+},
+{
+id:"bonnie",
+name:"Bonnie",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.1 m (7 ft)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Bonnie is the blue rabbit guitarist of Freddy Fazbear's Pizza. Often the first animatronic to leave the stage, Bonnie silently patrols the building and relentlessly pursues anyone remaining after hours.",
+
+abilities:[
+"Superhuman strength",
+"Silent movement",
+"High durability",
+"Advanced tracking",
+"Powerful grip"
+],
+
+weaknesses:[
+"Electrical failure",
+"Mechanical damage",
+"Power outage"
+],
+
+tags:[
+"animatronic","rabbit","bonnie","fnaf","game","horror"
+],
+
+image:"images/monsters/bonnie/profile.webp"
+},
+
+{
+id:"chica",
+name:"Chica",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.0 m (6 ft 7 in)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Chica is the restaurant's chicken mascot. While carrying her trademark cupcake, she roams the pizzeria searching for intruders and is known for taking unpredictable routes through the building.",
+
+abilities:[
+"Superhuman strength",
+"Relentless pursuit",
+"Night patrol",
+"Mechanical durability",
+"Jump scare attacks"
+],
+
+weaknesses:[
+"Electrical failure",
+"Mechanical damage",
+"Power outage"
+],
+
+tags:[
+"animatronic","chicken","cupcake","fnaf","game","horror"
+],
+
+image:"images/monsters/chica/profile.webp"
+},
+
+{
+id:"foxy",
+name:"Foxy",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Pirate Cove",
+
+height:"2.0 m (6 ft 8 in)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"Extreme",
+
+description:"Foxy is a damaged pirate fox animatronic hidden inside Pirate Cove. Unlike the others, Foxy sprints directly toward his target, making him one of the fastest and most dangerous animatronics.",
+
+abilities:[
+"Extreme speed",
+"Superhuman strength",
+"Hook weapon",
+"Night vision",
+"Rapid pursuit"
+],
+
+weaknesses:[
+"Power outage",
+"Mechanical damage",
+"Electrical failure"
+],
+
+tags:[
+"animatronic","fox","pirate","foxy","fnaf","game"
+],
+
+image:"images/monsters/foxy/profile.webp"
+},
+
+{
+id:"golden-freddy",
+name:"Golden Freddy",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Unknown",
+
+height:"Unknown",
+weight:"Unknown",
+
+status:"Unknown",
+alignment:"Hostile",
+
+threat:"Extreme",
+
+description:"Golden Freddy is a mysterious spectral animatronic capable of appearing without warning. Unlike the other mascots, his behaviour defies normal mechanical rules, making him one of the franchise's most enigmatic entities.",
+
+abilities:[
+"Teleportation",
+"Hallucination induction",
+"Instant appearance",
+"Psychological attacks",
+"Supernatural presence"
+],
+
+weaknesses:[
+"Unknown"
+],
+
+tags:[
+"golden","freddy","ghost","animatronic","fnaf","game"
+],
+
+image:"images/monsters/golden-freddy/profile.webp"
+},
+
+{
+id:"endo-01",
+name:"Endo-01",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's (2014)",
+
+origin:"Parts and Service",
+
+height:"2.0 m (6 ft 7 in)",
+weight:"Unknown",
+
+status:"Inactive",
+alignment:"Neutral",
+
+threat:"Moderate",
+
+description:"Endo-01 is the exposed endoskeleton used inside the restaurant's animatronics. Although normally inactive, its unsettling appearance has become one of the series' most iconic mechanical designs.",
+
+abilities:[
+"Mechanical strength",
+"Animatronic frame",
+"Metal durability"
+],
+
+weaknesses:[
+"No outer armour",
+"Electrical failure",
+"Mechanical damage"
+],
+
+tags:[
+"endo","endoskeleton","robot","fnaf","game"
+],
+
+image:"images/monsters/endo-01/profile.webp"
+},
+
+{
+id:"toy-freddy",
+name:"Toy Freddy",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's 2 (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.0 m (6 ft 7 in)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Toy Freddy is a redesigned version of Freddy Fazbear featuring advanced facial recognition technology. Despite his friendly appearance, he aggressively hunts intruders after hours.",
+
+abilities:[
+"Facial recognition",
+"Superhuman strength",
+"Mechanical durability",
+"Night patrol"
+],
+
+weaknesses:[
+"Electrical failure",
+"Mechanical damage"
+],
+
+tags:[
+"toy","freddy","animatronic","fnaf2","game"
+],
+
+image:"images/monsters/toy-freddy/profile.webp"
+},
+
+{
+id:"toy-bonnie",
+name:"Toy Bonnie",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's 2 (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.0 m (6 ft 6 in)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Toy Bonnie is the modern rabbit mascot introduced in the second Freddy Fazbear's Pizza location. Fast and highly aggressive, he relentlessly stalks the night guard.",
+
+abilities:[
+"Enhanced mobility",
+"Facial recognition",
+"Superhuman strength",
+"Mechanical durability"
+],
+
+weaknesses:[
+"Electrical failure",
+"Mechanical damage"
+],
+
+tags:[
+"toy","bonnie","rabbit","animatronic","fnaf2"
+],
+
+image:"images/monsters/toy-bonnie/profile.webp"
+},
+
+{
+id:"toy-chica",
+name:"Toy Chica",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's 2 (2014)",
+
+origin:"Freddy Fazbear's Pizza",
+
+height:"2.0 m (6 ft 6 in)",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"High",
+
+description:"Toy Chica is a redesigned chicken animatronic equipped with facial recognition systems. She abandons her friendly daytime role after dark and actively hunts anyone inside the restaurant.",
+
+abilities:[
+"Facial recognition",
+"Enhanced mobility",
+"Mechanical durability",
+"Superhuman strength"
+],
+
+weaknesses:[
+"Electrical failure",
+"Mechanical damage"
+],
+
+tags:[
+"toy","chica","animatronic","fnaf2","game"
+],
+
+image:"images/monsters/toy-chica/profile.webp"
+},
+
+{
+id:"mangle",
+name:"Mangle",
+
+category:"Game Monsters",
+universe:"Five Nights at Freddy's",
+
+creator:"Scott Cawthon",
+firstAppearance:"Five Nights at Freddy's 2 (2014)",
+
+origin:"Kid's Cove",
+
+height:"Variable",
+weight:"Unknown",
+
+status:"Active",
+alignment:"Hostile",
+
+threat:"Extreme",
+
+description:"Mangle is a heavily damaged animatronic fox that has been repeatedly dismantled and rebuilt by children. Its twisted body allows it to crawl across ceilings and walls, making it one of the most unpredictable animatronics in the series.",
+
+abilities:[
+"Ceiling traversal",
+"Extreme agility",
+"Superhuman strength",
+"Mechanical durability",
+"Radio interference"
+],
+
+weaknesses:[
+"Mechanical damage",
+"Electrical failure"
+],
+
+tags:[
+"mangle","fox","animatronic","fnaf2","game","horror"
+],
+
+image:"images/monsters/mangle/profile.webp"
+}
+];
