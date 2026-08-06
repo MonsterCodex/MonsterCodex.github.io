@@ -910,3 +910,125 @@ text-align:center;
     max-width: 420px;
     width: 90%;
 }
+
+#encounter-name{
+
+    font-size:32px;
+    font-family:'Cinzel',serif;
+    margin-top:15px;
+    color:#ffffff;
+
+}
+
+#encounter-text{
+
+    color:#cccccc;
+    margin-top:10px;
+    min-height:24px;
+
+}
+
+#encounter-button{
+
+    margin-top:25px;
+    padding:14px 30px;
+    background:#e63946;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.25s;
+
+}
+
+#encounter-button:hover{
+
+    transform:scale(1.05);
+    background:#ff4d5f;
+
+}
+
+#encounter-image{
+
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #e63946;
+    margin:20px auto;
+
+}
+
+.scan-header{
+    font-family:monospace;
+    color:#ff3131;
+    letter-spacing:4px;
+    opacity:.7;
+    margin-bottom:15px;
+}
+
+.encounter-box h2{
+    font-family:'Cinzel',serif;
+    letter-spacing:2px;
+    margin-bottom:5px;
+}
+
+.encounter-box h3{
+    color:#ff3131;
+    font-size:14px;
+    letter-spacing:5px;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+#encounter-text{
+    color:#cfcfcf;
+    min-height:24px;
+    margin-bottom:15px;
+}
+
+#encounter-name{
+    font-size:32px;
+    letter-spacing:2px;
+    margin-top:20px;
+    text-transform:uppercase;
+}
+
+#encounter-button{
+    margin-top:20px;
+    padding:14px 30px;
+    background:#d11f1f;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.25s;
+}
+
+#encounter-button:hover{
+    background:#ff3131;
+    transform:scale(1.05);
+}
+
+#encounter-image{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #d11f1f;
+    margin:20px auto;
+    display:block;
+}
+
+#scan-percent{
+    margin-top:15px;
+    font-family:monospace;
+    font-size:22px;
+    color:#ff3131;
+    font-weight:bold;
+    letter-spacing:2px;
+}

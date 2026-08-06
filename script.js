@@ -169,26 +169,104 @@ filterMonsters();
 
 });
 
-const randomButton=document.getElementById("random-monster");
+const randomButton = document.getElementById("random-monster");
+const encounter = document.getElementById("encounter-screen");
+const encounterText = document.getElementById("encounter-text");
+const encounterImage = document.getElementById("encounter-image");
+const encounterName = document.getElementById("encounter-name");
+const encounterButton = document.getElementById("encounter-button");
+const loadingFill = document.querySelector(".loading-fill");
+const scanPercent = document.getElementById("scan-percent");
 
-const encounter=document.getElementById("encounter-screen");
+const encounterMessages = [
+    "🔒 Accessing secure database...",
+    "🛰️ Scanning classified archives...",
+    "📡 Searching known universes...",
+    "🧬 Analysing lifeform...",
+    "⚠️ Threat signature detected...",
+    "👁️ Identity confirmed..."
+];
 
-if(randomButton){
+if (randomButton) {
 
-randomButton.addEventListener("click",e=>{
+    randomButton.addEventListener("click", function(e){
 
-e.preventDefault();
+        e.preventDefault();
 
-const random=monsters[Math.floor(Math.random()*monsters.length)];
+        const random = monsters[Math.floor(Math.random()*monsters.length)];
 
-encounter.style.display="flex";
+        encounter.style.display="flex";
 
-setTimeout(()=>{
+        encounterImage.style.display="none";
+        encounterName.style.display="none";
+        encounterButton.style.display="none";
 
-window.location.href=`monster.html?id=${random.id}`;
+        loadingFill.style.animation="none";
+        loadingFill.offsetHeight;
+        loadingFill.style.animation="loading 3s linear forwards";
 
-},2000);
+        let i = 0;
 
-});
+encounterText.textContent = encounterMessages[0];
+
+const messageTimer = setInterval(() => {
+
+    i++;
+
+    if (i < encounterMessages.length) {
+        encounterText.textContent = encounterMessages[i];
+    }
+
+}, 600);
+
+// Start percentage counter
+scanPercent.textContent = "0%";
+
+let percent = 0;
+
+const percentTimer = setInterval(() => {
+
+    percent += Math.floor(Math.random() * 12) + 4;
+
+    if (percent > 100)
+        percent = 100;
+
+    scanPercent.textContent = percent + "%";
+
+    if (percent === 100) {
+
+        clearInterval(percentTimer);
+        clearInterval(messageTimer);
+
+        encounterText.textContent = "CLASSIFIED FILE LOCATED";
+
+        encounterImage.src = random.image;
+        encounterImage.alt = random.name;
+        encounterImage.style.display = "block";
+
+        encounterName.textContent = random.name;
+        encounterName.style.display = "block";
+
+        encounterButton.style.display = "inline-block";
+
+        encounterButton.onclick = function () {
+            window.location.href = `monster.html?id=${random.id}`;
+        };
+
+    }
+
+}, 180);
+
+    });
+
+    encounter.addEventListener("click",function(e){
+
+        if(e.target===encounter){
+
+            encounter.style.display="none";
+
+        }
+
+    });
 
 }
