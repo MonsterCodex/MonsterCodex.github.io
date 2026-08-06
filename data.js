@@ -537,7 +537,7 @@ gallery:[]
 id:"freddy-fazbear",
 name:"Freddy Fazbear",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -587,7 +587,7 @@ image:"images/monsters/freddy-fazbear/profile.png"
 id:"bonnie",
 name:"Bonnie",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -630,7 +630,7 @@ image:"images/monsters/bonnie/profile.png"
 id:"chica",
 name:"Chica",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -673,7 +673,7 @@ image:"images/monsters/chica/profile.png"
 id:"foxy",
 name:"Foxy",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -716,7 +716,7 @@ image:"images/monsters/foxy/profile.png"
 id:"golden-freddy",
 name:"Golden Freddy",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -757,7 +757,7 @@ image:"images/monsters/golden-freddy/profile.png"
 id:"endo-01",
 name:"Endo-01",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -798,7 +798,7 @@ image:"images/monsters/endo-01/profile.png"
 id:"toy-freddy",
 name:"Toy Freddy",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -839,7 +839,7 @@ image:"images/monsters/toy-freddy/profile.png"
 id:"toy-bonnie",
 name:"Toy Bonnie",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -880,7 +880,7 @@ image:"images/monsters/toy-bonnie/profile.png"
 id:"toy-chica",
 name:"Toy Chica",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
@@ -921,7 +921,7 @@ image:"images/monsters/toy-chica/profile.png"
 id:"mangle",
 name:"Mangle",
 
-category:"Game Monsters",
+category:"Games",
 universe:"Five Nights at Freddy's",
 
 creator:"Scott Cawthon",
