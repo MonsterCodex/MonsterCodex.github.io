@@ -6,6 +6,10 @@ const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
 const revealSound = new Audio("assets/sounds/reveal.mp3");
 
+clickSound.volume = 0.4;
+scanSound.volume = 0.25;
+revealSound.volume = 0.5;
+
 let currentCategory="All";
 
 function createCard(monster){
@@ -196,8 +200,11 @@ if (randomButton) {
 
         e.preventDefault();
 
-        clickSound.play();
-        scanSound.play();
+        clickSound.currentTime = 0;
+        clickSound.play().catch(()=>{});
+
+        scanSound.currentTime = 0;
+        scanSound.play().catch(()=>{});
 
         const random = monsters[Math.floor(Math.random()*monsters.length)];
 
@@ -232,38 +239,55 @@ let percent = 0;
 
 const percentTimer = setInterval(() => {
 
-    percent += Math.floor(Math.random() * 12) + 4;
+    if (percent < 100) {
 
-    if (percent > 100)
-        percent = 100;
+        percent += Math.floor(Math.random() * 6) + 2;
 
-    scanPercent.textContent = percent + "%";
+        if (percent > 100)
+            percent = 100;
 
-    if (percent === 100) {
+        scanPercent.textContent = percent + "%";
 
-        clearInterval(percentTimer);
-        clearInterval(messageTimer);
-
-        encounterText.textContent = "CLASSIFIED FILE LOCATED";
-
-        encounterImage.src = random.image;
-        encounterImage.alt = random.name;
-        encounterImage.style.display = "block";
-
-        encounterName.textContent = random.name;
-        encounterName.style.display = "block";
-
-        encounterButton.style.display = "inline-block";
-
-        encounterButton.onclick = function () {
-            window.location.href = `monster.html?id=${random.id}`;
-        };
-
+        return;
     }
+
+    clearInterval(percentTimer);
+clearInterval(messageTimer);
+
+encounterText.textContent = "ACCESS GRANTED";
+
+scanPercent.textContent = "100%";
+
+setTimeout(() => {
+
+    encounterText.textContent = "CLASSIFIED FILE LOCATED";
+
+    scanSound.pause();
+    scanSound.currentTime = 0;
+
+    revealSound.currentTime = 0;
+    revealSound.play().catch(()=>{});
+
+    encounterImage.src = `images/monsters/${random.id}/profile.png`;
+    encounterImage.alt = random.name;
+    encounterImage.style.display = "block";
+
+    encounterName.textContent = random.name;
+    encounterName.style.display = "block";
+
+    encounterButton.style.display = "inline-block";
+
+    encounterButton.onclick = function () {
+        window.location.href = `monster.html?id=${random.id}`;
+    };
+
+}, 800);
 
 }, 180);
 
     });
+
+}
 
     encounter.addEventListener("click",function(e){
 
@@ -275,4 +299,3 @@ const percentTimer = setInterval(() => {
 
     });
 
-}
