@@ -2,6 +2,9 @@ const grid=document.querySelector(".monster-grid");
 const search=document.getElementById("search");
 const results=document.getElementById("search-results");
 const categories=document.querySelectorAll(".category");
+const clickSound = new Audio("assets/sounds/click.mp3");
+const scanSound = new Audio("assets/sounds/scan.mp3");
+const revealSound = new Audio("assets/sounds/reveal.mp3");
 
 let currentCategory="All";
 
@@ -192,6 +195,9 @@ if (randomButton) {
     randomButton.addEventListener("click", function(e){
 
         e.preventDefault();
+
+        clickSound.play();
+        scanSound.play();
 
         const random = monsters[Math.floor(Math.random()*monsters.length)];
 
