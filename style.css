@@ -837,9 +837,18 @@ gap:18px;
         linear-gradient(rgba(10,10,10,.70), rgba(10,10,10,.85)),
         url("images/banners/header.png");
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 120px 20px 80px;
 }
 
 .hero h1{
