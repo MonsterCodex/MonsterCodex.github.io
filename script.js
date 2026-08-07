@@ -34,7 +34,9 @@ const categoryIcons = {
 function createCard(monster){
 
 return `
-<div class="card" data-url="monster.html?id=${monster.id}">
+<a href="monster.html?id=${monster.id}" class="card-link">
+
+<div class="card">
 
 <img src="${monster.image}" alt="${monster.name}">
 
