@@ -5,12 +5,31 @@ const categories=document.querySelectorAll(".category");
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
 const revealSound = new Audio("assets/sounds/reveal.mp3");
+const keySounds = [
+new Audio("assets/sounds/key1.mp3"),
+new Audio("assets/sounds/key2.mp3"),
+new Audio("assets/sounds/key3.mp3"),
+new Audio("assets/sounds/key4.mp3")
+];
+
+keySounds.forEach(s=>s.volume=0.15);
 
 clickSound.volume = 0.4;
 scanSound.volume = 0.25;
 revealSound.volume = 0.5;
 
 let currentCategory="All";
+
+const categoryIcons = {
+    Games: "🎮",
+    Movies: "🎬",
+    Television: "📺",
+    "Internet Horror": "👻",
+    Creepypasta: "📖",
+    Cryptids: "🐺",
+    Folklore: "🧙",
+    Aliens: "👽"
+};
 
 function createCard(monster){
 
@@ -26,15 +45,7 @@ return `
 <h3>${monster.name}</h3>
 
 <p>
-${monster.category === "Games" ? "🎮" :
-monster.category === "Movies" ? "🎬" :
-monster.category === "Television" ? "📺" :
-monster.category === "Internet Horror" ? "👻" :
-monster.category === "Creepypasta" ? "📖" :
-monster.category === "Cryptids" ? "🐺" :
-monster.category === "Folklore" ? "🧙" :
-monster.category === "Aliens" ? "👽" : "🌍"}
-${monster.universe}
+${categoryIcons[monster.category] || "🌍"} ${monster.universe}
 </p>
 
 <p>✍️ ${monster.creator}</p>
@@ -190,22 +201,30 @@ showDropdown(filtered);
 }
 
 displayMonsters(monsters);
+search.addEventListener("input", filterMonsters);
 
-search.addEventListener("input",filterMonsters);
+search.addEventListener("keydown", function(e){
 
-search.addEventListener("keydown",e=>{
+    if(!["Shift","Control","Alt","Meta","CapsLock","Tab","Escape","ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key)){
 
-if(e.key==="Enter"){
+        const sound = keySounds[
+            Math.floor(Math.random() * keySounds.length)
+        ].cloneNode();
 
-const first=document.querySelector(".search-item");
+        sound.volume = 0.15;
+        sound.play();
 
-if(first){
+    }
 
-window.location.href=`monster.html?id=${first.dataset.id}`;
+    if(e.key === "Enter"){
 
-}
+        const first = document.querySelector(".search-item");
 
-}
+        if(first){
+            window.location.href = `monster.html?id=${first.dataset.id}`;
+        }
+
+    }
 
 });
 
@@ -337,7 +356,7 @@ setTimeout(() => {
     revealSound.currentTime = 0;
     revealSound.play().catch(()=>{});
 
-    encounterImage.src = `images/monsters/${random.id}/profile.png`;
+    encounterImage.src = random.image;
     encounterImage.alt = random.name;
     encounterImage.style.display = "block";
 
@@ -370,8 +389,9 @@ setTimeout(() => {
 
     if(!clickable) return;
 
-    clickSound.currentTime = 0;
-    clickSound.play();
+    const sound = clickSound.cloneNode();
+    sound.volume = clickSound.volume;
+    sound.play().catch(()=>{});
 
 });
 
