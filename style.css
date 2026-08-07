@@ -1046,3 +1046,42 @@ html {
 .logo a:hover{
     color:#e63946;
 }
+
+.logo{
+    position:relative;
+    display:inline-block;
+}
+
+.monster-eyes{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:14px;
+    pointer-events:none;
+}
+
+.eye{
+    width:8px;
+    height:8px;
+    background:#e63946;
+    border-radius:50%;
+    box-shadow:
+        0 0 8px #e63946,
+        0 0 16px #e63946,
+        0 0 24px #e63946;
+    animation:blink 6s infinite;
+}
+
+@keyframes blink{
+
+    0%,92%,100%{
+        transform:scaleY(1);
+    }
+
+    94%,98%{
+        transform:scaleY(0.1);
+    }
+
+}
