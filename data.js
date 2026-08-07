@@ -1,8 +1,7 @@
 const monsters = [
 
 {
-    id: "siren-head",
-    name: "Siren Head",
+
     category: "Internet Horror",
     creator: "Trevor Henderson",
     year: "2018",
@@ -55,8 +54,9 @@ const monsters = [
     ],
 
     gallery:[]
-},
+    
 
+},
 {
     id:"long-horse",
     name:"Long Horse",
@@ -957,5 +957,419 @@ tags:[
 ],
 
 image:"images/monsters/mangle/profile.png"
+},
+
+{
+id:"werewolf",
+name:"Werewolf",
+
+category:"Folklore",
+universe:"European Folklore",
+creator:"European Legend",
+firstAppearance:"Ancient Greece",
+origin:"Europe",
+threat:"High",
+image:"images/monsters/werewolf/profile.png",
+description:"A human cursed or gifted with the ability to transform into a wolf-like beast during the full moon.",
+
+abilities:[
+"Superhuman strength",
+"Enhanced speed",
+"Regeneration",
+"Keen senses",
+"Powerful claws and fangs"
+],
+
+weaknesses:[
+"Silver weapons",
+"Wolfsbane",
+"Transformation tied to the full moon"
+]
+},
+
+{
+id:"vampire",
+name:"Vampire",
+
+category:"Folklore",
+universe:"European Folklore",
+creator:"European Legend",
+firstAppearance:"Ancient Folklore",
+origin:"Eastern Europe",
+threat:"Extreme",
+image:"images/monsters/vampire/profile.png",
+description:"An undead creature sustained by drinking the blood of the living.",
+
+abilities:[
+"Immortality",
+"Superhuman strength",
+"Hypnosis",
+"Shape-shifting",
+"Rapid regeneration"
+],
+
+weaknesses:[
+"Sunlight",
+"Wooden stakes",
+"Holy symbols",
+"Fire"
+]
+},
+
+{
+id:"banshee",
+name:"Banshee",
+
+category:"Folklore",
+universe:"Irish Folklore",
+creator:"Irish Legend",
+firstAppearance:"Medieval Ireland",
+origin:"Ireland",
+threat:"High",
+image:"images/monsters/banshee/profile.png",
+description:"A ghostly woman whose terrifying scream foretells the death of a family member.",
+
+abilities:[
+"Death omen",
+"Piercing scream",
+"Spirit form",
+"Appears and disappears"
+],
+
+weaknesses:[
+"Cannot physically attack",
+"Bound to ancient bloodlines"
+]
+},
+
+{
+id:"kelpie",
+name:"Kelpie",
+
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Scottish Legend",
+firstAppearance:"18th Century",
+origin:"Scotland",
+threat:"High",
+image:"images/monsters/kelpie/profile.png",
+description:"A shape-shifting water spirit that lures travellers onto its back before dragging them beneath the water.",
+
+abilities:[
+"Shape-shifting",
+"Water manipulation",
+"Supernatural strength",
+"Ambush predator"
+],
+
+weaknesses:[
+"Freshwater only",
+"Iron"
+]
+},
+
+{
+id:"leshy",
+name:"Leshy",
+
+category:"Folklore",
+universe:"Slavic Folklore",
+creator:"Slavic Legend",
+firstAppearance:"Ancient Slavic Myth",
+origin:"Eastern Europe",
+threat:"High",
+image:"images/monsters/leshy/profile.png",
+description:"Guardian spirit of the forest capable of changing size and confusing travellers.",
+
+abilities:[
+"Forest control",
+"Shape-shifting",
+"Animal communication",
+"Illusions"
+],
+
+weaknesses:[
+"Sacred symbols",
+"Leaving the forest"
+]
+},
+
+{
+id:"oni",
+name:"Oni",
+
+category:"Folklore",
+universe:"Japanese Folklore",
+creator:"Japanese Legend",
+firstAppearance:"Heian Period",
+origin:"Japan",
+threat:"Extreme",
+image:"images/monsters/oni/profile.png",
+description:"Massive horned demons feared for their immense strength and cruelty.",
+
+abilities:[
+"Immense strength",
+"Regeneration",
+"Weapon mastery",
+"Intimidation"
+],
+
+weaknesses:[
+"Holy blessings",
+"Divine weapons"
+]
+},
+
+{
+id:"kitsune",
+name:"Kitsune",
+
+category:"Folklore",
+universe:"Japanese Folklore",
+creator:"Japanese Legend",
+firstAppearance:"Ancient Japan",
+origin:"Japan",
+threat:"High",
+image:"images/monsters/kitsune/profile.png",
+description:"An intelligent fox spirit capable of illusion, transformation and magical powers.",
+
+abilities:[
+"Shape-shifting",
+"Illusions",
+"Fox fire",
+"Magic"
+],
+
+weaknesses:[
+"Overconfidence",
+"Sacred charms"
+]
+},
+
+{
+id:"medusa",
+name:"Medusa",
+category:"Folklore",
+universe:"Greek Mythology",
+creator:"Greek Myth",
+firstAppearance:"8th Century BC",
+origin:"Ancient Greece",
+threat:"Extreme",
+image:"images/monsters/medusa/profile.png",
+
+description:"A Gorgon whose gaze turns anyone who looks directly at her into stone.",
+
+abilities:[
+"Petrifying gaze",
+"Snake hair",
+"Immortality",
+"Deadly combat skills"
+],
+
+weaknesses:[
+"Mirrors",
+"Indirect vision",
+"Decapitation"
+]
+},
+
+{
+id:"wendigo",
+name:"Wendigo",
+category:"Folklore",
+universe:"Algonquian Folklore",
+creator:"Native American Legend",
+firstAppearance:"Ancient Oral Tradition",
+origin:"North America",
+threat:"Catastrophic",
+image:"images/monsters/wendigo/profile.png",
+description:"A terrifying spirit associated with greed, winter and insatiable hunger.",
+
+abilities:[
+"Extreme speed",
+"Superhuman strength",
+"Relentless endurance",
+"Fear inducement"
+],
+
+weaknesses:[
+"Fire",
+"Sacred rituals"
+]
+},
+
+{
+id:"dullahan",
+name:"Dullahan",
+category:"Folklore",
+universe:"Irish Folklore",
+creator:"Irish Legend",
+firstAppearance:"Medieval Ireland",
+origin:"Ireland",
+threat:"Extreme",
+image:"images/monsters/dullahan/profile.png",
+description:"A headless rider who carries his own severed head and heralds impending death.",
+
+abilities:[
+"Supernatural horse",
+"Death prophecy",
+"Teleportation",
+"Cannot be stopped by gates"
+],
+
+weaknesses:[
+"Gold",
+"Sunlight"
+]
+},
+
+{
+id:"black-shuck",
+name:"Black Shuck",
+category:"Folklore",
+universe:"English Folklore",
+creator:"English Legend",
+firstAppearance:"16th Century",
+origin:"East Anglia, England",
+threat:"High",
+image:"images/monsters/black-shuck/profile.png",
+description:"A ghostly black dog said to roam the countryside and churchyards, often appearing before tragedy or death.",
+abilities:["Supernatural speed","Fear inducement","Night stalking","Spirit form"],
+weaknesses:["Sacred ground","Sunlight"]
+},
+
+{
+id:"nuckelavee",
+name:"Nuckelavee",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Orkney Legend",
+firstAppearance:"Ancient Folklore",
+origin:"Orkney Islands",
+threat:"Catastrophic",
+image:"images/monsters/nuckelavee/profile.png",
+description:"A terrifying skinless horse demon whose breath spreads disease and famine.",
+abilities:["Disease","Immense strength","Supernatural speed","Fear aura"],
+weaknesses:["Fresh water"]
+},
+
+{
+id:"selkie",
+name:"Selkie",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Scottish Legend",
+firstAppearance:"Medieval Scotland",
+origin:"Scotland",
+threat:"Low",
+image:"images/monsters/selkie/profile.png",
+description:"A magical seal capable of shedding its skin to become human.",
+abilities:["Shape-shifting","Swimming","Longevity"],
+weaknesses:["Loss of seal skin"]
+},
+
+{
+id:"redcap",
+name:"Redcap",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Border Legend",
+firstAppearance:"14th Century",
+origin:"Scottish Borders",
+threat:"High",
+image:"images/monsters/redcap/profile.png",
+description:"A murderous goblin who dyes his cap in the blood of his victims.",
+abilities:["Superhuman strength","Speed","Weapon mastery"],
+weaknesses:["Crosses","Scripture"]
+},
+
+{
+id:"grindylow",
+name:"Grindylow",
+category:"Folklore",
+universe:"English Folklore",
+creator:"Yorkshire Legend",
+firstAppearance:"Ancient England",
+origin:"Northern England",
+threat:"Medium",
+image:"images/monsters/grindylow/profile.png",
+description:"A swamp-dwelling creature that drags children beneath the water.",
+abilities:["Water ambush","Long claws","Swimming"],
+weaknesses:["Dry land"]
+},
+
+{
+id:"jenny-greenteeth",
+name:"Jenny Greenteeth",
+category:"Folklore",
+universe:"English Folklore",
+creator:"English Legend",
+firstAppearance:"18th Century",
+origin:"Lancashire, England",
+threat:"Medium",
+image:"images/monsters/jenny-greenteeth/profile.png",
+description:"A green-skinned water hag that lurks beneath ponds waiting for unsuspecting victims.",
+abilities:["Camouflage","Water ambush","Stealth"],
+weaknesses:["Dry environments"]
+},
+
+{
+id:"blue-men-of-the-minch",
+name:"Blue Men of the Minch",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Scottish Legend",
+firstAppearance:"19th Century",
+origin:"The Minch, Scotland",
+threat:"High",
+image:"images/monsters/blue-men-of-the-minch/profile.png",
+description:"Blue-skinned sea spirits that challenge sailors before sinking their ships.",
+abilities:["Storm control","Swimming","Supernatural strength"],
+weaknesses:["Calm seas"]
+},
+
+{
+id:"each-uisge",
+name:"Each Uisge",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Scottish Legend",
+firstAppearance:"Ancient Scotland",
+origin:"Scottish Highlands",
+threat:"Extreme",
+image:"images/monsters/each-uisge/profile.png",
+description:"A deadly water horse that devours anyone foolish enough to ride it.",
+abilities:["Shape-shifting","Immense strength","Water speed"],
+weaknesses:["Freshwater boundaries"]
+},
+
+{
+id:"afanc",
+name:"Afanc",
+category:"Folklore",
+universe:"Welsh Folklore",
+creator:"Welsh Legend",
+firstAppearance:"Medieval Wales",
+origin:"Wales",
+threat:"High",
+image:"images/monsters/afanc/profile.png",
+description:"A monstrous lake beast said to destroy villages through floods.",
+abilities:["Water manipulation","Massive strength","Aquatic endurance"],
+weaknesses:["Can be lured onto land"]
+},
+
+{
+id:"gwrgi-garwl",
+name:"Gwrgi Garwl",
+category:"Folklore",
+universe:"Welsh Folklore",
+creator:"Welsh Legend",
+firstAppearance:"The Mabinogion",
+origin:"Wales",
+threat:"High",
+image:"images/monsters/gwrgi-garwl/profile.png",
+description:"A monstrous wolf-like beast with human characteristics that terrorised ancient Wales.",
+abilities:["Superhuman strength","Speed","Savage attacks"],
+weaknesses:["Conventional weapons","Fire"]
 }
 ];
