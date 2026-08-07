@@ -4,12 +4,16 @@ const results=document.getElementById("search-results");
 const categories=document.querySelectorAll(".category");
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
+const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
+eyeScream.volume = 0.25;
+const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
+eyeScream.volume = 0.25;
 const revealSound = new Audio("assets/sounds/reveal.mp3");
-const keySounds = [
-new Audio("assets/sounds/key1.mp3"),
-new Audio("assets/sounds/key2.mp3"),
-new Audio("assets/sounds/key3.mp3"),
-new Audio("assets/sounds/key4.mp3")
+const keySounds = [    
+    new Audio("assets/sounds/key1.mp3"),
+    new Audio("assets/sounds/key2.mp3"),
+    new Audio("assets/sounds/key3.mp3"),
+    new Audio("assets/sounds/key4.mp3")
 ];
 
 keySounds.forEach(s=>s.volume=0.15);
@@ -405,6 +409,35 @@ document.addEventListener("pointerdown",function(e){
     clickSound.cloneNode().play().catch(()=>{});
 
 });
+
+const eyes = document.querySelector(".monster-eyes");
+
+if(eyes){
+
+    let canPlay = true;
+
+    eyes.addEventListener("mouseenter",()=>{
+
+        if(!canPlay) return;
+
+        eyeScream.currentTime = 0;
+        eyeScream.play().catch(()=>{});
+
+        document.querySelector(".logo").classList.add("monster-awake");
+
+        canPlay = false;
+
+    });
+
+    eyes.addEventListener("mouseleave",()=>{
+
+        document.querySelector(".logo").classList.remove("monster-awake");
+
+        canPlay = true;
+
+    });
+
+}
 
 
 

@@ -1154,7 +1154,11 @@ html {
 .logo{
     position:relative;
     display:inline-block;
-    
+    transition:transform .25s ease;
+}
+
+.logo.monster-awake{
+    transform:scale(1.02);
 }
 
 .monster-eyes{
@@ -1167,6 +1171,17 @@ html {
     padding:12px;
     transition:.35s ease;
     pointer-events:none;
+}
+
+.logo.monster-awake .monster-eyes{
+    animation:shakeEyes .18s linear 4;
+    background:#ff1b1b;
+    transform:scale(1.35);
+    box-shadow:
+        0 0 8px #ff0000,
+        0 0 18px #ff0000,
+        0 0 35px #ff0000,
+        0 0 55px #ff0000;
 }
 
 .logo:hover .monster-eyes{
@@ -1186,4 +1201,14 @@ html {
 
 .card{
     cursor:pointer;
+}
+
+@keyframes shakeEyes{
+
+0%{transform:translateX(-50%) translateX(0);}
+25%{transform:translateX(-50%) translateX(-2px);}
+50%{transform:translateX(-50%) translateX(2px);}
+75%{transform:translateX(-50%) translateX(-2px);}
+100%{transform:translateX(-50%) translateX(0);}
+
 }
