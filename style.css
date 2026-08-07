@@ -1058,30 +1058,67 @@ html {
     left:50%;
     transform:translateX(-50%);
     display:flex;
-    gap:14px;
+    gap:16px;
     pointer-events:none;
 }
 
 .eye{
     width:8px;
     height:8px;
-    background:#e63946;
+    background:#ff3b3b;
     border-radius:50%;
     box-shadow:
-        0 0 8px #e63946,
-        0 0 16px #e63946,
-        0 0 24px #e63946;
-    animation:blink 6s infinite;
+        0 0 6px #ff3b3b,
+        0 0 14px #ff3b3b,
+        0 0 22px #ff3b3b;
+    animation:eyes 12s infinite;
+    transform-origin:center;
 }
 
-@keyframes blink{
+.eye:nth-child(2){
+    animation-delay:.05s;
+}
 
-    0%,92%,100%{
-        transform:scaleY(1);
+@keyframes eyes{
+
+    /* Looking forward */
+    0%,15%{
+        transform:translateX(0) scaleY(1);
     }
 
-    94%,98%{
-        transform:scaleY(0.1);
+    /* Look left */
+    20%,30%{
+        transform:translateX(-3px) scaleY(1);
+    }
+
+    /* Centre */
+    35%,45%{
+        transform:translateX(0) scaleY(1);
+    }
+
+    /* Look right */
+    50%,60%{
+        transform:translateX(3px) scaleY(1);
+    }
+
+    /* Blink */
+    65%{
+        transform:translateX(3px) scaleY(.1);
+    }
+
+    /* Open */
+    68%{
+        transform:translateX(3px) scaleY(1);
+    }
+
+    /* Look left */
+    75%,85%{
+        transform:translateX(-2px) scaleY(1);
+    }
+
+    /* Return */
+    90%,100%{
+        transform:translateX(0) scaleY(1);
     }
 
 }
