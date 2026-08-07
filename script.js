@@ -367,3 +367,14 @@ setTimeout(() => {
 
     });
 
+document.querySelectorAll("a, button, .category").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+    });
+
+});    
+
