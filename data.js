@@ -1397,28 +1397,7 @@ weaknesses:[
 ]
 },
 
-{
-id:"black-shuck",
-name:"Black Shuck",
-category:"Folklore",
-universe:"English Folklore",
-creator:"English Legend",
-firstAppearance:"16th Century",
-origin:"East Anglia, England",
-threat:"High",
-image:"images/monsters/black-shuck/profile.png",
-description:"A gigantic ghostly black dog said to haunt lonely roads and churchyards, often appearing before tragedy or death.",
-abilities:[
-"Supernatural speed",
-"Fear inducement",
-"Spirit form",
-"Night stalking"
-],
-weaknesses:[
-"Sacred ground",
-"Holy relics"
-]
-},
+
 
 {
 id:"loch-ness-monster",
