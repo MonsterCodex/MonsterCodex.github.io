@@ -372,17 +372,39 @@ if (randomButton) {
 
 }
 
-document.addEventListener("click", function (e) {
+document.addEventListener("click", function(e){
 
-    const clickable = e.target.closest(
-        "a, button, .category, .card, .card-link, .search-item, .threat"
-    );
+    const link = e.target.closest("a");
 
-    if(!clickable) return;
+    // Handle ALL links (menu, logo, cards, View Profile, etc.)
+    if(link){
 
-    const sound = clickSound.cloneNode();
-    sound.volume = clickSound.volume;
-    sound.play().catch(()=>{});
+        e.preventDefault();
+
+        const href = link.href;
+
+        const sound = clickSound.cloneNode();
+        sound.volume = clickSound.volume;
+
+        sound.play().catch(()=>{});
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 120);
+
+        return;
+    }
+
+    // Handle buttons and category pills
+    const button = e.target.closest("button, .category");
+
+    if(button){
+
+        const sound = clickSound.cloneNode();
+        sound.volume = clickSound.volume;
+        sound.play().catch(()=>{});
+
+    }
 
 });
 
