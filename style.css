@@ -1164,15 +1164,12 @@ html {
     transform:translateX(-50%);
     display:flex;
     gap:16px;
-    padding:12px;      /* invisible hover area */
-    cursor:pointer;
+    padding:12px;
     transition:.35s ease;
+    pointer-events:none;
 }
 
-.monster-eyes:hover{
-
-    transform:translate(-50%,14px) scale(.8);
-    opacity:0;
-
+.logo:hover .monster-eyes{
+    transform:translate(-50%,8px) scale(.9);
+    opacity:.15;
 }
-
