@@ -1360,7 +1360,7 @@ weaknesses:["Can be lured onto land"]
 
 {
 id:"gwrgi-garwl",
-name:"Gwrgi Garwl",
+name:"Gwrgi Garwlwyd",
 category:"Folklore",
 universe:"Welsh Folklore",
 creator:"Welsh Legend",
