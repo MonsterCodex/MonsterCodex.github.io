@@ -362,13 +362,13 @@ setTimeout(() => {
 
 }
 
-    document.addEventListener("click", function(e){
+ document.addEventListener("click", function(e){
 
-    const target = e.target.closest(
-        ".nav-links a, .category, .button, .card-link, #encounter-button"
+    const clickable = e.target.closest(
+        "a, button, .category, .card, .card-link, .search-item, .threat"
     );
 
-    if(!target) return;
+    if(!clickable) return;
 
     clickSound.currentTime = 0;
     clickSound.play();
