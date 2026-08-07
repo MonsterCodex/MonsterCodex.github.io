@@ -367,7 +367,9 @@ setTimeout(() => {
 
     });
 
-document.querySelectorAll("a, button, .category").forEach(item => {
+document.querySelectorAll(
+"a, button, .category, .card, .search-item"
+).forEach(item => {
 
     item.addEventListener("click", () => {
 
@@ -376,5 +378,5 @@ document.querySelectorAll("a, button, .category").forEach(item => {
 
     });
 
-});    
+});
 
