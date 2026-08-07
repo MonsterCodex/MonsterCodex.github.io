@@ -833,7 +833,13 @@ gap:18px;
 }
 
 .hero{
-padding:90px 20px;
+    background:
+        linear-gradient(rgba(10,10,10,.70), rgba(10,10,10,.85)),
+        url("images/banners/header.webp");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero h1{
