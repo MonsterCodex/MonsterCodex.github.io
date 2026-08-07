@@ -1154,8 +1154,7 @@ html {
 .logo{
     position:relative;
     display:inline-block;
-    transition:.8s;
-    transition-delay:.4s;
+    
 }
 
 .monster-eyes{
@@ -1166,11 +1165,13 @@ html {
     display:flex;
     gap:16px;
     transition:.35s ease;
+    cursor:pointer;
 }
 
-.logo:hover .monster-eyes{
+.monster-eyes:hover{
 
     transform:translate(-50%,14px) scale(.8);
+    opacity:0;
 
 }
 
