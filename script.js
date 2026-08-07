@@ -374,34 +374,36 @@ if (randomButton) {
 
 document.addEventListener("click", function(e){
 
+    // Links (navigation, logo, cards, etc.)
     const link = e.target.closest("a");
 
-    if(!link) return;
+    if(link){
 
-    // Don't intercept anchors or JavaScript links
-    const href = link.getAttribute("href");
+        const href = link.getAttribute("href");
 
-    if(!href || href.startsWith("#") || href.startsWith("javascript:")){
-        return;
+        if(href && !href.startsWith("#")){
+
+            e.preventDefault();
+
+            const sound = clickSound.cloneNode();
+            sound.volume = clickSound.volume;
+            sound.play().catch(()=>{});
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 100);
+
+            return;
+        }
+
     }
 
-    e.preventDefault();
-
-    const sound = clickSound.cloneNode();
-    sound.volume = clickSound.volume;
-
-    sound.play().catch(()=>{});
-
-    setTimeout(() => {
-        window.location.href = href;
-    }, 100);
-
-});
-
-    // Handle buttons and category pills
-    const button = e.target.closest("button, .category");
-
-    if(button){
+    // Everything else clickable
+    if(
+        e.target.closest(
+            "button, .button, .category, .threat, .search-item"
+        )
+    ){
 
         const sound = clickSound.cloneNode();
         sound.volume = clickSound.volume;
@@ -409,6 +411,8 @@ document.addEventListener("click", function(e){
 
     }
 
-    
+});
+
+
 
 
