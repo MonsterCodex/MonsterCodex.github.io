@@ -1148,3 +1148,26 @@ html {
     }
 
 }
+
+.logo{
+    position:relative;
+    display:inline-block;
+}
+
+.monster-eyes{
+    position:absolute;
+    top:-6px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:16px;
+    transition:.35s ease;
+}
+
+.logo:hover .monster-eyes{
+
+    transform:translate(-50%,18px);
+
+    opacity:0;
+
+}
