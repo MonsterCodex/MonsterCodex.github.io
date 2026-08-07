@@ -362,16 +362,16 @@ setTimeout(() => {
 
 }
 
-    document.addEventListener("click",function(e){
+    document.addEventListener("click", function(e){
 
-    const target=e.target.closest(".card-link,.button,.category,.nav-links a");
+    const target = e.target.closest(
+        ".nav-links a, .category, .button, .card-link, #encounter-button"
+    );
 
-    if(target){
+    if(!target) return;
 
-        clickSound.currentTime=0;
-        clickSound.play();
-
-    }
+    clickSound.currentTime = 0;
+    clickSound.play();
 
 });
 
