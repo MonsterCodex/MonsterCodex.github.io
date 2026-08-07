@@ -342,8 +342,12 @@ setTimeout(() => {
     encounterButton.style.display = "inline-block";
 
     encounterButton.onclick = function () {
-        window.location.href = `monster.html?id=${random.id}`;
-    };
+
+    encounter.style.display = "none";
+
+    window.location.href = `monster.html?id=${random.id}`;
+
+};
 
 }, 800);
 
