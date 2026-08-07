@@ -1,7 +1,8 @@
 const monsters = [
 
 {
-
+    id:"siren-head",
+    name:"Siren Head",
     category: "Internet Horror",
     creator: "Trevor Henderson",
     year: "2018",
