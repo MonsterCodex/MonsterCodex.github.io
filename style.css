@@ -1164,8 +1164,9 @@ html {
     transform:translateX(-50%);
     display:flex;
     gap:16px;
-    transition:.35s ease;
+    padding:12px;      /* invisible hover area */
     cursor:pointer;
+    transition:.35s ease;
 }
 
 .monster-eyes:hover{
