@@ -144,7 +144,7 @@ HERO
     position:relative;
 
     background:
-        linear-gradient(rgba(10,10,10,.60), rgba(10,10,10,.80)),
+        linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.45)),
         url("images/banners/header.png");
 
     background-size:cover;
