@@ -1173,3 +1173,17 @@ html {
     transform:translate(-50%,8px) scale(.9);
     opacity:.15;
 }
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.card-link:hover{
+    text-decoration:none;
+}
+
+.card{
+    cursor:pointer;
+}

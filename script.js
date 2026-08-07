@@ -15,42 +15,47 @@ let currentCategory="All";
 function createCard(monster){
 
 return `
+<a href="monster.html?id=${monster.id}" class="card-link">
+
 <div class="card">
 
-    <img src="${monster.image}" alt="${monster.name}">
+<img src="${monster.image}" alt="${monster.name}">
 
-    <div class="card-content">
+<div class="card-content">
 
-        <h3>${monster.name}</h3>
+<h3>${monster.name}</h3>
 
-        <p>
-        ${monster.category === "Games" ? "🎮" :
-        monster.category === "Movies" ? "🎬" :
-        monster.category === "Television" ? "📺" :
-        monster.category === "Internet Horror" ? "👻" :
-        monster.category === "Creepypasta" ? "📖" :
-        monster.category === "Cryptids" ? "🐺" :
-        monster.category === "Folklore" ? "🧙" :
-        monster.category === "Aliens" ? "👽" : "🌍"}
-        ${monster.universe}
-        </p>
+<p>
+${monster.category === "Games" ? "🎮" :
+monster.category === "Movies" ? "🎬" :
+monster.category === "Television" ? "📺" :
+monster.category === "Internet Horror" ? "👻" :
+monster.category === "Creepypasta" ? "📖" :
+monster.category === "Cryptids" ? "🐺" :
+monster.category === "Folklore" ? "🧙" :
+monster.category === "Aliens" ? "👽" : "🌍"}
+${monster.universe}
+</p>
 
-        <p>✍️ ${monster.creator}</p>
+<p>✍️ ${monster.creator}</p>
 
-        <span class="threat ${monster.threat.toLowerCase()}">
-            ${monster.threat}
-        </span>
+<span class="threat ${monster.threat.toLowerCase()}">
+${monster.threat}
+</span>
 
-        <a href="monster.html?id=${monster.id}" class="button">
-            View Profile →
-        </a>
-
-    </div>
+<div class="button">
+View Profile →
+</div>
 
 </div>
+
+</div>
+
+</a>
 `;
 
 }
+
 
 function displayMonsters(list) {
 
@@ -357,26 +362,16 @@ setTimeout(() => {
 
 }
 
-    encounter.addEventListener("click",function(e){
+    document.addEventListener("click",function(e){
 
-        if(e.target===encounter){
+    const target=e.target.closest(".card-link,.button,.category,.nav-links a");
 
-            encounter.style.display="none";
+    if(target){
 
-        }
-
-    });
-
-document.querySelectorAll(
-"a, button, .category, .card, .search-item"
-).forEach(item => {
-
-    item.addEventListener("click", () => {
-
-        clickSound.currentTime = 0;
+        clickSound.currentTime=0;
         clickSound.play();
 
-    });
+    }
 
 });
 
