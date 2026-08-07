@@ -1076,6 +1076,8 @@ html {
 .logo{
     position:relative;
     display:inline-block;
+    transition:.8s;
+    transition-delay:.4s;
 }
 
 .monster-eyes{
@@ -1152,6 +1154,8 @@ html {
 .logo{
     position:relative;
     display:inline-block;
+    transition:.8s;
+    transition-delay:.4s;
 }
 
 .monster-eyes{
@@ -1169,3 +1173,4 @@ html {
     transform:translate(-50%,14px) scale(.8);
 
 }
+
