@@ -298,9 +298,7 @@ if (randomButton) {
 
         e.preventDefault();
 
-        clickSound.currentTime = 0;
-        clickSound.play().catch(() => {});
-
+        
         scanSound.currentTime = 0;
         scanSound.play().catch(() => {});
 
@@ -372,44 +370,19 @@ if (randomButton) {
 
 }
 
-document.addEventListener("click", function(e){
+document.addEventListener("mousedown", function(e){
 
-    // Links (navigation, logo, cards, etc.)
-    const link = e.target.closest("a");
+    const clickable = e.target.closest(
+        "a, button, .button, .category, .card-link, .search-item, .threat"
+    );
 
-    if(link){
+    if(!clickable) return;
 
-        const href = link.getAttribute("href");
+    const sound = clickSound.cloneNode();
+    sound.volume = clickSound.volume;
+    sound.play().catch(()=>{});
 
-        if(href && !href.startsWith("#")){
-
-            e.preventDefault();
-
-            const sound = clickSound.cloneNode();
-            sound.volume = clickSound.volume;
-            sound.play().catch(()=>{});
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 100);
-
-            return;
-        }
-
-    }
-
-    // Everything else clickable
-    if(
-        e.target.closest(
-            "button, .button, .category, .threat, .search-item"
-        )
-    ){
-
-        const sound = clickSound.cloneNode();
-        sound.volume = clickSound.volume;
-        sound.play().catch(()=>{});
-
-    }
+    
 
 });
 
