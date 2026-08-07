@@ -1053,7 +1053,7 @@ firstAppearance:"18th Century",
 origin:"Scotland",
 threat:"High",
 image:"images/monsters/kelpie/profile.png",
-description:"A shape-shifting water spirit that lures travellers onto its back before dragging them beneath the water.",
+description:"A kelpie is a shape-shifting water spirit from Scottish folklore. It usually takes the form of a horse. It lives in lochs and pools. It lures humans, especially children, to ride on its back. Once they mount it, its skin turns sticky. It drags them underwater and eats them..",
 
 abilities:[
 "Shape-shifting",
