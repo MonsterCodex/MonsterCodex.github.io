@@ -139,10 +139,17 @@ HERO
 ==================================================*/
 
 .hero{
-padding:120px 20px;
-text-align:center;
-background:url(images/hero.jpg) center/cover;
-position:relative;
+    padding:120px 20px;
+    text-align:center;
+    position:relative;
+
+    background:
+        linear-gradient(rgba(10,10,10,.60), rgba(10,10,10,.80)),
+        url("images/banners/header.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero::before{
