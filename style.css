@@ -1166,8 +1166,6 @@ html {
 
 .logo:hover .monster-eyes{
 
-    transform:translate(-50%,18px);
-
-    opacity:0;
+    transform:translate(-50%,14px) scale(.8);
 
 }
