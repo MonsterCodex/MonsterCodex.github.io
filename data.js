@@ -54,7 +54,7 @@ const monsters = [
     ],
 
     gallery:[]
-    
+
 
 },
 {
@@ -1371,5 +1371,234 @@ image:"images/monsters/gwrgi-garwl/profile.png",
 description:"A monstrous wolf-like beast with human characteristics that terrorised ancient Wales.",
 abilities:["Superhuman strength","Speed","Savage attacks"],
 weaknesses:["Conventional weapons","Fire"]
+},
+
+{
+id:"baba-yaga",
+name:"Baba Yaga",
+category:"Folklore",
+universe:"Slavic Folklore",
+creator:"Slavic Legend",
+firstAppearance:"Ancient Slavic Myth",
+origin:"Eastern Europe",
+threat:"Extreme",
+image:"images/monsters/baba-yaga/profile.png",
+description:"A mysterious witch who lives deep within enchanted forests in a hut standing on giant chicken legs. Baba Yaga can be either a terrifying villain or an unlikely ally.",
+abilities:[
+"Powerful magic",
+"Flight",
+"Potion brewing",
+"Shape-shifting",
+"Immortality"
+],
+weaknesses:[
+"Ancient magical rituals",
+"Can be outwitted"
+]
+},
+
+{
+id:"black-shuck",
+name:"Black Shuck",
+category:"Folklore",
+universe:"English Folklore",
+creator:"English Legend",
+firstAppearance:"16th Century",
+origin:"East Anglia, England",
+threat:"High",
+image:"images/monsters/black-shuck/profile.png",
+description:"A gigantic ghostly black dog said to haunt lonely roads and churchyards, often appearing before tragedy or death.",
+abilities:[
+"Supernatural speed",
+"Fear inducement",
+"Spirit form",
+"Night stalking"
+],
+weaknesses:[
+"Sacred ground",
+"Holy relics"
+]
+},
+
+{
+id:"loch-ness-monster",
+name:"Loch Ness Monster",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Scottish Legend",
+firstAppearance:"565 AD",
+origin:"Loch Ness, Scotland",
+threat:"Medium",
+image:"images/monsters/loch-ness-monster/profile.png",
+description:"A mysterious aquatic creature believed to inhabit the deep waters of Loch Ness, remaining one of the world's greatest cryptid mysteries.",
+abilities:[
+"Underwater speed",
+"Stealth",
+"Deep diving",
+"Long-distance swimming"
+],
+weaknesses:[
+"Rarely leaves the loch",
+"Generally avoids humans"
+]
+},
+
+{
+id:"chupacabra",
+name:"Chupacabra",
+category:"Folklore",
+universe:"Latin American Folklore",
+creator:"Puerto Rican Legend",
+firstAppearance:"1995",
+origin:"Puerto Rico",
+threat:"High",
+image:"images/monsters/chupacabra/profile.png",
+description:"A blood-drinking cryptid blamed for mysterious livestock deaths across Latin America.",
+abilities:[
+"Night vision",
+"Agility",
+"Sharp claws",
+"Stealth"
+],
+weaknesses:[
+"Bright light",
+"Firearms"
+]
+},
+
+{
+id:"minotaur",
+name:"Minotaur",
+category:"Folklore",
+universe:"Greek Mythology",
+creator:"Greek Myth",
+firstAppearance:"Ancient Greece",
+origin:"Crete",
+threat:"Extreme",
+image:"images/monsters/minotaur/profile.png",
+description:"A fearsome creature with the body of a man and the head of a bull, imprisoned within the legendary Labyrinth.",
+abilities:[
+"Immense strength",
+"Horn attacks",
+"Endurance",
+"Close combat"
+],
+weaknesses:[
+"Can be outmanoeuvred",
+"Conventional weapons"
+]
+},
+
+{
+id:"kraken",
+name:"Kraken",
+category:"Folklore",
+universe:"Scandinavian Folklore",
+creator:"Norse Legend",
+firstAppearance:"13th Century",
+origin:"Norwegian Sea",
+threat:"Catastrophic",
+image:"images/monsters/kraken/profile.png",
+description:"A colossal sea monster capable of dragging entire ships beneath the ocean.",
+abilities:[
+"Gigantic tentacles",
+"Immense strength",
+"Deep sea camouflage",
+"Ship destruction"
+],
+weaknesses:[
+"Shallow water"
+]
+},
+
+{
+id:"yeti",
+name:"Yeti",
+category:"Folklore",
+universe:"Himalayan Folklore",
+creator:"Sherpa Legend",
+firstAppearance:"Ancient Oral Tradition",
+origin:"Himalayas",
+threat:"Medium",
+image:"images/monsters/yeti/profile.png",
+description:"A massive ape-like creature said to roam the frozen mountains of the Himalayas.",
+abilities:[
+"Cold resistance",
+"Immense strength",
+"Mountain climbing",
+"Stealth"
+],
+weaknesses:[
+"Warm climates"
+]
+},
+
+{
+id:"bigfoot",
+name:"Bigfoot",
+category:"Folklore",
+universe:"North American Folklore",
+creator:"Native American Legend",
+firstAppearance:"Ancient Oral Tradition",
+origin:"North America",
+threat:"Low",
+image:"images/monsters/bigfoot/profile.png",
+description:"A legendary giant ape said to inhabit remote forests throughout North America.",
+abilities:[
+"Stealth",
+"Immense strength",
+"Forest survival",
+"Excellent hearing"
+],
+weaknesses:[
+"Avoids humans"
+]
+},
+
+{
+id:"nuckelavee",
+name:"Nuckelavee",
+category:"Folklore",
+universe:"Scottish Folklore",
+creator:"Orkney Legend",
+firstAppearance:"Ancient Scotland",
+origin:"Orkney Islands",
+threat:"Catastrophic",
+image:"images/monsters/nuckelavee/profile.png",
+description:"A horrifying skinless horse demon whose poisonous breath spreads plague and famine.",
+abilities:[
+"Disease",
+"Immense strength",
+"Fear aura",
+"Supernatural endurance"
+],
+weaknesses:[
+"Fresh water"
+]
+},
+
+{
+id:"jersey-devil",
+name:"Jersey Devil",
+category:"Folklore",
+universe:"American Folklore",
+creator:"New Jersey Legend",
+firstAppearance:"1735",
+origin:"New Jersey Pine Barrens",
+threat:"High",
+image:"images/monsters/jersey-devil/profile.png",
+description:"A winged cryptid said to haunt the forests of New Jersey with its terrifying scream and frightening appearance.",
+abilities:[
+"Flight",
+"Night vision",
+"Powerful claws",
+"Stealth"
+],
+weaknesses:[
+"Rarely attacks groups",
+"Bright light"
+]
 }
 ];
+
+
