@@ -1324,7 +1324,7 @@ firstAppearance:"19th Century",
 origin:"The Minch, Scotland",
 threat:"High",
 image:"images/monsters/blue-men-of-the-minch/profile.png",
-description:"Blue-skinned sea spirits that challenge sailors before sinking their ships.",
+description:"The Blue Men of the Minch, also called na fir ghorma, are mythical storm spirits in Scottish folklore that inhabit the treacherous strait between the Outer Hebrides and mainland Scotland..",
 abilities:["Storm control","Swimming","Supernatural strength"],
 weaknesses:["Calm seas"]
 },
