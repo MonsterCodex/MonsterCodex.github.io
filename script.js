@@ -221,7 +221,17 @@ search.addEventListener("keydown", function(e){
         const first = document.querySelector(".search-item");
 
         if(first){
-            window.location.href = `monster.html?id=${first.dataset.id}`;
+
+            // Play click sound
+            const sound = clickSound.cloneNode();
+            sound.volume = clickSound.volume;
+            sound.play().catch(()=>{});
+
+            // Small delay so the sound is heard
+            setTimeout(() => {
+                window.location.href = `monster.html?id=${first.dataset.id}`;
+            }, 120);
+
         }
 
     }
@@ -284,104 +294,85 @@ const encounterMessages = [
 
 if (randomButton) {
 
-    randomButton.addEventListener("click", function(e){
+    randomButton.addEventListener("click", function (e) {
 
         e.preventDefault();
 
         clickSound.currentTime = 0;
-        clickSound.play().catch(()=>{});
+        clickSound.play().catch(() => {});
 
         scanSound.currentTime = 0;
-        scanSound.play().catch(()=>{});
+        scanSound.play().catch(() => {});
 
-        const random = monsters[Math.floor(Math.random()*monsters.length)];
+        const random = monsters[Math.floor(Math.random() * monsters.length)];
 
-        encounter.style.display="flex";
+        encounter.style.display = "flex";
+        encounterImage.style.display = "none";
+        encounterName.style.display = "none";
+        encounterButton.style.display = "none";
 
-        encounterImage.style.display="none";
-        encounterName.style.display="none";
-        encounterButton.style.display="none";
-
-        loadingFill.style.animation="none";
+        loadingFill.style.animation = "none";
         loadingFill.offsetHeight;
-        loadingFill.style.animation="loading 3s linear forwards";
+        loadingFill.style.animation = "loading 3s linear forwards";
 
         let i = 0;
+        encounterText.textContent = encounterMessages[0];
 
-encounterText.textContent = encounterMessages[0];
+        const messageTimer = setInterval(() => {
+            i++;
 
-const messageTimer = setInterval(() => {
+            if (i < encounterMessages.length) {
+                encounterText.textContent = encounterMessages[i];
+            }
+        }, 600);
 
-    i++;
+        scanPercent.textContent = "0%";
 
-    if (i < encounterMessages.length) {
-        encounterText.textContent = encounterMessages[i];
-    }
+        let percent = 0;
+        const percentTimer = setInterval(() => {
+            if (percent < 100) {
+                percent += Math.floor(Math.random() * 6) + 2;
+                if (percent > 100) {
+                    percent = 100;
+                }
+                scanPercent.textContent = percent + "%";
+                return;
+            }
 
-}, 600);
+            clearInterval(percentTimer);
+            clearInterval(messageTimer);
 
-// Start percentage counter
-scanPercent.textContent = "0%";
+            encounterText.textContent = "ACCESS GRANTED";
+            scanPercent.textContent = "100%";
 
-let percent = 0;
+            setTimeout(() => {
+                encounterText.textContent = "CLASSIFIED FILE LOCATED";
 
-const percentTimer = setInterval(() => {
+                scanSound.pause();
+                scanSound.currentTime = 0;
 
-    if (percent < 100) {
+                revealSound.currentTime = 0;
+                revealSound.play().catch(() => {});
 
-        percent += Math.floor(Math.random() * 6) + 2;
+                encounterImage.src = random.image;
+                encounterImage.alt = random.name;
+                encounterImage.style.display = "block";
 
-        if (percent > 100)
-            percent = 100;
+                encounterName.textContent = random.name;
+                encounterName.style.display = "block";
 
-        scanPercent.textContent = percent + "%";
-
-        return;
-    }
-
-    clearInterval(percentTimer);
-clearInterval(messageTimer);
-
-encounterText.textContent = "ACCESS GRANTED";
-
-scanPercent.textContent = "100%";
-
-setTimeout(() => {
-
-    encounterText.textContent = "CLASSIFIED FILE LOCATED";
-
-    scanSound.pause();
-    scanSound.currentTime = 0;
-
-    revealSound.currentTime = 0;
-    revealSound.play().catch(()=>{});
-
-    encounterImage.src = random.image;
-    encounterImage.alt = random.name;
-    encounterImage.style.display = "block";
-
-    encounterName.textContent = random.name;
-    encounterName.style.display = "block";
-
-    encounterButton.style.display = "inline-block";
-
-    encounterButton.onclick = function () {
-
-    encounter.style.display = "none";
-
-    window.location.href = `monster.html?id=${random.id}`;
-
-};
-
-}, 800);
-
-}, 180);
-
+                encounterButton.style.display = "inline-block";
+                encounterButton.onclick = function () {
+                    encounter.style.display = "none";
+                    window.location.href = `monster.html?id=${random.id}`;
+                };
+            }, 800);
+        }, 180);
     });
 
 }
 
- document.addEventListener("click", function(e){
+document.addEventListener("click", function (e) {
 
     const clickable = e.target.closest(
         "a, button, .category, .card, .card-link, .search-item, .threat"
@@ -394,4 +385,5 @@ setTimeout(() => {
     sound.play().catch(()=>{});
 
 });
+
 
