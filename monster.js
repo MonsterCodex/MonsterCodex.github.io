@@ -2,6 +2,9 @@ const params=new URLSearchParams(window.location.search);
 const id=params.get("id");
 const monster=monsters.find(m=>m.id===id);
 
+const clickSound = new Audio("assets/sounds/click.mp3");
+clickSound.volume = 0.4;
+
 function getAbilityIcon(ability){
 
 const text=ability.toLowerCase();
@@ -229,3 +232,29 @@ window.location.href=`monster.html?id=${random.id}`;
 });
 
 }
+
+document.addEventListener("click", function(e){
+
+    const link = e.target.closest("a");
+
+    if(!link) return;
+
+    // Don't intercept anchors or JavaScript links
+    const href = link.getAttribute("href");
+
+    if(!href || href.startsWith("#") || href.startsWith("javascript:")){
+        return;
+    }
+
+    e.preventDefault();
+
+    const sound = clickSound.cloneNode();
+    sound.volume = clickSound.volume;
+
+    sound.play().catch(()=>{});
+
+    setTimeout(() => {
+        window.location.href = href;
+    }, 100);
+
+});

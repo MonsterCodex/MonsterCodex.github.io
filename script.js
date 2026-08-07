@@ -376,24 +376,27 @@ document.addEventListener("click", function(e){
 
     const link = e.target.closest("a");
 
-    // Handle ALL links (menu, logo, cards, View Profile, etc.)
-    if(link){
+    if(!link) return;
 
-        e.preventDefault();
+    // Don't intercept anchors or JavaScript links
+    const href = link.getAttribute("href");
 
-        const href = link.href;
-
-        const sound = clickSound.cloneNode();
-        sound.volume = clickSound.volume;
-
-        sound.play().catch(()=>{});
-
-        setTimeout(() => {
-            window.location.href = href;
-        }, 120);
-
+    if(!href || href.startsWith("#") || href.startsWith("javascript:")){
         return;
     }
+
+    e.preventDefault();
+
+    const sound = clickSound.cloneNode();
+    sound.volume = clickSound.volume;
+
+    sound.play().catch(()=>{});
+
+    setTimeout(() => {
+        window.location.href = href;
+    }, 100);
+
+});
 
     // Handle buttons and category pills
     const button = e.target.closest("button, .category");
@@ -406,6 +409,6 @@ document.addEventListener("click", function(e){
 
     }
 
-});
+    
 
 
