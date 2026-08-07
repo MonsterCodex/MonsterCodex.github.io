@@ -370,7 +370,7 @@ if (randomButton) {
 
 }
 
-document.addEventListener("mousedown", function(e){
+document.addEventListener("pointerdown", function(e){
 
     const clickable = e.target.closest(
         "a, button, .button, .category, .card-link, .search-item, .threat"
@@ -383,7 +383,6 @@ document.addEventListener("mousedown", function(e){
     sound.play().catch(()=>{});
 
     
-
 });
 
 
