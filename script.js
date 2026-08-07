@@ -5,22 +5,25 @@ const categories=document.querySelectorAll(".category");
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
 const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
-eyeScream.volume = 0.25;
-const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
-eyeScream.volume = 0.25;
+
 const revealSound = new Audio("assets/sounds/reveal.mp3");
-const keySounds = [    
+
+const keySounds = [
     new Audio("assets/sounds/key1.mp3"),
     new Audio("assets/sounds/key2.mp3"),
     new Audio("assets/sounds/key3.mp3"),
     new Audio("assets/sounds/key4.mp3")
 ];
 
-keySounds.forEach(s=>s.volume=0.15);
+
 
 clickSound.volume = 0.4;
 scanSound.volume = 0.25;
+eyeScream.volume = 0.25;
 revealSound.volume = 0.5;
+
+keySounds.forEach(sound => sound.volume = 0.15);
+
 
 let currentCategory="All";
 
