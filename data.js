@@ -467,7 +467,7 @@ weight:"Massive",
 status:"Active",
 alignment:"Hostile",
 image:"images/monsters/the-blob/profile.png",
-description:"A gigantic gelatinous organism that consumes everything in its path while continually increasing in size.",
+description:"A gigantic gelatinous organism that consumes everything in its path while continually increasing in size.The Blob is a giant, shapeless, gelatinous alien amoeba. It landed on Earth in a meteorite. It starts small and clear, but turns bright red or dark purple as it dissolves and consumes flesh. It grows larger with every victim, resists standard weapons, and shrinks only from extreme cold",
 abilities:[
 "Absorption",
 "Growth",
@@ -1080,7 +1080,7 @@ firstAppearance:"Ancient Slavic Myth",
 origin:"Eastern Europe",
 threat:"High",
 image:"images/monsters/leshy/profile.png",
-description:"Guardian spirit of the forest capable of changing size and confusing travellers.",
+description:"Leshy is a shape-shifting forest spirit from Slavic mythology and guardian of the wilderness. He can change his appearance and size, leading travelers astray or punishing those who disrespect nature, while protecting those who honor the forest.",
 
 abilities:[
 "Forest control",

@@ -2,6 +2,7 @@ const grid=document.querySelector(".monster-grid");
 const search=document.getElementById("search");
 const results=document.getElementById("search-results");
 const categories=document.querySelectorAll(".category");
+
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
 const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
@@ -27,6 +28,10 @@ keySounds.forEach(sound => sound.volume = 0.15);
 
 let currentCategory="All";
 
+let currentPage = 1;
+const monstersPerPage = 10;
+
+
 const categoryIcons = {
     Games: "🎮",
     Movies: "🎬",
@@ -37,6 +42,7 @@ const categoryIcons = {
     Folklore: "🧙",
     Aliens: "👽"
 };
+
 
 function createCard(monster){
 
@@ -75,48 +81,35 @@ View Profile →
 }
 
 
+/* ==================================================
+   DISPLAY MONSTERS
+================================================== */
+
 function displayMonsters(list) {
 
     grid.innerHTML = "";
 
-    // Homepage - show one random monster from each category
+    if(currentPage < 1){
+        currentPage = 1;
+    }
+
+
+    /*
+    HOMEPAGE
+
+    Show ALL monsters instead of one random monster
+    from each category.
+    */
+
     if (currentCategory === "All" && search.value.trim() === "") {
 
-        const featuredCategories = [
-            "Movies",
-            "Games",
-            "Television",
-            "Internet Horror",
-            "Creepypasta",
-            "Cryptids",
-            "Folklore",
-            "Aliens"
-        ];
-
-        featuredCategories.forEach(category => {
-
-            const categoryMonsters = monsters.filter(
-                monster => monster.category === category
-            );
-
-            if (categoryMonsters.length > 0) {
-
-                const randomMonster =
-                    categoryMonsters[
-                        Math.floor(Math.random() * categoryMonsters.length)
-                    ];
-
-                grid.innerHTML += createCard(randomMonster);
-
-            }
-
-        });
-
-        return;
+        list = monsters;
 
     }
 
-    // Category/Search results
+
+    /* No results */
+
     if (list.length === 0) {
 
         grid.innerHTML = `
@@ -126,17 +119,37 @@ function displayMonsters(list) {
         </div>
         `;
 
+        updatePagination(0);
+
         return;
 
     }
 
-    list.forEach(monster => {
+
+    /* PAGINATION */
+
+    const start = (currentPage - 1) * monstersPerPage;
+
+    const end = start + monstersPerPage;
+
+    const pageItems = list.slice(start, end);
+
+
+    pageItems.forEach(monster=>{
 
         grid.innerHTML += createCard(monster);
 
     });
 
+
+    updatePagination(list.length);
+
 }
+
+
+/* ==================================================
+   SEARCH DROPDOWN
+================================================== */
 
 function showDropdown(list){
 
@@ -145,25 +158,37 @@ results.innerHTML="";
 if(search.value.trim()===""||list.length===0){
 
 results.style.display="none";
+
 return;
 
 }
 
+
 list.slice(0,6).forEach(monster=>{
 
 results.innerHTML+=`
+
 <div class="search-item" data-id="${monster.id}">
+
 <img src="${monster.image}" alt="${monster.name}">
+
 <div>
+
 <h4>${monster.name}</h4>
+
 <p>${monster.category}</p>
+
 </div>
+
 </div>
+
 `;
 
 });
 
+
 results.style.display="block";
+
 
 document.querySelectorAll(".search-item").forEach(item=>{
 
@@ -177,13 +202,27 @@ window.location.href=`monster.html?id=${item.dataset.id}`;
 
 }
 
-function filterMonsters(){
+
+/* ==================================================
+   FILTER MONSTERS
+================================================== */
+
+function filterMonsters(resetPage = true){
+
+    if(resetPage){
+
+        currentPage = 1;
+
+    }
+
 
 const term=search.value.toLowerCase().trim();
+
 
 let filtered=monsters.filter(monster=>{
 
 const text=[
+
 monster.name,
 monster.category,
 monster.creator,
@@ -191,15 +230,21 @@ monster.universe,
 monster.description,
 ...(monster.abilities||[]),
 ...(monster.weaknesses||[])
+
 ].join(" ").toLowerCase();
+
 
 const matchesSearch=text.includes(term);
 
-const matchesCategory=currentCategory==="All"||monster.category===currentCategory;
+const matchesCategory=
+    currentCategory==="All" ||
+    monster.category===currentCategory;
+
 
 return matchesSearch&&matchesCategory;
 
 });
+
 
 displayMonsters(filtered);
 
@@ -207,21 +252,46 @@ showDropdown(filtered);
 
 }
 
+
+/* ==================================================
+   INITIAL DISPLAY
+================================================== */
+
 displayMonsters(monsters);
+
 search.addEventListener("input", filterMonsters);
+
+
+/* ==================================================
+   SEARCH KEYBOARD SOUNDS
+================================================== */
 
 search.addEventListener("keydown", function(e){
 
-    if(!["Shift","Control","Alt","Meta","CapsLock","Tab","Escape","ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key)){
+    if(![
+        "Shift",
+        "Control",
+        "Alt",
+        "Meta",
+        "CapsLock",
+        "Tab",
+        "Escape",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown"
+    ].includes(e.key)){
 
         const sound = keySounds[
             Math.floor(Math.random() * keySounds.length)
         ].cloneNode();
 
         sound.volume = 0.15;
-        sound.play();
+
+        sound.play().catch(()=>{});
 
     }
+
 
     if(e.key === "Enter"){
 
@@ -229,15 +299,19 @@ search.addEventListener("keydown", function(e){
 
         if(first){
 
-            // Play click sound
             const sound = clickSound.cloneNode();
+
             sound.volume = clickSound.volume;
+
             sound.play().catch(()=>{});
 
-            // Small delay so the sound is heard
+
             setTimeout(() => {
-                window.location.href = `monster.html?id=${first.dataset.id}`;
-            }, 120);
+
+                window.location.href =
+                    `monster.html?id=${first.dataset.id}`;
+
+            },120);
 
         }
 
@@ -245,41 +319,61 @@ search.addEventListener("keydown", function(e){
 
 });
 
+
+/* ==================================================
+   SEARCH FOCUS
+================================================== */
+
 search.addEventListener("focus",()=>{
 
-if(search.value.trim()!==""){
+    if(search.value.trim()!==""){
 
-filterMonsters();
+        filterMonsters();
 
-}
+    }
 
 });
+
+
+/* ==================================================
+   CLOSE SEARCH DROPDOWN
+================================================== */
 
 document.addEventListener("click",e=>{
 
-if(!e.target.closest(".search-container")){
+    if(!e.target.closest(".search-container")){
 
-results.style.display="none";
+        results.style.display="none";
 
-}
+    }
 
 });
+
+
+/* ==================================================
+   CATEGORY FILTERING
+================================================== */
 
 categories.forEach(category=>{
 
-category.addEventListener("click",()=>{
+    category.addEventListener("click",()=>{
 
-categories.forEach(c=>c.classList.remove("active"));
+        categories.forEach(c=>c.classList.remove("active"));
 
-category.classList.add("active");
+        category.classList.add("active");
 
-currentCategory=category.dataset.category;
+        currentCategory=category.dataset.category;
 
-filterMonsters();
+        filterMonsters();
+
+    });
 
 });
 
-});
+
+/* ==================================================
+   RANDOM ENCOUNTER
+================================================== */
 
 const randomButton = document.getElementById("random-monster");
 const encounter = document.getElementById("encounter-screen");
@@ -290,16 +384,20 @@ const encounterButton = document.getElementById("encounter-button");
 const loadingFill = document.querySelector(".loading-fill");
 const scanPercent = document.getElementById("scan-percent");
 
+
 const encounterMessages = [
+
     "🔒 Accessing secure database...",
     "🛰️ Scanning classified archives...",
     "📡 Searching known universes...",
     "🧬 Analysing lifeform...",
     "⚠️ Threat signature detected...",
     "👁️ Identity confirmed..."
+
 ];
 
-// ---------- RANDOM ENCOUNTER ----------
+
+/* ---------- RANDOM ENCOUNTER ---------- */
 
 if(randomButton){
 
@@ -307,90 +405,148 @@ if(randomButton){
 
         e.preventDefault();
 
+
         clickSound.cloneNode().play().catch(()=>{});
 
+
         scanSound.currentTime=0;
+
         scanSound.play().catch(()=>{});
 
-        const random=monsters[Math.floor(Math.random()*monsters.length)];
+
+        const random=
+            monsters[
+                Math.floor(
+                    Math.random()*monsters.length
+                )
+            ];
+
 
         encounter.style.display="flex";
 
+
         encounterImage.style.display="none";
+
         encounterName.style.display="none";
+
         encounterButton.style.display="none";
 
+
         loadingFill.style.animation="none";
+
         loadingFill.offsetHeight;
-        loadingFill.style.animation="loading 3s linear forwards";
+
+        loadingFill.style.animation=
+            "loading 3s linear forwards";
+
 
         let i=0;
 
-        encounterText.textContent=encounterMessages[0];
+
+        encounterText.textContent=
+            encounterMessages[0];
+
 
         const messageTimer=setInterval(()=>{
 
             i++;
 
+
             if(i<encounterMessages.length){
 
-                encounterText.textContent=encounterMessages[i];
+                encounterText.textContent=
+                    encounterMessages[i];
 
             }
 
         },600);
 
+
         scanPercent.textContent="0%";
 
+
         let percent=0;
+
 
         const percentTimer=setInterval(()=>{
 
             if(percent<100){
 
-                percent+=Math.floor(Math.random()*6)+2;
+                percent+=
+                    Math.floor(Math.random()*6)+2;
 
-                if(percent>100) percent=100;
 
-                scanPercent.textContent=percent+"%";
+                if(percent>100){
+
+                    percent=100;
+
+                }
+
+
+                scanPercent.textContent=
+                    percent+"%";
+
 
                 return;
 
             }
 
+
             clearInterval(percentTimer);
+
             clearInterval(messageTimer);
 
-            encounterText.textContent="ACCESS GRANTED";
+
+            encounterText.textContent=
+                "ACCESS GRANTED";
+
+
             scanPercent.textContent="100%";
+
 
             setTimeout(()=>{
 
-                encounterText.textContent="CLASSIFIED FILE LOCATED";
+                encounterText.textContent=
+                    "CLASSIFIED FILE LOCATED";
+
 
                 scanSound.pause();
+
                 scanSound.currentTime=0;
 
+
                 revealSound.currentTime=0;
+
                 revealSound.play().catch(()=>{});
 
+
                 encounterImage.src=random.image;
+
                 encounterImage.alt=random.name;
+
                 encounterImage.style.display="block";
 
+
                 encounterName.textContent=random.name;
+
                 encounterName.style.display="block";
 
+
                 encounterButton.style.display="inline-block";
+
 
                 encounterButton.onclick=function(){
 
                     encounter.style.display="none";
-                    window.location.href=`monster.html?id=${random.id}`;
+
+                    window.location.href=
+                        `monster.html?id=${random.id}`;
 
                 };
 
+
             },800);
+
 
         },180);
 
@@ -398,43 +554,66 @@ if(randomButton){
 
 }
 
-// ---------- GLOBAL CLICK SOUNDS ----------
 
-// Play instantly when pressed
+/* ==================================================
+   GLOBAL CLICK SOUNDS
+================================================== */
+
 document.addEventListener("pointerdown",function(e){
 
     const clickable=e.target.closest(
         "a,.button,.category,.search-item,button,.threat"
     );
 
+
     if(!clickable) return;
+
 
     clickSound.cloneNode().play().catch(()=>{});
 
 });
 
+
+/* ==================================================
+   MONSTER EYES
+================================================== */
+
 const eyes = document.querySelector(".monster-eyes");
+
 
 if(eyes){
 
     let canPlay = true;
 
+
     eyes.addEventListener("mouseenter",()=>{
 
         if(!canPlay) return;
 
+
         eyeScream.currentTime = 0;
+
         eyeScream.play().catch(()=>{});
 
-        document.querySelector(".logo").classList.add("monster-awake");
+
+        document
+            .querySelector(".logo")
+            .classList
+            .add("monster-awake");
+
 
         canPlay = false;
 
     });
 
+
     eyes.addEventListener("mouseleave",()=>{
 
-        document.querySelector(".logo").classList.remove("monster-awake");
+        document
+            .querySelector(".logo")
+            .classList
+            .remove("monster-awake");
+
 
         canPlay = true;
 
@@ -443,5 +622,157 @@ if(eyes){
 }
 
 
+/* ==================================================
+   PAGINATION
+================================================== */
+
+function updatePagination(total){
+
+    const totalPages =
+        Math.max(
+            1,
+            Math.ceil(total / monstersPerPage)
+        );
 
 
+    const pageInfo =
+        document.getElementById("page-info");
+
+
+    const previousButton =
+        document.getElementById("prev-page");
+
+
+    const nextButton =
+        document.getElementById("next-page");
+
+
+    /*
+    Make sure the current page can never
+    go beyond the available pages.
+    */
+
+    if(currentPage > totalPages){
+
+        currentPage = totalPages;
+
+    }
+
+
+    if(pageInfo){
+
+        pageInfo.textContent =
+            `Page ${currentPage} of ${totalPages}`;
+
+    }
+
+
+    if(previousButton){
+
+        previousButton.disabled =
+            currentPage === 1;
+
+    }
+
+
+    if(nextButton){
+
+        nextButton.disabled =
+            currentPage >= totalPages ||
+            total === 0;
+
+    }
+
+}
+
+
+/* ==================================================
+   PREVIOUS PAGE
+================================================== */
+
+const previousPageButton =
+    document.getElementById("prev-page");
+
+
+if(previousPageButton){
+
+    previousPageButton.addEventListener("click",()=>{
+
+        if(currentPage > 1){
+
+            currentPage--;
+
+            filterMonsters(false);
+
+        }
+
+    });
+
+}
+
+
+/* ==================================================
+   NEXT PAGE
+================================================== */
+
+const nextPageButton =
+    document.getElementById("next-page");
+
+
+if(nextPageButton){
+
+    nextPageButton.addEventListener("click",()=>{
+
+        const term =
+            search.value.toLowerCase().trim();
+
+
+        const filtered =
+            monsters.filter(monster=>{
+
+                const text=[
+
+                    monster.name,
+                    monster.category,
+                    monster.creator,
+                    monster.universe,
+                    monster.description,
+                    ...(monster.abilities||[]),
+                    ...(monster.weaknesses||[])
+
+                ].join(" ").toLowerCase();
+
+
+                const matchesSearch =
+                    text.includes(term);
+
+
+                const matchesCategory =
+                    currentCategory==="All" ||
+                    monster.category===currentCategory;
+
+
+                return matchesSearch &&
+                       matchesCategory;
+
+            });
+
+
+        const totalPages =
+            Math.ceil(
+                filtered.length /
+                monstersPerPage
+            );
+
+
+        if(currentPage < totalPages){
+
+            currentPage++;
+
+            filterMonsters(false);
+
+        }
+
+    });
+
+}

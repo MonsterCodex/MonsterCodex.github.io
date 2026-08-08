@@ -1212,3 +1212,47 @@ html {
 100%{transform:translateX(-50%) translateX(0);}
 
 }
+
+/* PAGINATION */
+
+.pagination{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin:50px 0;
+
+}
+
+.pagination button{
+
+    background:#d32f2f;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.25s;
+
+}
+
+.pagination button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.pagination button:disabled{
+
+    opacity:.4;
+    cursor:not-allowed;
+
+}
+
+#page-info{
+
+    font-weight:bold;
+
+}
