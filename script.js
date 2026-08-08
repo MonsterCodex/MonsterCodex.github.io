@@ -29,7 +29,7 @@ keySounds.forEach(sound => sound.volume = 0.15);
 let currentCategory="All";
 
 let currentPage = 1;
-const monstersPerPage = 10;
+const monstersPerPage = 12;
 
 
 const categoryIcons = {
