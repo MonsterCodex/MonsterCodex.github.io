@@ -236,7 +236,7 @@ const monsters = [
     weight:"Unknown",
     status:"Active",
     alignment:"Hostile",
-    image:"images/monsters/xenomorph/profile.webp",
+    image:"images/monsters/xenomorph/profile.png",
     description:"A terrifying extraterrestrial apex predator with a biomechanical appearance. Xenomorphs are highly adaptable,hunt relentlessly and reproduce through a parasitic life cycle,making them one of science fiction's deadliest species.",
     abilities:[
     "Acid Blood",
