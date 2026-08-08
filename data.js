@@ -1132,8 +1132,7 @@ firstAppearance:"Ancient Japan",
 origin:"Japan",
 threat:"High",
 image:"images/monsters/kitsune/profile.png",
-description:"An intelligent fox spirit capable of illusion, transformation and magical powers.",
-
+description:"The kitsune is a mythical fox spirit from Japanese folklore possessing high intelligence, long life, and magical abilities like shapeshifting into human form. Their power and age are shown by their tails, maxing out at nine tails when they become wise celestial beings",
 abilities:[
 "Shape-shifting",
 "Illusions",
