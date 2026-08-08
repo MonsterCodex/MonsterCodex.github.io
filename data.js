@@ -467,7 +467,7 @@ weight:"Massive",
 status:"Active",
 alignment:"Hostile",
 image:"images/monsters/the-blob/profile.png",
-description:"A gigantic gelatinous organism that consumes everything in its path while continually increasing in size.The Blob is a giant, shapeless, gelatinous alien amoeba. It landed on Earth in a meteorite. It starts small and clear, but turns bright red or dark purple as it dissolves and consumes flesh. It grows larger with every victim, resists standard weapons, and shrinks only from extreme cold",
+description:"A gigantic gelatinous organism that consumes everything in its path while continually increasing in size.The Blob is a giant, shapeless, gelatinous alien amoeba. It landed on Earth in a meteorite. It starts small and clear, but turns bright red or dark purple as it dissolves and consumes flesh. It grows larger with every victim, resists standard weapons, and shrinks only from extreme cold.",
 abilities:[
 "Absorption",
 "Growth",
