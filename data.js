@@ -1183,7 +1183,7 @@ firstAppearance:"Ancient Oral Tradition",
 origin:"North America",
 threat:"Catastrophic",
 image:"images/monsters/wendigo/profile.png",
-description:"A terrifying spirit associated with greed, winter and insatiable hunger.",
+description:"The Wendigo is a legendary, cannibalistic spirit or monster rooted in the oral traditions of North American Algonquian-speaking Indigenous peoples, symbolizing winter, insatiable hunger, greed, and the destruction of communal bonds.",
 
 abilities:[
 "Extreme speed",
@@ -1208,7 +1208,7 @@ firstAppearance:"Medieval Ireland",
 origin:"Ireland",
 threat:"Extreme",
 image:"images/monsters/dullahan/profile.png",
-description:"A headless rider who carries his own severed head and heralds impending death.",
+description:"The Dullahan is a type of legendary creature in Irish folklore. He is depicted as a headless rider on a black horse, or as a coachman, who carries his own head. Since it is not widely talked about, his origin in Irish folklore is questionable.",
 
 abilities:[
 "Supernatural horse",
