@@ -1157,7 +1157,7 @@ origin:"Ancient Greece",
 threat:"Extreme",
 image:"images/monsters/medusa/profile.png",
 
-description:"A Gorgon whose gaze turns anyone who looks directly at her into stone.",
+description:"In Ancient Greek mythology, around 700 BC, Medusa was a mortal Gorgon with snakes for hair whose gaze could turn people to stone. She lived on Sarpedon and was slain by the hero Perseus. Perseus later gave her head to Athena, who placed it on her shield as a protective symbol.",
 
 abilities:[
 "Petrifying gaze",
