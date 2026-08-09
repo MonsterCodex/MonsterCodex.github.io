@@ -35,7 +35,7 @@ const monstersPerPage = 12;
 ================================================== */
 
 const categoryIcons = {
-    
+
     Movies: "🎬",
     Games: "🎮",
     Television: "📺",
@@ -932,11 +932,7 @@ function attachCategoryEvents() {
                 "click",
                 () => {
 
-                    clickSound
-                        .cloneNode()
-                        .play()
-                        .catch(() => {});
-
+                    
 
                     categoryButtons.forEach(
                         button =>
