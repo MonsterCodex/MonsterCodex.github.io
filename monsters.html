@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>All Monsters | MonsterCodex</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="monster-eyes">
+            <span class="eye"></span>
+            <span class="eye"></span>
+        </div>
+
+        <a href="index.html">
+            👁 MonsterCodex
+        </a>
+
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="monsters.html">
+                Monsters
+            </a>
+        </li>
+
+        <li>
+            <a href="vs.html">
+                ⚔️ VS Mode
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="random-monster">
+                🎲 Random
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                ℹ️ About
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     DATABASE HEADER
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Monster Database
+        </h1>
+
+        <p>
+            Explore the complete MonsterCodex.
+        </p>
+
+
+        <div class="search-container">
+
+            <input
+                id="search"
+                type="text"
+                placeholder="Search MonsterCodex..."
+            >
+
+            <div id="search-results"></div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="categories">
+
+    <div class="section-title">
+
+        <h2>
+            Browse Categories
+        </h2>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div
+            class="category active"
+            data-category="All"
+        >
+            🌍 All Monsters
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Movies"
+        >
+            🎬 Movies
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Games"
+        >
+            🎮 Games
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Television"
+        >
+            📺 Television
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Folklore / Mythological"
+        >
+            🧙 Folklore / Mythological
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Creepypasta"
+        >
+            👻 Creepypasta
+        </div>
+
+
+        <div
+            class="category"
+            data-category="Aliens"
+        >
+            👽 Aliens
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ALL MONSTERS
+========================= -->
+
+<section class="featured">
+
+    <div class="section-title">
+
+        <h2 id="monster-list-title">
+            All Monsters
+        </h2>
+
+    </div>
+
+
+    <div
+        class="monster-grid"
+        id="monster-grid"
+    >
+
+    </div>
+
+
+    <!-- =========================
+         PAGINATION
+    ========================= -->
+
+    <div class="pagination">
+
+        <button
+            id="prev-page"
+            type="button"
+        >
+            ◀ Previous
+        </button>
+
+
+        <span id="page-info">
+            Page 1
+        </span>
+
+
+        <button
+            id="next-page"
+            type="button"
+        >
+            Next ▶
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        MonsterCodex © 2026
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     RANDOM ENCOUNTER
+========================= -->
+
+<div id="encounter-screen">
+
+    <div class="encounter-box">
+
+        <div class="scan-header">
+            ███████████████████
+        </div>
+
+        <h2>
+            MONSTERCODEX
+        </h2>
+
+        <h3>
+            CLASSIFIED DATABASE
+        </h3>
+
+        <p id="encounter-text">
+            Initialising secure scan...
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-fill"></div>
+
+        </div>
+
+        <div id="scan-percent">
+            0%
+        </div>
+
+        <img
+            id="encounter-image"
+            src=""
+            alt=""
+            style="display:none;"
+        >
+
+        <h2
+            id="encounter-name"
+            style="display:none;"
+        >
+        </h2>
+
+        <button
+            id="encounter-button"
+            style="display:none;"
+        >
+            ACCESS FILE
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
