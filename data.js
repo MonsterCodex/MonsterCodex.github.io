@@ -2113,4 +2113,611 @@ weaknesses:[
         "Severe structural damage"
     ],
     image: "images/monsters/t-800/profile.png"
-}];
+},
+
+{
+    id: "jason-voorhees",
+    name:"Jason Voorhees",
+    category: "Movies",
+    universe: "Friday the 13th",
+    creator: "Victor Miller / Ron Kurz / Sean S. Cunningham",
+    firstAppearance: "Friday the 13th (1980)",
+    origin: "Camp Crystal Lake",
+    height: "6'5\"",
+    weight: "275 lbs",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A relentless masked killer associated with Camp Crystal Lake. Jason is infamous for his immense physical strength, durability and relentless pursuit of his victims.",
+    abilities: [
+        "Superhuman strength",
+        "Extreme durability",
+        "Enhanced endurance",
+        "Stealth",
+        "Weapon proficiency",
+        "Pain resistance"
+    ],
+    weaknesses: [
+        "Severe physical destruction",
+        "Immobilisation",
+        "Water",
+        "Supernatural weaknesses vary"
+    ],
+    image: "images/monsters/jason-voorhees/profile.png"
+},
+
+{
+    id: "michael-myers",
+    name: "Michael Myers",
+    category: "Movies",
+    universe: "Halloween",
+    creator: "John Carpenter / Debra Hill",
+    firstAppearance: "Halloween (1978)",
+    origin: "Haddonfield, Illinois",
+    height: "6'7\"",
+    weight: "200+ lbs",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A masked and seemingly unstoppable killer who stalks the residents of Haddonfield. Michael is known for his silence, patience and extraordinary resilience.",
+    abilities: [
+        "Superhuman strength",
+        "Extreme durability",
+        "Stealth",
+        "Enhanced endurance",
+        "Pain resistance",
+        "Weapon proficiency"
+    ],
+    weaknesses: [
+        "Severe physical trauma",
+        "Immobilisation",
+        "Fire",
+        "Decapitation"
+    ],
+    image: "images/monsters/michael-myers/profile.png"
+},
+
+{
+    id: "freddy-krueger",
+    name: "Freddy Krueger",
+    category: "Movies",
+    universe: "A Nightmare on Elm Street",
+    creator: "Wes Craven",
+    firstAppearance: "A Nightmare on Elm Street (1984)",
+    origin: "Springwood, Ohio",
+    height: "5'9\"",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A supernatural killer who attacks victims through their dreams. Freddy possesses terrifying control over the dream world and uses his bladed glove as his signature weapon.",
+    abilities: [
+        "Dream manipulation",
+        "Reality manipulation",
+        "Shapeshifting",
+        "Teleportation",
+        "Superhuman strength",
+        "Regeneration"
+    ],
+    weaknesses: [
+        "Being pulled into reality",
+        "Loss of fear",
+        "Supernatural intervention",
+        "Dream manipulation by others"
+    ],
+    image: "images/monsters/freddy-krueger/profile.png"
+},
+
+{
+    id: "leatherface",
+    name: "Leatherface",
+    category: "Movies",
+    universe: "The Texas Chain Saw Massacre",
+    creator: "Tobe Hooper / Kim Henkel",
+    firstAppearance: "The Texas Chain Saw Massacre (1974)",
+    origin: "Texas",
+    height: "6'4\"",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A chainsaw-wielding killer known for wearing masks made from human skin. Leatherface is a physically powerful and highly dangerous member of the Sawyer family.",
+    abilities: [
+        "Superhuman strength",
+        "Chainsaw proficiency",
+        "Weapon proficiency",
+        "Intimidation",
+        "Enhanced endurance"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Severe physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/leatherface/profile.png"
+},
+
+{
+    id: "ghostface",
+    name: "Ghostface",
+    category: "Movies",
+    universe: "Scream",
+    creator: "Kevin Williamson",
+    firstAppearance: "Scream (1996)",
+    origin: "Woodsboro",
+    height: "Variable",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "The identity of Ghostface is assumed by different killers throughout the Scream series. The masked murderer uses deception, psychological manipulation and a distinctive voice to terrorise victims.",
+    abilities: [
+        "Stealth",
+        "Manipulation",
+        "Deception",
+        "Weapon proficiency",
+        "Surveillance",
+        "Psychological warfare"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/ghostface/profile.png"
+},
+
+{
+    id: "pinhead",
+    name: "Pinhead",
+    category: "Movies",
+    universe: "Hellraiser",
+    creator: "Clive Barker",
+    firstAppearance: "Hellraiser (1987)",
+    origin: "The Labyrinth",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A powerful supernatural entity and leader of the Cenobites. Pinhead uses chains and supernatural abilities to punish and torment those who open the Lament Configuration.",
+    abilities: [
+        "Supernatural strength",
+        "Teleportation",
+        "Chain manipulation",
+        "Reality manipulation",
+        "Immortality",
+        "Regeneration"
+    ],
+    weaknesses: [
+        "Lament Configuration",
+        "Supernatural forces",
+        "Dimensional restrictions"
+    ],
+    image: "images/monsters/pinhead/profile.png"
+},
+
+{
+    id: "candyman",
+    name: "Candyman",
+    category: "Movies",
+    universe: "Candyman",
+    creator: "Clive Barker",
+    firstAppearance: "Candyman (1992)",
+    origin: "Chicago",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A supernatural killer summoned by repeating his name five times in a mirror. Candyman is associated with a hook and possesses powerful supernatural abilities.",
+    abilities: [
+        "Supernatural strength",
+        "Teleportation",
+        "Immortality",
+        "Regeneration",
+        "Psychological manipulation",
+        "Reality manipulation"
+    ],
+    weaknesses: [
+        "Belief manipulation",
+        "Destruction of his legend",
+        "Supernatural intervention"
+    ],
+    image: "images/monsters/candyman/profile.png"
+},
+
+{
+    id: "art-the-clown",
+    name: "Art the Clown",
+    category: "Movies",
+    universe: "Terrifier",
+    creator: "Damien Leone",
+    firstAppearance: "The 9th Circle (2008)",
+    origin: "Unknown",
+    height: "Approx. 6'2\"",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A sadistic silent clown who delights in torturing and murdering his victims. Art's supernatural nature makes him exceptionally difficult to kill.",
+    abilities: [
+        "Superhuman strength",
+        "Extreme durability",
+        "Regeneration",
+        "Pain resistance",
+        "Stealth",
+        "Weapon proficiency"
+    ],
+    weaknesses: [
+        "Severe physical destruction",
+        "Decapitation",
+        "Supernatural intervention"
+    ],
+    image: "images/monsters/art-the-clown/profile.png"
+},
+
+{
+    id: "victor-crowley",
+    name: "Victor Crowley",
+    category: "Movies",
+    universe: "Hatchet",
+    creator: "Adam Green",
+    firstAppearance: "Hatchet (2006)",
+    origin: "Honey Island Swamp",
+    height: "Approx. 7 feet",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A deformed supernatural killer who haunts the Honey Island Swamp and violently attacks anyone who enters his territory.",
+    abilities: [
+        "Superhuman strength",
+        "Extreme durability",
+        "Regeneration",
+        "Pain resistance",
+        "Enhanced endurance"
+    ],
+    weaknesses: [
+        "Severe physical destruction",
+        "Dismemberment",
+        "Supernatural intervention"
+    ],
+    image: "images/monsters/victor-crowley/profile.png"
+},
+
+{
+    id: "the-collector",
+    name: "The Collector",
+    category: "Movies",
+    universe: "The Collector",
+    creator: "Marcus Dunstan / Patrick Melton",
+    firstAppearance: "The Collector (2009)",
+    origin: "Unknown",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A masked serial killer who breaks into homes and transforms them into elaborate death traps before hunting the occupants.",
+    abilities: [
+        "Stealth",
+        "Trap construction",
+        "Weapon proficiency",
+        "Planning",
+        "Surveillance",
+        "Tracking"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/the-collector/profile.png"
+},
+
+{
+    id: "the-creeper",
+    name: "The Creeper",
+    category: "Movies",
+    universe: "Jeepers Creepers",
+    creator: "Victor Salva",
+    firstAppearance: "Jeepers Creepers (2001)",
+    origin: "Unknown",
+    height: "Unknown",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "An ancient predatory creature that awakens periodically to hunt humans and consume their body parts to regenerate itself.",
+    abilities: [
+        "Flight",
+        "Superhuman strength",
+        "Regeneration",
+        "Enhanced senses",
+        "Shapeshifting",
+        "Immortality"
+    ],
+    weaknesses: [
+        "Severe physical destruction",
+        "Regeneration disruption",
+        "Supernatural intervention"
+    ],
+    image: "images/monsters/the-creeper/profile.png"
+},
+
+{
+    id: "norman-bates",
+    name: "Norman Bates",
+    category: "Movies",
+    universe: "Psycho",
+    creator: "Robert Bloch / Alfred Hitchcock",
+    firstAppearance: "Psycho (1960)",
+    origin: "Fairvale",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Imprisoned",
+    alignment: "Evil",
+    threat: "High",
+    description: "The disturbed owner of the Bates Motel whose fractured identity leads him to commit a series of murders while adopting the persona of his deceased mother.",
+    abilities: [
+        "Deception",
+        "Manipulation",
+        "Stealth",
+        "Planning",
+        "Weapon proficiency"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Psychological instability",
+        "Physical trauma",
+        "Capture"
+    ],
+    image: "images/monsters/norman-bates/profile.png"
+},
+{
+    id: "patrick-bateman",
+    name: "Patrick Bateman",
+    category: "Movies",
+    universe: "American Psycho",
+    creator: "Bret Easton Ellis / Mary Harron",
+    firstAppearance: "American Psycho (2000)",
+    origin: "New York City",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Evil",
+    threat: "High",
+    description: "A wealthy investment banker living a double life as a violent killer. Bateman uses his social status and carefully maintained appearance to conceal his violent behaviour.",
+    abilities: [
+        "Manipulation",
+        "Deception",
+        "Stealth",
+        "Planning",
+        "Weapon proficiency",
+        "Physical strength"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Exposure"
+    ],
+    image: "images/monsters/patrick-bateman/profile.png"
+},
+{
+    id: "jigsaw",
+    name: "Jigsaw",
+    category: "Movies",
+    universe: "Saw",
+    creator: "James Wan / Leigh Whannell",
+    firstAppearance: "Saw (2004)",
+    origin: "Unknown",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "The alias used by John Kramer, a terminally ill mastermind who constructs elaborate traps designed to test his victims' will to survive.",
+    abilities: [
+        "Strategic planning",
+        "Engineering",
+        "Psychological manipulation",
+        "Surveillance",
+        "Trap construction",
+        "Deception"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Terminal illness",
+        "Physical weakness",
+        "Capture"
+    ],
+    image: "images/monsters/jigsaw/profile.png"
+},
+
+{
+    id: "hannibal-lecter",
+    name: "Hannibal Lecter",
+    category: "Movies",
+    universe: "The Silence of the Lambs",
+    creator: "Thomas Harris / Jonathan Demme",
+    firstAppearance: "The Silence of the Lambs (1991)",
+    origin: "United States",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A brilliant psychiatrist and imprisoned serial killer renowned for his intelligence, manipulation and cannibalistic murders.",
+    abilities: [
+        "Genius intelligence",
+        "Psychological manipulation",
+        "Deception",
+        "Strategic planning",
+        "Medical knowledge",
+        "Human behaviour analysis"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical restraint",
+        "Capture",
+        "Limited physical freedom"
+    ],
+    image: "images/monsters/hannibal-lecter/profile.png"
+},
+
+{
+    id: "harry-warden",
+    name: "Harry Warden",
+    category: "Movies",
+    universe: "My Bloody Valentine",
+    creator: "George Mihalka / John Beaird",
+    firstAppearance: "My Bloody Valentine (1981)",
+    origin: "Valentine Bluffs",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Evil",
+    threat: "High",
+    description: "A masked killer associated with the Valentine's Day massacre who stalks victims while wearing mining equipment and carrying a pickaxe.",
+    abilities: [
+        "Stealth",
+        "Weapon proficiency",
+        "Tracking",
+        "Intimidation",
+        "Enhanced endurance"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/harry-warden/profile.png"
+},
+
+{
+    id: "fisherman",
+    name: "The Fisherman",
+    category: "Movies",
+    universe: "I Know What You Did Last Summer",
+    creator: "Kevin Williamson",
+    firstAppearance: "I Know What You Did Last Summer (1997)",
+    origin: "Southport",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Evil",
+    threat: "High",
+    description: "A mysterious hook-wielding killer who stalks a group of young people after they attempt to conceal a fatal accident.",
+    abilities: [
+        "Stealth",
+        "Tracking",
+        "Weapon proficiency",
+        "Intimidation",
+        "Planning"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/fisherman/profile.png"
+},
+
+{
+    id: "cropsey",
+    name: "Cropsey",
+    category: "Movies",
+    universe: "The Burning",
+    creator: "Tony Maylam / Harvey Weinstein",
+    firstAppearance: "The Burning (1981)",
+    origin: "Camp Blackfoot",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "A horribly scarred camp caretaker who returns to seek revenge on those responsible for his suffering.",
+    abilities: [
+        "Stealth",
+        "Weapon proficiency",
+        "Tracking",
+        "Enhanced endurance",
+        "Intimidation"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Severe physical trauma",
+        "Blood loss",
+        "Immobilisation"
+    ],
+    image: "images/monsters/cropsey/profile.png"
+},
+
+{
+    id: "angela-baker",
+    name: "Angela Baker",
+    category: "Movies",
+    universe: "Sleepaway Camp",
+    creator: "Robert Hiltzik",
+    firstAppearance: "Sleepaway Camp (1983)",
+    origin: "Camp Arawak",
+    height: "Variable",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "A disturbed killer associated with Camp Arawak whose identity and motives form the central mystery of the Sleepaway Camp series.",
+    abilities: [
+        "Stealth",
+        "Deception",
+        "Planning",
+        "Weapon proficiency",
+        "Manipulation"
+    ],
+    weaknesses: [
+        "Human durability",
+        "Physical trauma",
+        "Blood loss",
+        "Capture"
+    ],
+    image: "images/monsters/angela-baker/profile.png"
+},
+
+{
+    id: "maniac-cop",
+    name: "Matt Cordell",
+    category: "Movies",
+    universe: "Maniac Cop",
+    creator: "William Lustig / Larry Cohen",
+    firstAppearance: "Maniac Cop (1988)",
+    origin: "New York City",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A seemingly unstoppable killer and corrupt former police officer who uses his authority and physical power to hunt his victims.",
+    abilities: [
+    "Superhuman strength",
+    "Extreme durability",
+    "Police training",
+    "Weapon proficiency",
+     "Enhanced endurance",
+     "Stealth"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Fire",
+        "Decapitation",
+        "Immobilisation"
+    ],
+    image: "images/monsters/maniac-cop/profile.png"
+}
+]
