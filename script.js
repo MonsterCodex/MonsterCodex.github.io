@@ -1557,6 +1557,16 @@ if (nextPageButton) {
    START
 ================================================== */
 
-createMainCategories();
+document.addEventListener("DOMContentLoaded", () => {
 
-displayMonsters(monsters);
+    createMainCategories();
+
+    attachCategoryEvents();
+
+    currentCategory = "All";
+    currentType = "All";
+    currentPage = 1;
+
+    filterMonsters();
+
+});
