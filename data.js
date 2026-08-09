@@ -1338,7 +1338,7 @@ firstAppearance:"Ancient Scotland",
 origin:"Scottish Highlands",
 threat:"Extreme",
 image:"images/monsters/each-uisge/profile.png",
-description:"A deadly water horse that devours anyone foolish enough to ride it.",
+description:"The Each Uisge is a shape-shifting water spirit that is usually seen in the form of a horse. They are also said to take the forms of birds, ponies, and handsome men Both lure their victims to the water's edge, some say with sounds or songs, some say by tricking their victims into riding them. Others suggest one might be unlucky enough to be forcefully dragged to a watery grave by them.",
 abilities:["Shape-shifting","Immense strength","Water speed"],
 weaknesses:["Freshwater boundaries"]
 },
