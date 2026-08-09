@@ -90,21 +90,6 @@ document.getElementById("monster-weight").textContent=monster.weight||"Unknown";
 document.getElementById("monster-status").textContent=monster.status||"Unknown";
 document.getElementById("monster-alignment").textContent=monster.alignment||"Unknown";
 
-const threat=document.getElementById("monster-threat");
-threat.textContent=monster.threat||"Unknown";
-threat.className="threat";
-
-if(monster.threat){
-
-const level=monster.threat.toLowerCase();
-
-if(level.includes("extreme")) threat.classList.add("extreme");
-else if(level.includes("high")) threat.classList.add("high");
-else if(level.includes("medium")) threat.classList.add("medium");
-else if(level.includes("low")) threat.classList.add("low");
-else threat.classList.add("unknown");
-
-}
 
 const abilities=document.getElementById("monster-abilities");
 abilities.innerHTML="";

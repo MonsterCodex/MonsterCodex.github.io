@@ -1351,3 +1351,17 @@ html {
 .profile-right .monster-table td:last-child {
     border-radius: 0 8px 8px 0;
 }
+
+/* =========================================
+   MONSTER PROFILE HEADING
+========================================= */
+
+.profile-right h1#monster-name {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--red);
+}
+
+.profile-right .monster-intro {
+    margin-bottom: 10px;
+}
