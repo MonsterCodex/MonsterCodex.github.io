@@ -1257,3 +1257,55 @@ html {
     font-weight:bold;
 
 }
+
+/* =========================================
+   MONSTER TYPE FILTERS
+========================================= */
+
+#type-filters {
+    width: 100%;
+    margin: 25px 0 35px;
+    text-align: center;
+}
+
+#type-filters .section-title {
+    margin-bottom: 20px;
+}
+
+#type-filters .section-title h3 {
+    margin-bottom: 8px;
+}
+
+#type-filters .section-title p {
+    margin: 0;
+}
+
+.type-filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.type-filter {
+    padding: 12px 20px;
+    border: 1px solid #303640;
+    border-radius: 10px;
+    background: #171b21;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.type-filter:hover {
+    background: #242a32;
+    transform: translateY(-2px);
+}
+
+.type-filter.active {
+    background: #c93b32;
+    border-color: #c93b32;
+    color: #fff;
+}
