@@ -370,33 +370,7 @@ weaknesses:[
 gallery:[]
 },
 
-{
-id:"the-thing",
-name:"The Thing",
-category:"Movies",
-creator:"John W. Campbell Jr.",
-year:"1982",
-threat:"Extreme",
-universe:"The Thing",
-origin:"Outer Space",
-height:"Variable",
-weight:"Unknown",
-status:"Active",
-alignment:"Hostile",
-image:"images/monsters/the-thing/profile.png",
-description:"A shape-shifting alien organism capable of perfectly imitating any living creature it assimilates.",
-abilities:[
-"Shapeshifting",
-"Assimilation",
-"Regeneration",
-"Body Horror"
-],
-weaknesses:[
-"Fire",
-"Extreme Heat"
-],
-gallery:[]
-},
+
 
 {
 id:"pennywise",
