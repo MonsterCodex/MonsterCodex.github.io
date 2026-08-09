@@ -1248,7 +1248,7 @@ firstAppearance:"Ancient Folklore",
 origin:"Orkney Islands",
 threat:"Catastrophic",
 image:"images/monsters/nuckelavee/profile.png",
-description:"A terrifying skinless horse demon whose breath spreads disease and famine.",
+description:"a legendary, horse-like demon from the folklore of the Orkney Islands in Scotland. Described as a terrifying centaur-like hybrid with no skin, it features a human torso fused to a horse's back, black blood pulsing through yellow veins, and a breath that spreads plague and withers crops.",
 abilities:["Disease","Immense strength","Supernatural speed","Fear aura"],
 weaknesses:["Fresh water"]
 },
