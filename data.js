@@ -1359,6 +1359,36 @@ weaknesses:["Can be lured onto land"]
 },
 
 {
+id:"frankenstein-monster",
+name:"Frankenstein's Monster",
+category:"Folklore",
+universe:"Gothic Literature",
+creator:"Mary Shelley",
+firstAppearance:"1818",
+origin:"England",
+threat:"High",
+image:"images/monsters/frankenstein-monster/profile.png",
+description:"A reanimated humanoid created from assembled body parts by the scientist Victor Frankenstein.",
+abilities:["Superhuman strength","Exceptional endurance","Resilience"],
+weaknesses:["Fire","Physical injury"]
+},
+
+{
+id:"jekyll-hyde",
+name:"Mr. Hyde",
+category:"Folklore",
+universe:"Gothic Literature",
+creator:"Robert Louis Stevenson",
+firstAppearance:"1886",
+origin:"Scotland",
+threat:"High",
+image:"images/monsters/jekyll-hyde/profile.png",
+description:"A violent alter ego created when Dr. Henry Jekyll develops a potion that transforms him into the sinister Mr. Hyde.",
+abilities:["Superhuman strength","Enhanced agility","High pain tolerance"],
+weaknesses:["Transformation dependence","Jekyll's physical vulnerability"]
+},
+
+{
 id:"gwrgi-garwl",
 name:"Gwrgi Garwlwyd",
 category:"Folklore",
