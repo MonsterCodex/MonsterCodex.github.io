@@ -6,18 +6,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MonsterCodex</title>
+<title>Monster Profile | MonsterCodex</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="navbar">
 
@@ -28,168 +37,91 @@
             <span class="eye"></span>
         </div>
 
-        <a href="index.html">👁 MonsterCodex</a>
+        <a href="index.html">
+            👁 MonsterCodex
+        </a>
 
     </div>
 
+
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#categories">Monsters</a></li>
-        <li><a href="index.html#categories">Categories</a></li>
-        <li><a href="#" id="random-monster">🎲 Random</a></li>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="monsters.html">
+                Monsters
+            </a>
+        </li>
+
+        <li>
+            <a href="vs.html">
+                ⚔️ VS Mode
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="random-monster">
+                🎲 Random
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                ℹ️ About
+            </a>
+        </li>
+
     </ul>
 
 </nav>
 
-<main class="monster-profile">
-
-<div class="profile-top">
-
-<div class="profile-left">
-
-<img
-id="monster-image"
-src=""
-alt="Monster">
 
 
+<!-- =========================
+     MONSTER PROFILE
+========================= -->
 
-</div>
+<main class="monster-profile-page">
 
-<div class="profile-right">
+    <div
+        id="monster-profile"
+        class="monster-profile"
+    >
 
-<h1 id="monster-name"></h1>
+        <!-- Monster details are loaded by monster.js -->
 
-<p
-id="monster-description"
-class="monster-intro">
-</p>
-
-<div
-id="monster-threat"
-class="threat">
-</div>
-
-<table class="monster-table">
-
-<tr>
-<th>Creator</th>
-<td id="monster-creator"></td>
-</tr>
-
-<tr>
-<th>First Appearance</th>
-<td id="monster-year"></td>
-</tr>
-
-<tr>
-<th>Universe</th>
-<td id="monster-universe"></td>
-</tr>
-
-<tr>
-<th>Origin</th>
-<td id="monster-origin"></td>
-</tr>
-
-<tr>
-<th>Height</th>
-<td id="monster-height"></td>
-</tr>
-
-<tr>
-<th>Weight</th>
-<td id="monster-weight"></td>
-</tr>
-
-<tr>
-<th>Status</th>
-<td id="monster-status"></td>
-</tr>
-
-<tr>
-<th>Alignment</th>
-<td id="monster-alignment"></td>
-</tr>
-
-</table>
-
-<div class="profile-bottom">
-
-<div class="profile-section">
-
-<h2>💪 Abilities</h2>
-
-<ul id="monster-abilities"></ul>
-
-</div>
-
-<div class="profile-section">
-
-<h2>⚠ Weaknesses</h2>
-
-<ul id="monster-weaknesses"></ul>
-
-</div>
-
-</div>
-
-<section class="profile-section">
-
-<h2>🔗 Related Monsters</h2>
-
-<div
-id="related-monsters"
-class="related-grid">
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-<div class="back-home">
-
-<a
-href="index.html"
-class="button">
-
-← Return Home
-
-</a>
-
-</div>
+    </div>
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-MonsterCodex © 2026
+    <p>
+        MonsterCodex © 2026
+    </p>
 
 </footer>
 
-<div id="encounter-screen">
-<div class="encounter-box">
 
-<h2>🎲 Random Encounter</h2>
 
-<p>
-A monster has been discovered...
-</p>
-
-<div class="loading-bar">
-
-<div class="loading-fill"></div>
-
-</div>
-
-</div>
-
-</div>
+<!-- =========================
+     SCRIPTS
+========================= -->
 
 <script src="data.js"></script>
 <script src="monster.js"></script>
+
 
 </body>
 
