@@ -1241,6 +1241,40 @@ document.addEventListener(
     }
 );
 
+// ---------- NAVIGATION SOUND ----------
+
+document.addEventListener("click", function(e) {
+
+    const link = e.target.closest("a");
+
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+
+    if (!href || href.startsWith("#")) return;
+
+    // Allow normal browser actions
+    if (
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.metaKey ||
+        e.button !== 0 ||
+        link.target === "_blank"
+    ) {
+        return;
+    }
+
+    e.preventDefault();
+
+    // Let the click sound finish
+    setTimeout(() => {
+
+        window.location.href = href;
+
+    }, 250);
+
+});
+
 
 /* ==================================================
    MONSTER EYES
