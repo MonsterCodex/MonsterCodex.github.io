@@ -1409,12 +1409,7 @@ if (previousPageButton) {
         "click",
         () => {
 
-            clickSound
-                .cloneNode()
-                .play()
-                .catch(() => {});
-
-
+           
             if (currentPage > 1) {
 
                 currentPage--;
@@ -1445,12 +1440,7 @@ if (nextPageButton) {
         "click",
         () => {
 
-            clickSound
-                .cloneNode()
-                .play()
-                .catch(() => {});
-
-
+           
             const term =
                 search.value
                     .toLowerCase()
