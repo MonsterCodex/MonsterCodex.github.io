@@ -1610,39 +1610,39 @@ weaknesses:[
 },
 
 {
-id: "t-1000",
-name: "T-1000",
-category: "Movies",
-universe: "Terminator",
-creator: "James Cameron / William Wisher Jr.",
-firstAppearance: "Terminator 2: Judgment Day (1991)",
-origin: "Skynet",
-height: "Variable",
-weight: "Variable",
-status: "Destroyed",
-alignment: "Evil",
-threat: "Extreme",
-description: "A highly advanced infiltrator composed of liquid metal. The T-1000 can imitate people, reshape its body and recover from devastating physical damage.",
-abilities: [
-"Liquid metal shapeshifting",
-"Human imitation",
-"Regeneration",
-"Superhuman strength",
-"Weapon formation",
-"Enhanced speed"
-],
-weaknesses: [
-"Extreme heat",
-"Extreme cold",
-"Molten metal",
-"Requires structural integrity"
-],
-image: "images/monsters/t-1000/profile.png"
+    id: "t-1000",
+    name: "T-1000",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "James Cameron / William Wisher Jr.",
+    firstAppearance: "Terminator 2: Judgment Day (1991)",
+    origin: "Skynet",
+    height: "Variable",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A highly advanced infiltrator composed of liquid metal. The T-1000 can imitate people, reshape its body and recover from devastating physical damage.",
+    abilities: [
+        "Liquid metal shapeshifting",
+        "Human imitation",
+        "Regeneration",
+        "Superhuman strength",
+        "Weapon formation",
+        "Enhanced speed"
+    ],
+    weaknesses: [
+        "Extreme heat",
+        "Extreme cold",
+        "Molten metal",
+        "Requires structural integrity"
+    ],
+    image: "images/monsters/t-1000/profile.png"
 },
 
 {
-id: "t-x",
-name: "T-X",
+    id: "t-x",
+    name: "T-X",
     category: "Movies",
     universe: "Terminator",
     creator: "Jonathan Mostow / John D. Brancato / Michael Ferris",
@@ -2117,7 +2117,7 @@ name: "T-X",
 
 {
     id: "jason-voorhees",
-    name:"Jason Voorhees",
+    name: "Jason Voorhees",
     category: "Movies",
     universe: "Friday the 13th",
     creator: "Victor Miller / Ron Kurz / Sean S. Cunningham",
@@ -2478,6 +2478,7 @@ name: "T-X",
     ],
     image: "images/monsters/norman-bates/profile.png"
 },
+
 {
     id: "patrick-bateman",
     name: "Patrick Bateman",
@@ -2508,6 +2509,7 @@ name: "T-X",
     ],
     image: "images/monsters/patrick-bateman/profile.png"
 },
+
 {
     id: "jigsaw",
     name: "Jigsaw",
@@ -2705,12 +2707,12 @@ name: "T-X",
     threat: "Extreme",
     description: "A seemingly unstoppable killer and corrupt former police officer who uses his authority and physical power to hunt his victims.",
     abilities: [
-    "Superhuman strength",
-    "Extreme durability",
-    "Police training",
-    "Weapon proficiency",
-     "Enhanced endurance",
-     "Stealth"
+        "Superhuman strength",
+        "Extreme durability",
+        "Police training",
+        "Weapon proficiency",
+        "Enhanced endurance",
+        "Stealth"
     ],
     weaknesses: [
         "Severe physical damage",
@@ -2720,4 +2722,5 @@ name: "T-X",
     ],
     image: "images/monsters/maniac-cop/profile.png"
 }
-]
+
+];
