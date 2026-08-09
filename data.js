@@ -1610,39 +1610,39 @@ weaknesses:[
 },
 
 {
-    id: "t-1000",
-    name: "T-1000",
-    category: "Movies",
-    universe: "Terminator",
-    creator: "James Cameron / William Wisher Jr.",
-    firstAppearance: "Terminator 2: Judgment Day (1991)",
-    origin: "Skynet",
-    height: "Variable",
-    weight: "Variable",
-    status: "Destroyed",
-    alignment: "Evil",
-    threat: "Extreme",
-    description: "A highly advanced infiltrator composed of liquid metal. The T-1000 can imitate people, reshape its body and recover from devastating physical damage.",
-    abilities: [
-        "Liquid metal shapeshifting",
-        "Human imitation",
-        "Regeneration",
-        "Superhuman strength",
-        "Weapon formation",
-        "Enhanced speed"
-    ],
-    weaknesses: [
-        "Extreme heat",
-        "Extreme cold",
-        "Molten metal",
-        "Requires structural integrity"
-    ],
-    image: "images/monsters/t-1000/profile.png"
+id: "t-1000",
+name: "T-1000",
+category: "Movies",
+universe: "Terminator",
+creator: "James Cameron / William Wisher Jr.",
+firstAppearance: "Terminator 2: Judgment Day (1991)",
+origin: "Skynet",
+height: "Variable",
+weight: "Variable",
+status: "Destroyed",
+alignment: "Evil",
+threat: "Extreme",
+description: "A highly advanced infiltrator composed of liquid metal. The T-1000 can imitate people, reshape its body and recover from devastating physical damage.",
+abilities: [
+"Liquid metal shapeshifting",
+"Human imitation",
+"Regeneration",
+"Superhuman strength",
+"Weapon formation",
+"Enhanced speed"
+],
+weaknesses: [
+"Extreme heat",
+"Extreme cold",
+"Molten metal",
+"Requires structural integrity"
+],
+image: "images/monsters/t-1000/profile.png"
 },
 
 {
-    id: "t-x",
-    name: "T-X",
+id: "t-x",
+name: "T-X",
     category: "Movies",
     universe: "Terminator",
     creator: "Jonathan Mostow / John D. Brancato / Michael Ferris",
