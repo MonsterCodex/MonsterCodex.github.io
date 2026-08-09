@@ -2081,5 +2081,36 @@ weaknesses:[
         "Severe physical damage"
     ],
     image: "images/monsters/sentinels/profile.png"
-}
-];
+},
+
+{
+    id: "t-800",
+    name: "T-800",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "James Cameron / Gale Anne Hurd",
+    firstAppearance: "The Terminator (1984)",
+    origin: "Skynet",
+    height: "6'2\"",
+    weight: "320 lbs",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A Cyberdyne Systems Model 101 Terminator built around a living tissue-covered endoskeleton. Designed by Skynet for infiltration and assassination, the T-800 is an exceptionally durable machine capable of tracking and eliminating human targets.",
+    abilities: [
+        "Superhuman strength",
+        "Enhanced durability",
+        "Advanced targeting",
+        "Night vision",
+        "Infiltration",
+        "Weapons proficiency",
+        "Human imitation"
+    ],
+    weaknesses: [
+        "Extreme physical damage",
+        "Heavy explosives",
+        "Electromagnetic disruption",
+        "Severe structural damage"
+    ],
+    image: "images/monsters/t-800/profile.png"
+}];
