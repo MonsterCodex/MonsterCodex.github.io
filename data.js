@@ -2093,6 +2093,7 @@ weaknesses:[
     id: "jason-voorhees",
     name: "Jason Voorhees",
     category: "Movies",
+    type: "Slasher",
     universe: "Friday the 13th",
     creator: "Victor Miller / Ron Kurz / Sean S. Cunningham",
     firstAppearance: "Friday the 13th (1980)",

@@ -1,12 +1,11 @@
-const grid=document.querySelector(".monster-grid");
-const search=document.getElementById("search");
-const results=document.getElementById("search-results");
-const categories=document.querySelectorAll(".category");
+const grid = document.querySelector(".monster-grid");
+const search = document.getElementById("search");
+const results = document.getElementById("search-results");
+const categories = document.querySelectorAll(".category");
 
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
 const eyeScream = new Audio("assets/sounds/monster-scream.mp3");
-
 const revealSound = new Audio("assets/sounds/reveal.mp3");
 
 const keySounds = [
@@ -16,8 +15,6 @@ const keySounds = [
     new Audio("assets/sounds/key4.mp3")
 ];
 
-
-
 clickSound.volume = 0.4;
 scanSound.volume = 0.25;
 eyeScream.volume = 0.25;
@@ -25,12 +22,11 @@ revealSound.volume = 0.5;
 
 keySounds.forEach(sound => sound.volume = 0.15);
 
-
-let currentCategory="All";
+let currentCategory = "All";
+let currentType = "All";
 
 let currentPage = 1;
 const monstersPerPage = 12;
-
 
 const categoryIcons = {
     Games: "🎮",
@@ -44,39 +40,280 @@ const categoryIcons = {
 };
 
 
-function createCard(monster){
+/* ==================================================
+   TYPE / SUBCATEGORY SYSTEM
+================================================== */
 
-return `
-<a href="monster.html?id=${monster.id}" class="card-link">
+function getMonsterType(monster) {
 
-<div class="card">
+    /*
+        Uses the new optional "type" field.
 
-<img src="${monster.image}" alt="${monster.name}">
+        If an older monster doesn't have a type,
+        it will safely appear under Other.
+    */
 
-<div class="card-content">
+    if (monster.type && monster.type.trim() !== "") {
+        return monster.type.trim();
+    }
 
-<h3>${monster.name}</h3>
+    return "Other";
+}
 
-<p>
-${categoryIcons[monster.category] || "🌍"} ${monster.universe}
-</p>
 
-<p>✍️ ${monster.creator}</p>
+function createTypeFilters() {
 
-<span class="threat ${monster.threat.toLowerCase()}">
-${monster.threat}
-</span>
+    /*
+        Find the category section.
+    */
 
-<div class="button">
-View Profile →
-</div>
+    const categorySection = document.querySelector("#categories");
 
-</div>
+    if (!categorySection) return;
 
-</div>
 
-</a>
-`;
+    /*
+        Remove an old type filter if one exists.
+    */
+
+    const oldFilters = document.getElementById("type-filters");
+
+    if (oldFilters) {
+        oldFilters.remove();
+    }
+
+
+    /*
+        Only show subcategories when a specific
+        main category has been selected.
+    */
+
+    if (currentCategory === "All") {
+        currentType = "All";
+        return;
+    }
+
+
+    /*
+        Find monsters belonging to the selected category.
+    */
+
+    const categoryMonsters = monsters.filter(monster =>
+        monster.category === currentCategory
+    );
+
+
+    /*
+        Get unique types.
+    */
+
+    const typeSet = new Set();
+
+    categoryMonsters.forEach(monster => {
+
+        typeSet.add(getMonsterType(monster));
+
+    });
+
+
+    /*
+        Sort alphabetically.
+    */
+
+    const types = Array.from(typeSet).sort((a, b) =>
+        a.localeCompare(b)
+    );
+
+
+    if (types.length === 0) {
+        currentType = "All";
+        return;
+    }
+
+
+    /*
+        Create the subcategory area.
+    */
+
+    const typeSection = document.createElement("div");
+
+    typeSection.id = "type-filters";
+
+    typeSection.innerHTML = `
+        <div class="section-title">
+            <h3>${categoryIcons[currentCategory] || "👹"} ${currentCategory} Monsters</h3>
+            <p>Browse by monster type.</p>
+        </div>
+
+        <div class="type-filter-grid">
+
+            <div
+                class="type-filter active"
+                data-type="All">
+                🌍 All ${currentCategory}
+            </div>
+
+            ${types.map(type => `
+                <div
+                    class="type-filter"
+                    data-type="${escapeHTML(type)}">
+                    ${getTypeIcon(type)} ${escapeHTML(type)}
+                </div>
+            `).join("")}
+
+        </div>
+    `;
+
+
+    /*
+        Put it directly underneath the main categories.
+    */
+
+    categorySection.insertAdjacentElement(
+        "afterend",
+        typeSection
+    );
+
+
+    /*
+        Add click events.
+    */
+
+    typeSection.querySelectorAll(".type-filter").forEach(filter => {
+
+        filter.addEventListener("click", () => {
+
+            /*
+                Click sound.
+            */
+
+            clickSound.cloneNode().play().catch(() => {});
+
+
+            /*
+                Remove active state.
+            */
+
+            typeSection
+                .querySelectorAll(".type-filter")
+                .forEach(button => {
+                    button.classList.remove("active");
+                });
+
+
+            filter.classList.add("active");
+
+
+            /*
+                Set selected type.
+            */
+
+            currentType = filter.dataset.type;
+
+
+            /*
+                Reset page.
+            */
+
+            currentPage = 1;
+
+
+            /*
+                Refresh monsters.
+            */
+
+            filterMonsters();
+
+        });
+
+    });
+
+}
+
+
+function getTypeIcon(type) {
+
+    const text = type.toLowerCase();
+
+    if (text.includes("slasher")) return "🔪";
+    if (text.includes("killer")) return "☠️";
+    if (text.includes("robot")) return "🤖";
+    if (text.includes("android")) return "🤖";
+    if (text.includes("ai")) return "🧠";
+    if (text.includes("alien")) return "👽";
+    if (text.includes("cryptid")) return "🐺";
+    if (text.includes("animatronic")) return "🐻";
+    if (text.includes("creature")) return "👹";
+    if (text.includes("demon")) return "😈";
+    if (text.includes("spirit")) return "👻";
+    if (text.includes("entity")) return "👁️";
+    if (text.includes("shapeshifter")) return "🌫️";
+    if (text.includes("undead")) return "💀";
+    if (text.includes("witch")) return "🧙";
+    if (text.includes("goblin")) return "👺";
+    if (text.includes("sea")) return "🌊";
+    if (text.includes("water")) return "💧";
+    if (text.includes("supernatural")) return "👻";
+    if (text.includes("mythological")) return "🏛️";
+
+    return "👹";
+}
+
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* ==================================================
+   CREATE MONSTER CARD
+================================================== */
+
+function createCard(monster) {
+
+    return `
+    <a href="monster.html?id=${monster.id}" class="card-link">
+
+        <div class="card">
+
+            <img
+                src="${monster.image}"
+                alt="${monster.name}">
+
+            <div class="card-content">
+
+                <h3>${monster.name}</h3>
+
+                <p>
+                    ${categoryIcons[monster.category] || "🌍"}
+                    ${monster.universe}
+                </p>
+
+                <p>
+                    ✍️ ${monster.creator}
+                </p>
+
+                <span class="threat ${monster.threat.toLowerCase()}">
+                    ${monster.threat}
+                </span>
+
+                <div class="button">
+                    View Profile →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+    `;
 
 }
 
@@ -89,34 +326,46 @@ function displayMonsters(list) {
 
     grid.innerHTML = "";
 
-    if(currentPage < 1){
+
+    if (currentPage < 1) {
         currentPage = 1;
     }
 
 
     /*
-    HOMEPAGE
-
-    Show ALL monsters instead of one random monster
-    from each category.
+        Homepage / All Monsters
     */
 
-    if (currentCategory === "All" && search.value.trim() === "") {
+    if (
+        currentCategory === "All" &&
+        search.value.trim() === ""
+    ) {
 
         list = monsters;
 
     }
 
 
-    /* No results */
+    /*
+        No results.
+    */
 
     if (list.length === 0) {
 
         grid.innerHTML = `
-        <div style="grid-column:1/-1;text-align:center;padding:60px;">
-            <h2>No monsters found</h2>
-            <p>Try another search.</p>
-        </div>
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:60px;
+            ">
+
+                <h2>No monsters found</h2>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+            </div>
         `;
 
         updatePagination(0);
@@ -126,16 +375,21 @@ function displayMonsters(list) {
     }
 
 
-    /* PAGINATION */
+    /*
+        Pagination.
+    */
 
-    const start = (currentPage - 1) * monstersPerPage;
+    const start =
+        (currentPage - 1) * monstersPerPage;
 
-    const end = start + monstersPerPage;
+    const end =
+        start + monstersPerPage;
 
-    const pageItems = list.slice(start, end);
+    const pageItems =
+        list.slice(start, end);
 
 
-    pageItems.forEach(monster=>{
+    pageItems.forEach(monster => {
 
         grid.innerHTML += createCard(monster);
 
@@ -151,54 +405,82 @@ function displayMonsters(list) {
    SEARCH DROPDOWN
 ================================================== */
 
-function showDropdown(list){
+function showDropdown(list) {
 
-results.innerHTML="";
-
-if(search.value.trim()===""||list.length===0){
-
-results.style.display="none";
-
-return;
-
-}
+    results.innerHTML = "";
 
 
-list.slice(0,6).forEach(monster=>{
+    if (
+        search.value.trim() === "" ||
+        list.length === 0
+    ) {
 
-results.innerHTML+=`
+        results.style.display = "none";
 
-<div class="search-item" data-id="${monster.id}">
+        return;
 
-<img src="${monster.image}" alt="${monster.name}">
-
-<div>
-
-<h4>${monster.name}</h4>
-
-<p>${monster.category}</p>
-
-</div>
-
-</div>
-
-`;
-
-});
+    }
 
 
-results.style.display="block";
+    list.slice(0, 6).forEach(monster => {
+
+        results.innerHTML += `
+
+            <div
+                class="search-item"
+                data-id="${monster.id}">
+
+                <img
+                    src="${monster.image}"
+                    alt="${monster.name}">
+
+                <div>
+
+                    <h4>
+                        ${monster.name}
+                    </h4>
+
+                    <p>
+                        ${monster.category}
+                    </p>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
 
 
-document.querySelectorAll(".search-item").forEach(item=>{
+    results.style.display = "block";
 
-item.addEventListener("click",()=>{
 
-window.location.href=`monster.html?id=${item.dataset.id}`;
+    document
+        .querySelectorAll(".search-item")
+        .forEach(item => {
 
-});
+            item.addEventListener("click", () => {
 
-});
+                const sound =
+                    clickSound.cloneNode();
+
+                sound.volume =
+                    clickSound.volume;
+
+                sound.play().catch(() => {});
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        `monster.html?id=${item.dataset.id}`;
+
+                }, 100);
+
+            });
+
+        });
 
 }
 
@@ -207,48 +489,62 @@ window.location.href=`monster.html?id=${item.dataset.id}`;
    FILTER MONSTERS
 ================================================== */
 
-function filterMonsters(resetPage = true){
+function filterMonsters(resetPage = true) {
 
-    if(resetPage){
-
+    if (resetPage) {
         currentPage = 1;
-
     }
 
 
-const term=search.value.toLowerCase().trim();
+    const term =
+        search.value.toLowerCase().trim();
 
 
-let filtered=monsters.filter(monster=>{
+    const filtered = monsters.filter(monster => {
 
-const text=[
+        const text = [
 
-monster.name,
-monster.category,
-monster.creator,
-monster.universe,
-monster.description,
-...(monster.abilities||[]),
-...(monster.weaknesses||[])
+            monster.name,
+            monster.category,
+            monster.type || "",
+            monster.creator,
+            monster.universe,
+            monster.description,
 
-].join(" ").toLowerCase();
+            ...(monster.abilities || []),
+            ...(monster.weaknesses || [])
 
-
-const matchesSearch=text.includes(term);
-
-const matchesCategory=
-    currentCategory==="All" ||
-    monster.category===currentCategory;
+        ]
+        .join(" ")
+        .toLowerCase();
 
 
-return matchesSearch&&matchesCategory;
+        const matchesSearch =
+            text.includes(term);
 
-});
+
+        const matchesCategory =
+            currentCategory === "All" ||
+            monster.category === currentCategory;
 
 
-displayMonsters(filtered);
+        const matchesType =
+            currentType === "All" ||
+            getMonsterType(monster) === currentType;
 
-showDropdown(filtered);
+
+        return (
+            matchesSearch &&
+            matchesCategory &&
+            matchesType
+        );
+
+    });
+
+
+    displayMonsters(filtered);
+
+    showDropdown(filtered);
 
 }
 
@@ -259,114 +555,199 @@ showDropdown(filtered);
 
 displayMonsters(monsters);
 
-search.addEventListener("input", filterMonsters);
+
+/* ==================================================
+   SEARCH INPUT
+================================================== */
+
+search.addEventListener(
+    "input",
+    () => {
+
+        filterMonsters();
+
+    }
+);
 
 
 /* ==================================================
    SEARCH KEYBOARD SOUNDS
 ================================================== */
 
-search.addEventListener("keydown", function(e){
+search.addEventListener(
+    "keydown",
+    function(e) {
 
-    if(![
-        "Shift",
-        "Control",
-        "Alt",
-        "Meta",
-        "CapsLock",
-        "Tab",
-        "Escape",
-        "ArrowLeft",
-        "ArrowRight",
-        "ArrowUp",
-        "ArrowDown"
-    ].includes(e.key)){
+        if (![
+            "Shift",
+            "Control",
+            "Alt",
+            "Meta",
+            "CapsLock",
+            "Tab",
+            "Escape",
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowUp",
+            "ArrowDown"
+        ].includes(e.key)) {
 
-        const sound = keySounds[
-            Math.floor(Math.random() * keySounds.length)
-        ].cloneNode();
+            const sound =
+                keySounds[
+                    Math.floor(
+                        Math.random() *
+                        keySounds.length
+                    )
+                ].cloneNode();
 
-        sound.volume = 0.15;
+            sound.volume = 0.15;
 
-        sound.play().catch(()=>{});
+            sound.play().catch(() => {});
 
-    }
-
-
-    if(e.key === "Enter"){
-
-        const first = document.querySelector(".search-item");
-
-        if(first){
-
-            const sound = clickSound.cloneNode();
-
-            sound.volume = clickSound.volume;
-
-            sound.play().catch(()=>{});
+        }
 
 
-            setTimeout(() => {
+        if (e.key === "Enter") {
 
-                window.location.href =
-                    `monster.html?id=${first.dataset.id}`;
+            const first =
+                document.querySelector(".search-item");
 
-            },120);
+
+            if (first) {
+
+                const sound =
+                    clickSound.cloneNode();
+
+                sound.volume =
+                    clickSound.volume;
+
+                sound.play().catch(() => {});
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        `monster.html?id=${first.dataset.id}`;
+
+                }, 120);
+
+            }
 
         }
 
     }
-
-});
+);
 
 
 /* ==================================================
    SEARCH FOCUS
 ================================================== */
 
-search.addEventListener("focus",()=>{
+search.addEventListener(
+    "focus",
+    () => {
 
-    if(search.value.trim()!==""){
+        if (search.value.trim() !== "") {
 
-        filterMonsters();
+            filterMonsters();
+
+        }
 
     }
-
-});
+);
 
 
 /* ==================================================
    CLOSE SEARCH DROPDOWN
 ================================================== */
 
-document.addEventListener("click",e=>{
+document.addEventListener(
+    "click",
+    e => {
 
-    if(!e.target.closest(".search-container")){
+        if (
+            !e.target.closest(
+                ".search-container"
+            )
+        ) {
 
-        results.style.display="none";
+            results.style.display =
+                "none";
+
+        }
 
     }
-
-});
+);
 
 
 /* ==================================================
-   CATEGORY FILTERING
+   MAIN CATEGORY FILTERING
 ================================================== */
 
-categories.forEach(category=>{
+categories.forEach(category => {
 
-    category.addEventListener("click",()=>{
+    category.addEventListener(
+        "click",
+        () => {
 
-        categories.forEach(c=>c.classList.remove("active"));
+            /*
+                Play click.
+            */
 
-        category.classList.add("active");
+            clickSound
+                .cloneNode()
+                .play()
+                .catch(() => {});
 
-        currentCategory=category.dataset.category;
 
-        filterMonsters();
+            /*
+                Active category.
+            */
 
-    });
+            categories.forEach(c =>
+                c.classList.remove("active")
+            );
+
+            category.classList.add("active");
+
+
+            /*
+                Set category.
+            */
+
+            currentCategory =
+                category.dataset.category;
+
+
+            /*
+                Reset type.
+            */
+
+            currentType = "All";
+
+
+            /*
+                Reset page.
+            */
+
+            currentPage = 1;
+
+
+            /*
+                Create subcategories.
+            */
+
+            createTypeFilters();
+
+
+            /*
+                Display monsters.
+            */
+
+            filterMonsters();
+
+        }
+    );
 
 });
 
@@ -375,14 +756,29 @@ categories.forEach(category=>{
    RANDOM ENCOUNTER
 ================================================== */
 
-const randomButton = document.getElementById("random-monster");
-const encounter = document.getElementById("encounter-screen");
-const encounterText = document.getElementById("encounter-text");
-const encounterImage = document.getElementById("encounter-image");
-const encounterName = document.getElementById("encounter-name");
-const encounterButton = document.getElementById("encounter-button");
-const loadingFill = document.querySelector(".loading-fill");
-const scanPercent = document.getElementById("scan-percent");
+const randomButton =
+    document.getElementById("random-monster");
+
+const encounter =
+    document.getElementById("encounter-screen");
+
+const encounterText =
+    document.getElementById("encounter-text");
+
+const encounterImage =
+    document.getElementById("encounter-image");
+
+const encounterName =
+    document.getElementById("encounter-name");
+
+const encounterButton =
+    document.getElementById("encounter-button");
+
+const loadingFill =
+    document.querySelector(".loading-fill");
+
+const scanPercent =
+    document.getElementById("scan-percent");
 
 
 const encounterMessages = [
@@ -397,160 +793,193 @@ const encounterMessages = [
 ];
 
 
-/* ---------- RANDOM ENCOUNTER ---------- */
+if (randomButton) {
 
-if(randomButton){
+    randomButton.addEventListener(
+        "click",
+        function(e) {
 
-    randomButton.addEventListener("click",function(e){
+            e.preventDefault();
 
-        e.preventDefault();
 
+            clickSound
+                .cloneNode()
+                .play()
+                .catch(() => {});
 
-        clickSound.cloneNode().play().catch(()=>{});
 
+            scanSound.currentTime = 0;
 
-        scanSound.currentTime=0;
+            scanSound
+                .play()
+                .catch(() => {});
 
-        scanSound.play().catch(()=>{});
 
+            const random =
+                monsters[
+                    Math.floor(
+                        Math.random() *
+                        monsters.length
+                    )
+                ];
 
-        const random=
-            monsters[
-                Math.floor(
-                    Math.random()*monsters.length
-                )
-            ];
 
+            encounter.style.display =
+                "flex";
 
-        encounter.style.display="flex";
 
+            encounterImage.style.display =
+                "none";
 
-        encounterImage.style.display="none";
+            encounterName.style.display =
+                "none";
 
-        encounterName.style.display="none";
+            encounterButton.style.display =
+                "none";
 
-        encounterButton.style.display="none";
 
+            loadingFill.style.animation =
+                "none";
 
-        loadingFill.style.animation="none";
+            loadingFill.offsetHeight;
 
-        loadingFill.offsetHeight;
+            loadingFill.style.animation =
+                "loading 3s linear forwards";
 
-        loadingFill.style.animation=
-            "loading 3s linear forwards";
 
+            let i = 0;
 
-        let i=0;
 
+            encounterText.textContent =
+                encounterMessages[0];
 
-        encounterText.textContent=
-            encounterMessages[0];
 
+            const messageTimer =
+                setInterval(() => {
 
-        const messageTimer=setInterval(()=>{
+                    i++;
 
-            i++;
+                    if (
+                        i <
+                        encounterMessages.length
+                    ) {
 
+                        encounterText.textContent =
+                            encounterMessages[i];
 
-            if(i<encounterMessages.length){
+                    }
 
-                encounterText.textContent=
-                    encounterMessages[i];
+                }, 600);
 
-            }
 
-        },600);
+            scanPercent.textContent =
+                "0%";
 
 
-        scanPercent.textContent="0%";
+            let percent = 0;
 
 
-        let percent=0;
+            const percentTimer =
+                setInterval(() => {
 
+                    if (percent < 100) {
 
-        const percentTimer=setInterval(()=>{
+                        percent +=
+                            Math.floor(
+                                Math.random() * 6
+                            ) + 2;
 
-            if(percent<100){
 
-                percent+=
-                    Math.floor(Math.random()*6)+2;
+                        if (percent > 100) {
+                            percent = 100;
+                        }
 
 
-                if(percent>100){
+                        scanPercent.textContent =
+                            percent + "%";
 
-                    percent=100;
 
-                }
+                        return;
 
+                    }
 
-                scanPercent.textContent=
-                    percent+"%";
 
+                    clearInterval(
+                        percentTimer
+                    );
 
-                return;
+                    clearInterval(
+                        messageTimer
+                    );
 
-            }
 
+                    encounterText.textContent =
+                        "ACCESS GRANTED";
 
-            clearInterval(percentTimer);
+                    scanPercent.textContent =
+                        "100%";
 
-            clearInterval(messageTimer);
 
+                    setTimeout(() => {
 
-            encounterText.textContent=
-                "ACCESS GRANTED";
+                        encounterText.textContent =
+                            "CLASSIFIED FILE LOCATED";
 
 
-            scanPercent.textContent="100%";
+                        scanSound.pause();
 
+                        scanSound.currentTime =
+                            0;
 
-            setTimeout(()=>{
 
-                encounterText.textContent=
-                    "CLASSIFIED FILE LOCATED";
+                        revealSound.currentTime =
+                            0;
 
+                        revealSound
+                            .play()
+                            .catch(() => {});
 
-                scanSound.pause();
 
-                scanSound.currentTime=0;
+                        encounterImage.src =
+                            random.image;
 
+                        encounterImage.alt =
+                            random.name;
 
-                revealSound.currentTime=0;
+                        encounterImage.style.display =
+                            "block";
 
-                revealSound.play().catch(()=>{});
 
+                        encounterName.textContent =
+                            random.name;
 
-                encounterImage.src=random.image;
+                        encounterName.style.display =
+                            "block";
 
-                encounterImage.alt=random.name;
 
-                encounterImage.style.display="block";
+                        encounterButton.style.display =
+                            "inline-block";
 
 
-                encounterName.textContent=random.name;
+                        encounterButton.onclick =
+                            function() {
 
-                encounterName.style.display="block";
+                                encounter.style.display =
+                                    "none";
 
+                                window.location.href =
+                                    `monster.html?id=${random.id}`;
 
-                encounterButton.style.display="inline-block";
+                            };
 
 
-                encounterButton.onclick=function(){
+                    }, 800);
 
-                    encounter.style.display="none";
 
-                    window.location.href=
-                        `monster.html?id=${random.id}`;
+                }, 180);
 
-                };
-
-
-            },800);
-
-
-        },180);
-
-    });
+        }
+    );
 
 }
 
@@ -559,65 +988,95 @@ if(randomButton){
    GLOBAL CLICK SOUNDS
 ================================================== */
 
-document.addEventListener("pointerdown",function(e){
+document.addEventListener(
+    "pointerdown",
+    function(e) {
 
-    const clickable=e.target.closest(
-        "a,.button,.category,.search-item,button,.threat"
-    );
+        const clickable =
+            e.target.closest(
+                "a,.button,.category,.search-item,button,.threat,.type-filter"
+            );
 
 
-    if(!clickable) return;
+        if (!clickable) return;
 
 
-    clickSound.cloneNode().play().catch(()=>{});
+        clickSound
+            .cloneNode()
+            .play()
+            .catch(() => {});
 
-});
+    }
+);
 
 
 /* ==================================================
    MONSTER EYES
 ================================================== */
 
-const eyes = document.querySelector(".monster-eyes");
+const eyes =
+    document.querySelector(".monster-eyes");
 
 
-if(eyes){
+if (eyes) {
 
     let canPlay = true;
 
 
-    eyes.addEventListener("mouseenter",()=>{
+    eyes.addEventListener(
+        "mouseenter",
+        () => {
 
-        if(!canPlay) return;
-
-
-        eyeScream.currentTime = 0;
-
-        eyeScream.play().catch(()=>{});
+            if (!canPlay) return;
 
 
-        document
-            .querySelector(".logo")
-            .classList
-            .add("monster-awake");
+            eyeScream.currentTime = 0;
+
+            eyeScream
+                .play()
+                .catch(() => {});
 
 
-        canPlay = false;
-
-    });
-
-
-    eyes.addEventListener("mouseleave",()=>{
-
-        document
-            .querySelector(".logo")
-            .classList
-            .remove("monster-awake");
+            const logo =
+                document.querySelector(".logo");
 
 
-        canPlay = true;
+            if (logo) {
 
-    });
+                logo.classList.add(
+                    "monster-awake"
+                );
+
+            }
+
+
+            canPlay = false;
+
+        }
+    );
+
+
+    eyes.addEventListener(
+        "mouseleave",
+        () => {
+
+            const logo =
+                document.querySelector(".logo");
+
+
+            if (logo) {
+
+                logo.classList.remove(
+                    "monster-awake"
+                );
+
+            }
+
+
+            canPlay = true;
+
+        }
+    );
 
 }
 
@@ -626,40 +1085,45 @@ if(eyes){
    PAGINATION
 ================================================== */
 
-function updatePagination(total){
+function updatePagination(total) {
 
     const totalPages =
         Math.max(
             1,
-            Math.ceil(total / monstersPerPage)
+            Math.ceil(
+                total /
+                monstersPerPage
+            )
         );
 
 
     const pageInfo =
-        document.getElementById("page-info");
+        document.getElementById(
+            "page-info"
+        );
 
 
     const previousButton =
-        document.getElementById("prev-page");
+        document.getElementById(
+            "prev-page"
+        );
 
 
     const nextButton =
-        document.getElementById("next-page");
+        document.getElementById(
+            "next-page"
+        );
 
 
-    /*
-    Make sure the current page can never
-    go beyond the available pages.
-    */
+    if (currentPage > totalPages) {
 
-    if(currentPage > totalPages){
-
-        currentPage = totalPages;
+        currentPage =
+            totalPages;
 
     }
 
 
-    if(pageInfo){
+    if (pageInfo) {
 
         pageInfo.textContent =
             `Page ${currentPage} of ${totalPages}`;
@@ -667,7 +1131,7 @@ function updatePagination(total){
     }
 
 
-    if(previousButton){
+    if (previousButton) {
 
         previousButton.disabled =
             currentPage === 1;
@@ -675,7 +1139,7 @@ function updatePagination(total){
     }
 
 
-    if(nextButton){
+    if (nextButton) {
 
         nextButton.disabled =
             currentPage >= totalPages ||
@@ -691,22 +1155,33 @@ function updatePagination(total){
 ================================================== */
 
 const previousPageButton =
-    document.getElementById("prev-page");
+    document.getElementById(
+        "prev-page"
+    );
 
 
-if(previousPageButton){
+if (previousPageButton) {
 
-    previousPageButton.addEventListener("click",()=>{
+    previousPageButton.addEventListener(
+        "click",
+        () => {
 
-        if(currentPage > 1){
+            clickSound
+                .cloneNode()
+                .play()
+                .catch(() => {});
 
-            currentPage--;
 
-            filterMonsters(false);
+            if (currentPage > 1) {
+
+                currentPage--;
+
+                filterMonsters(false);
+
+            }
 
         }
-
-    });
+    );
 
 }
 
@@ -716,63 +1191,90 @@ if(previousPageButton){
 ================================================== */
 
 const nextPageButton =
-    document.getElementById("next-page");
+    document.getElementById(
+        "next-page"
+    );
 
 
-if(nextPageButton){
+if (nextPageButton) {
 
-    nextPageButton.addEventListener("click",()=>{
+    nextPageButton.addEventListener(
+        "click",
+        () => {
 
-        const term =
-            search.value.toLowerCase().trim();
-
-
-        const filtered =
-            monsters.filter(monster=>{
-
-                const text=[
-
-                    monster.name,
-                    monster.category,
-                    monster.creator,
-                    monster.universe,
-                    monster.description,
-                    ...(monster.abilities||[]),
-                    ...(monster.weaknesses||[])
-
-                ].join(" ").toLowerCase();
+            clickSound
+                .cloneNode()
+                .play()
+                .catch(() => {});
 
 
-                const matchesSearch =
-                    text.includes(term);
+            const term =
+                search.value
+                    .toLowerCase()
+                    .trim();
 
 
-                const matchesCategory =
-                    currentCategory==="All" ||
-                    monster.category===currentCategory;
+            const filtered =
+                monsters.filter(monster => {
+
+                    const text = [
+
+                        monster.name,
+                        monster.category,
+                        monster.type || "",
+                        monster.creator,
+                        monster.universe,
+                        monster.description,
+
+                        ...(monster.abilities || []),
+                        ...(monster.weaknesses || [])
+
+                    ]
+                    .join(" ")
+                    .toLowerCase();
 
 
-                return matchesSearch &&
-                       matchesCategory;
-
-            });
+                    const matchesSearch =
+                        text.includes(term);
 
 
-        const totalPages =
-            Math.ceil(
-                filtered.length /
-                monstersPerPage
-            );
+                    const matchesCategory =
+                        currentCategory === "All" ||
+                        monster.category ===
+                        currentCategory;
 
 
-        if(currentPage < totalPages){
+                    const matchesType =
+                        currentType === "All" ||
+                        getMonsterType(monster) ===
+                        currentType;
 
-            currentPage++;
 
-            filterMonsters(false);
+                    return (
+                        matchesSearch &&
+                        matchesCategory &&
+                        matchesType
+                    );
+
+                });
+
+
+            const totalPages =
+                Math.ceil(
+                    filtered.length /
+                    monstersPerPage
+                );
+
+
+            if (currentPage < totalPages) {
+
+                currentPage++;
+
+                filterMonsters(false);
+
+            }
 
         }
-
-    });
+    );
 
 }
