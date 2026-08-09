@@ -1308,7 +1308,7 @@ firstAppearance:"18th Century",
 origin:"Lancashire, England",
 threat:"Medium",
 image:"images/monsters/jenny-greenteeth/profile.png",
-description:"A green-skinned water hag that lurks beneath ponds waiting for unsuspecting victims.",
+description:"Jenny Greenteeth is a malicious river-hag in English folklore—featuring green skin, sharp teeth, and long, grasping fingers—traditionally used as a \"nursery bogey\" to frighten children and the elderly away from dangerous, deep, or weed-choked waters",
 abilities:["Camouflage","Water ambush","Stealth"],
 weaknesses:["Dry environments"]
 },
