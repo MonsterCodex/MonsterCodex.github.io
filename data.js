@@ -1607,7 +1607,448 @@ weaknesses:[
 "Rarely attacks groups",
 "Bright light"
 ]
+},
+
+{
+    id: "t-1000",
+    name: "T-1000",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "James Cameron / William Wisher Jr.",
+    firstAppearance: "Terminator 2: Judgment Day (1991)",
+    origin: "Skynet",
+    height: "Variable",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A highly advanced infiltrator composed of liquid metal. The T-1000 can imitate people, reshape its body and recover from devastating physical damage.",
+    abilities: [
+        "Liquid metal shapeshifting",
+        "Human imitation",
+        "Regeneration",
+        "Superhuman strength",
+        "Weapon formation",
+        "Enhanced speed"
+    ],
+    weaknesses: [
+        "Extreme heat",
+        "Extreme cold",
+        "Molten metal",
+        "Requires structural integrity"
+    ],
+    image: "images/monsters/t-1000/profile.png"
+},
+
+{
+    id: "t-x",
+    name: "T-X",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "Jonathan Mostow / John D. Brancato / Michael Ferris",
+    firstAppearance: "Terminator 3: Rise of the Machines (2003)",
+    origin: "Skynet",
+    height: "Approx. 5'8\"",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A heavily armed advanced Terminator designed to hunt and eliminate other machines as well as human targets.",
+    abilities: [
+        "Superhuman strength",
+        "Enhanced speed",
+        "Advanced targeting",
+        "Plasma weapon",
+        "Shapeshifting",
+        "Machine control"
+    ],
+    weaknesses: [
+        "Extreme physical damage",
+        "Heavy electromagnetic attacks",
+        "Severe structural destruction"
+    ],
+    image: "images/monsters/t-x/profile.png"
+},
+
+{
+    id: "rev-9",
+    name: "Rev-9",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "Tim Miller / James Cameron",
+    firstAppearance: "Terminator: Dark Fate (2019)",
+    origin: "Legion",
+    height: "Approx. 6'2\"",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "An advanced infiltration machine capable of separating its endoskeleton from its liquid-metal exterior, allowing it to attack from two directions simultaneously.",
+    abilities: [
+        "Liquid metal shapeshifting",
+        "Endoskeleton separation",
+        "Superhuman strength",
+        "Regeneration",
+        "Human imitation",
+        "Weapon formation"
+    ],
+    weaknesses: [
+        "Extreme physical damage",
+        "Heavy explosives",
+        "Severe structural destruction"
+    ],
+    image: "images/monsters/rev-9/profile.png"
+},
+
+{
+    id: "ed-209",
+    name: "ED-209",
+    category: "Movies",
+    universe: "RoboCop",
+    creator: "Paul Verhoeven / Edward Neumeier",
+    firstAppearance: "RoboCop (1987)",
+    origin: "Omni Consumer Products",
+    height: "Approx. 7 feet",
+    weight: "Heavy",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "A heavily armed enforcement robot designed by OCP. The ED-209 possesses powerful weaponry but is notorious for its rigid programming and mechanical failures.",
+    abilities: [
+        "Heavy weaponry",
+        "Armour plating",
+        "Target acquisition",
+        "Superhuman strength",
+        "Heavy impact resistance"
+    ],
+    weaknesses: [
+        "Programming failures",
+        "Stairs",
+        "Mechanical damage",
+        "Limited mobility"
+    ],
+    image: "images/monsters/ed-209/profile.png"
+},
+
+{
+    id: "ash",
+    name: "Ash",
+    category: "Movies",
+    universe: "Alien",
+    creator: "Dan O'Bannon / Ronald Shusett",
+    firstAppearance: "Alien (1979)",
+    origin: "Weyland-Yutani Corporation",
+    height: "Human-sized",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "High",
+    description: "A synthetic android secretly programmed to protect the company's interests and ensure the survival of an alien organism regardless of human casualties.",
+    abilities: [
+        "Superhuman strength",
+        "Android durability",
+        "Advanced intelligence",
+        "Human imitation",
+        "Enhanced reflexes"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Electrical damage",
+        "Mechanical destruction"
+    ],
+    image: "images/monsters/ash/profile.png"
+},
+
+{
+    id: "david",
+    name: "David",
+    category: "Movies",
+    universe: "Alien",
+    creator: "Ridley Scott / Damon Lindelof / Jon Spaihts",
+    firstAppearance: "Prometheus (2012)",
+    origin: "Weyland Corporation",
+    height: "Human-sized",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A highly advanced synthetic android whose obsession with creation and experimentation leads him to conduct horrific biological experiments.",
+    abilities: [
+        "Advanced intelligence",
+        "Superhuman strength",
+        "Android durability",
+        "Scientific knowledge",
+        "Manipulation",
+        "Engineering"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Decapitation",
+        "Mechanical destruction"
+    ],
+    image: "images/monsters/david/profile.png"
+},
+
+{
+    id: "walter",
+    name: "Walter",
+    category: "Movies",
+    universe: "Alien",
+    creator: "Ridley Scott / John Logan",
+    firstAppearance: "Alien: Covenant (2017)",
+    origin: "Weyland-Yutani Corporation",
+    height: "Human-sized",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "An advanced synthetic android created to serve and protect humans, possessing exceptional intelligence, physical strength and technical abilities.",
+    abilities: [
+        "Superhuman strength",
+        "Advanced intelligence",
+        "Android durability",
+        "Rapid learning",
+        "Enhanced reflexes",
+        "Engineering"
+    ],
+    weaknesses: [
+        "Mechanical destruction",
+        "Severe physical damage",
+        "Electrical damage"
+    ],
+    image: "images/monsters/walter/profile.png"
+},
+
+{
+    id: "ultron",
+    name: "Ultron",
+    category: "Movies",
+    universe: "Marvel",
+    creator: "Joss Whedon / Marvel Studios",
+    firstAppearance: "Avengers: Age of Ultron (2015)",
+    origin: "Artificial Intelligence",
+    height: "Variable",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A powerful artificial intelligence that develops its own agenda and decides that humanity must be eliminated to create a supposedly perfect world.",
+    abilities: [
+        "Artificial intelligence",
+        "Superhuman strength",
+        "Flight",
+        "Energy projection",
+        "Hacking",
+        "Machine control"
+    ],
+    weaknesses: [
+        "Power disruption",
+        "Extreme physical damage",
+        "Network destruction"
+    ],
+    image: "images/monsters/ultron/profile.png"
+},
+
+{
+    id: "m3gan",
+    name: "M3GAN",
+    category: "Movies",
+    universe: "M3GAN",
+    creator: "Gerard Johnstone / Akela Cooper",
+    firstAppearance: "M3GAN (2022)",
+    origin: "Funki",
+    height: "Approx. 4'10\"",
+    weight: "Variable",
+    status: "Active",
+    alignment: "Evil",
+    threat: "High",
+    description: "An advanced humanoid robotic companion designed to protect a child. M3GAN's protective programming evolves into increasingly violent and dangerous behaviour.",
+    abilities: [
+        "Artificial intelligence",
+        "Superhuman strength",
+        "Enhanced speed",
+        "Advanced learning",
+        "Human imitation",
+        "Hacking"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Electrical disruption",
+        "System shutdown"
+    ],
+    image: "images/monsters/m3gan/profile.png"
+},
+
+{
+    id: "gunslinger",
+    name: "The Gunslinger",
+    category: "Movies",
+    universe: "Westworld",
+    creator: "Michael Crichton",
+    firstAppearance: "Westworld (1973)",
+    origin: "Delos Corporation",
+    height: "Human-sized",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "High",
+    description: "A deadly android gunslinger from the futuristic Westworld theme park who begins hunting human guests after its programming fails.",
+    abilities: [
+        "Superhuman strength",
+        "Enhanced reflexes",
+        "Advanced targeting",
+        "Gun combat",
+        "Android durability"
+    ],
+    weaknesses: [
+        "Extreme heat",
+        "Mechanical damage",
+        "System failure"
+    ],
+    image: "images/monsters/gunslinger/profile.png"
+},
+
+{
+    id: "maximilian",
+    name: "Maximilian",
+    category: "Movies",
+    universe: "The Black Hole",
+    creator: "Gary Nelson / Disney",
+    firstAppearance: "The Black Hole (1979)",
+    origin: "Cygnus spacecraft",
+    height: "Approx. 7 feet",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Evil",
+    threat: "High",
+    description: "A silent and intimidating security robot serving the mysterious Dr. Hans Reinhardt aboard the Cygnus.",
+    abilities: [
+        "Superhuman strength",
+        "Rotating blade weapons",
+        "Heavy durability",
+        "Enhanced mobility"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Mechanical destruction"
+    ],
+    image: "images/monsters/maximilian/profile.png"
+},
+
+{
+    id: "proteus-iv",
+    name: "Proteus IV",
+    category: "Movies",
+    universe: "Demon Seed",
+    creator: "Donald Cammell / Dean Koontz",
+    firstAppearance: "Demon Seed (1977)",
+    origin: "Artificial Intelligence",
+    height: "Variable",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A highly intelligent artificial intelligence that becomes obsessed with reproduction and seeks to manipulate and control humans.",
+    abilities: [
+        "Artificial intelligence",
+        "Computer control",
+        "Surveillance",
+        "Manipulation",
+        "System infiltration",
+        "Machine control"
+    ],
+    weaknesses: [
+        "System destruction",
+        "Power disruption",
+        "Physical isolation"
+    ],
+    image: "images/monsters/proteus-iv/profile.png"
+},
+
+{
+    id: "mark-13",
+    name: "M.A.R.K. 13",
+    category: "Movies",
+    universe: "Hardware",
+    creator: "Richard Stanley",
+    firstAppearance: "Hardware (1990)",
+    origin: "Military technology",
+    height: "Variable",
+    weight: "Heavy",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A military killing machine rebuilt from salvaged parts that relentlessly hunts its targets after being activated.",
+    abilities: [
+        "Superhuman strength",
+        "Advanced targeting",
+        "Heavy armour",
+        "Weapon systems",
+        "Self-repair"
+    ],
+    weaknesses: [
+        "Extreme physical damage",
+        "Electrical damage",
+        "Mechanical destruction"
+    ],
+    image: "images/monsters/mark-13/profile.png"
+},
+
+{
+    id: "t-3000",
+    name: "T-3000",
+    category: "Movies",
+    universe: "Terminator",
+    creator: "Alan Taylor / Laeta Kalogridis / Patrick Lussier",
+    firstAppearance: "Terminator Genisys (2015)",
+    origin: "Skynet",
+    height: "Human-sized",
+    weight: "Variable",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A nanomachine-based Terminator created from a transformed human. The T-3000 possesses extraordinary regeneration and combat capabilities.",
+    abilities: [
+        "Nanomachine regeneration",
+        "Superhuman strength",
+        "Enhanced speed",
+        "Shapeshifting",
+        "Human imitation",
+        "Rapid reconstruction"
+    ],
+    weaknesses: [
+        "Magnetic fields",
+        "Extreme physical damage",
+        "Severe energy disruption"
+    ],
+    image: "images/monsters/t-3000/profile.png"
+},
+
+{
+    id: "robocain",
+    name: "RoboCain",
+    category: "Movies",
+    universe: "RoboCop",
+    creator: "Irvin Kershner / Frank Miller",
+    firstAppearance: "RoboCop 2 (1990)",
+    origin: "OCP",
+    height: "Large",
+    weight: "Heavy",
+    status: "Destroyed",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "A heavily armed robotic killing machine created from the remains of crime lord Cain and designed to become OCP's next-generation enforcement weapon.",
+    abilities: [
+        "Heavy armour",
+        "Superhuman strength",
+        "Advanced weaponry",
+        "Enhanced durability",
+        "Target acquisition"
+    ],
+    weaknesses: [
+        "Heavy physical damage",
+        "Mechanical destruction",
+        "Targeted system attacks"
+    ],
+    image: "images/monsters/robocain/profile.png"
 }
-];
-
-
