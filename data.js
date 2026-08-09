@@ -2051,4 +2051,35 @@ weaknesses:[
         "Targeted system attacks"
     ],
     image: "images/monsters/robocain/profile.png"
+},
+
+{
+    id: "sentinels",
+    name: "Sentinels",
+    category: "Movies",
+    universe: "The Matrix",
+    creator: "The Wachowskis",
+    firstAppearance: "The Matrix (1999)",
+    origin: "Machine City",
+    height: "Variable",
+    weight: "Heavy",
+    status: "Active",
+    alignment: "Evil",
+    threat: "Extreme",
+    description: "Highly advanced machine creatures that patrol the real world and hunt humans who resist the machines.",
+    abilities: [
+        "Flight",
+        "Enhanced speed",
+        "Mechanical tentacles",
+        "Advanced targeting",
+        "Human detection",
+        "Swarming"
+    ],
+    weaknesses: [
+        "EMP",
+        "Electromagnetic disruption",
+        "Severe physical damage"
+    ],
+    image: "images/monsters/sentinels/profile.png"
 }
+];
