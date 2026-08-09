@@ -446,12 +446,7 @@ function createTypeFilters() {
                 "click",
                 () => {
 
-                    clickSound
-                        .cloneNode()
-                        .play()
-                        .catch(() => {});
-
-
+                    
                     typeSection
                         .querySelectorAll(
                             ".type-filter"
