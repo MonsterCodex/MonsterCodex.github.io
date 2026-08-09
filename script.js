@@ -1,7 +1,7 @@
 const grid = document.querySelector(".monster-grid");
 const search = document.getElementById("search");
 const results = document.getElementById("search-results");
-const categories = document.querySelectorAll(".category");
+
 
 const clickSound = new Audio("assets/sounds/click.mp3");
 const scanSound = new Audio("assets/sounds/scan.mp3");
@@ -22,22 +22,230 @@ revealSound.volume = 0.5;
 
 keySounds.forEach(sound => sound.volume = 0.15);
 
+
 let currentCategory = "All";
 let currentType = "All";
 
 let currentPage = 1;
 const monstersPerPage = 12;
 
+
+/* ==================================================
+   CATEGORY SYSTEM
+================================================== */
+
 const categoryIcons = {
-    Games: "🎮",
+    
     Movies: "🎬",
+    Games: "🎮",
     Television: "📺",
-    "Internet Horror": "👻",
-    Creepypasta: "📖",
-    Cryptids: "🐺",
-    Folklore: "🧙",
+    "Folklore / Mythological": "🧙",
+    Creepypasta: "👻",
     Aliens: "👽"
 };
+
+
+const mainCategories = [
+    {
+        name: "All",
+        label: "All Monsters",
+        icon: "🌍"
+    },
+    {
+        name: "Movies",
+        label: "Movies",
+        icon: "🎬"
+    },
+    {
+        name: "Games",
+        label: "Games",
+        icon: "🎮"
+    },
+    {
+        name: "Television",
+        label: "Television",
+        icon: "📺"
+    },
+    {
+        name: "Folklore / Mythological",
+        label: "Folklore / Mythological",
+        icon: "🧙"
+    },
+    {
+        name: "Creepypasta",
+        label: "Creepypasta",
+        icon: "👻"
+    },
+    {
+        name: "Aliens",
+        label: "Aliens",
+        icon: "👽"
+    }
+];
+
+
+/*
+    Known alien monsters.
+
+    These can stay marked as Movies in data.js.
+    This script will automatically place them
+    into the Aliens category.
+*/
+
+const alienMonsterIds = new Set([
+    "xenomorph",
+    "predator",
+    "alien-queen",
+    "facehugger",
+    "chestburster",
+    "the-blob"
+]);
+
+
+/*
+    Convert your old categories into the
+    new MonsterCodex structure.
+*/
+
+function getCategory(monster) {
+
+    const id = String(monster.id || "").toLowerCase();
+    const oldCategory = String(monster.category || "").trim();
+
+
+    /* Known alien monsters */
+
+    if (alienMonsterIds.has(id)) {
+        return "Aliens";
+    }
+
+
+    /* Existing categories */
+
+    if (oldCategory === "Movies") {
+        return "Movies";
+    }
+
+    if (oldCategory === "Games") {
+        return "Games";
+    }
+
+    if (oldCategory === "Television") {
+        return "Television";
+    }
+
+    if (oldCategory === "Aliens") {
+        return "Aliens";
+    }
+
+
+    /*
+        SCP goes under Games.
+    */
+
+    if (oldCategory === "SCP") {
+        return "Games";
+    }
+
+
+    /*
+        Internet Horror goes under Creepypasta.
+    */
+
+    if (oldCategory === "Internet Horror") {
+        return "Creepypasta";
+    }
+
+
+    /*
+        Existing Creepypasta stays Creepypasta.
+    */
+
+    if (oldCategory === "Creepypasta") {
+        return "Creepypasta";
+    }
+
+
+    /*
+        Folklore becomes Folklore / Mythological.
+    */
+
+    if (oldCategory === "Folklore") {
+        return "Folklore / Mythological";
+    }
+
+
+    /*
+        Anything else that is obviously an alien
+        by category also goes to Aliens.
+    */
+
+    if (
+        oldCategory.toLowerCase().includes("alien")
+    ) {
+        return "Aliens";
+    }
+
+
+    /*
+        Safe fallback.
+    */
+
+    return oldCategory;
+
+}
+
+
+/* ==================================================
+   CREATE MAIN CATEGORY BUTTONS
+================================================== */
+
+function createMainCategories() {
+
+    const categorySection =
+        document.getElementById("categories");
+
+    if (!categorySection) return;
+
+
+    const categoryGrid =
+        categorySection.querySelector(".category-grid");
+
+    if (!categoryGrid) return;
+
+
+    categoryGrid.innerHTML = "";
+
+
+    mainCategories.forEach(category => {
+
+        const button =
+            document.createElement("div");
+
+        button.className =
+            "category";
+
+        if (category.name === "All") {
+            button.classList.add("active");
+        }
+
+
+        button.dataset.category =
+            category.name;
+
+
+        button.innerHTML =
+            `${category.icon} ${category.label}`;
+
+
+        categoryGrid.appendChild(button);
+
+    });
+
+
+    attachCategoryEvents();
+
+}
 
 
 /* ==================================================
@@ -46,194 +254,24 @@ const categoryIcons = {
 
 function getMonsterType(monster) {
 
-    /*
-        Uses the new optional "type" field.
-
-        If an older monster doesn't have a type,
-        it will safely appear under Other.
-    */
-
-    if (monster.type && monster.type.trim() !== "") {
-        return monster.type.trim();
+    if (
+        monster.type &&
+        String(monster.type).trim() !== ""
+    ) {
+        return String(monster.type).trim();
     }
+
 
     return "Other";
-}
-
-
-function createTypeFilters() {
-
-    /*
-        Find the category section.
-    */
-
-    const categorySection = document.querySelector("#categories");
-
-    if (!categorySection) return;
-
-
-    /*
-        Remove an old type filter if one exists.
-    */
-
-    const oldFilters = document.getElementById("type-filters");
-
-    if (oldFilters) {
-        oldFilters.remove();
-    }
-
-
-    /*
-        Only show subcategories when a specific
-        main category has been selected.
-    */
-
-    if (currentCategory === "All") {
-        currentType = "All";
-        return;
-    }
-
-
-    /*
-        Find monsters belonging to the selected category.
-    */
-
-    const categoryMonsters = monsters.filter(monster =>
-        monster.category === currentCategory
-    );
-
-
-    /*
-        Get unique types.
-    */
-
-    const typeSet = new Set();
-
-    categoryMonsters.forEach(monster => {
-
-        typeSet.add(getMonsterType(monster));
-
-    });
-
-
-    /*
-        Sort alphabetically.
-    */
-
-    const types = Array.from(typeSet).sort((a, b) =>
-        a.localeCompare(b)
-    );
-
-
-    if (types.length === 0) {
-        currentType = "All";
-        return;
-    }
-
-
-    /*
-        Create the subcategory area.
-    */
-
-    const typeSection = document.createElement("div");
-
-    typeSection.id = "type-filters";
-
-    typeSection.innerHTML = `
-        <div class="section-title">
-            <h3>${categoryIcons[currentCategory] || "👹"} ${currentCategory} Monsters</h3>
-            <p>Browse by monster type.</p>
-        </div>
-
-        <div class="type-filter-grid">
-
-            <div
-                class="type-filter active"
-                data-type="All">
-                🌍 All ${currentCategory}
-            </div>
-
-            ${types.map(type => `
-                <div
-                    class="type-filter"
-                    data-type="${escapeHTML(type)}">
-                    ${getTypeIcon(type)} ${escapeHTML(type)}
-                </div>
-            `).join("")}
-
-        </div>
-    `;
-
-
-    /*
-        Put it directly underneath the main categories.
-    */
-
-    categorySection.insertAdjacentElement(
-        "afterend",
-        typeSection
-    );
-
-
-    /*
-        Add click events.
-    */
-
-    typeSection.querySelectorAll(".type-filter").forEach(filter => {
-
-        filter.addEventListener("click", () => {
-
-            /*
-                Click sound.
-            */
-
-            clickSound.cloneNode().play().catch(() => {});
-
-
-            /*
-                Remove active state.
-            */
-
-            typeSection
-                .querySelectorAll(".type-filter")
-                .forEach(button => {
-                    button.classList.remove("active");
-                });
-
-
-            filter.classList.add("active");
-
-
-            /*
-                Set selected type.
-            */
-
-            currentType = filter.dataset.type;
-
-
-            /*
-                Reset page.
-            */
-
-            currentPage = 1;
-
-
-            /*
-                Refresh monsters.
-            */
-
-            filterMonsters();
-
-        });
-
-    });
 
 }
 
 
 function getTypeIcon(type) {
 
-    const text = type.toLowerCase();
+    const text =
+        String(type).toLowerCase();
+
 
     if (text.includes("slasher")) return "🔪";
     if (text.includes("killer")) return "☠️";
@@ -257,6 +295,7 @@ function getTypeIcon(type) {
     if (text.includes("mythological")) return "🏛️";
 
     return "👹";
+
 }
 
 
@@ -273,46 +312,235 @@ function escapeHTML(value) {
 
 
 /* ==================================================
+   CREATE TYPE FILTERS
+================================================== */
+
+function createTypeFilters() {
+
+    const categorySection =
+        document.getElementById("categories");
+
+    if (!categorySection) return;
+
+
+    const oldFilters =
+        document.getElementById("type-filters");
+
+
+    if (oldFilters) {
+        oldFilters.remove();
+    }
+
+
+    currentType = "All";
+
+
+    /*
+        Don't show subcategories on All Monsters.
+    */
+
+    if (currentCategory === "All") {
+        return;
+    }
+
+
+    /*
+        IMPORTANT:
+        Use getCategory() here rather than the
+        original monster.category.
+    */
+
+    const categoryMonsters =
+        monsters.filter(monster =>
+            getCategory(monster) === currentCategory
+        );
+
+
+    const typeSet = new Set();
+
+
+    categoryMonsters.forEach(monster => {
+
+        typeSet.add(
+            getMonsterType(monster)
+        );
+
+    });
+
+
+    const types =
+        Array.from(typeSet).sort(
+            (a, b) =>
+                a.localeCompare(b)
+        );
+
+
+    if (types.length === 0) {
+        return;
+    }
+
+
+    const typeSection =
+        document.createElement("div");
+
+    typeSection.id =
+        "type-filters";
+
+
+    typeSection.innerHTML = `
+
+        <div class="section-title">
+
+            <h3>
+                ${categoryIcons[currentCategory] || "👹"}
+                ${currentCategory} Monsters
+            </h3>
+
+            <p>
+                Browse by monster type.
+            </p>
+
+        </div>
+
+
+        <div class="type-filter-grid">
+
+            <div
+                class="type-filter active"
+                data-type="All">
+
+                🌍 All ${currentCategory}
+
+            </div>
+
+
+            ${types.map(type => `
+
+                <div
+                    class="type-filter"
+                    data-type="${escapeHTML(type)}">
+
+                    ${getTypeIcon(type)}
+                    ${escapeHTML(type)}
+
+                </div>
+
+            `).join("")}
+
+        </div>
+
+    `;
+
+
+    categorySection.insertAdjacentElement(
+        "afterend",
+        typeSection
+    );
+
+
+    typeSection
+        .querySelectorAll(".type-filter")
+        .forEach(filter => {
+
+            filter.addEventListener(
+                "click",
+                () => {
+
+                    clickSound
+                        .cloneNode()
+                        .play()
+                        .catch(() => {});
+
+
+                    typeSection
+                        .querySelectorAll(
+                            ".type-filter"
+                        )
+                        .forEach(button => {
+
+                            button.classList.remove(
+                                "active"
+                            );
+
+                        });
+
+
+                    filter.classList.add(
+                        "active"
+                    );
+
+
+                    currentType =
+                        filter.dataset.type;
+
+
+                    currentPage = 1;
+
+
+                    filterMonsters();
+
+                }
+            );
+
+        });
+
+}
+
+
+/* ==================================================
    CREATE MONSTER CARD
 ================================================== */
 
 function createCard(monster) {
 
+    const category =
+        getCategory(monster);
+
+
     return `
-    <a href="monster.html?id=${monster.id}" class="card-link">
 
-        <div class="card">
+        <a
+            href="monster.html?id=${monster.id}"
+            class="card-link">
 
-            <img
-                src="${monster.image}"
-                alt="${monster.name}">
+            <div class="card">
 
-            <div class="card-content">
+                <img
+                    src="${monster.image}"
+                    alt="${monster.name}">
 
-                <h3>${monster.name}</h3>
+                <div class="card-content">
 
-                <p>
-                    ${categoryIcons[monster.category] || "🌍"}
-                    ${monster.universe}
-                </p>
+                    <h3>
+                        ${monster.name}
+                    </h3>
 
-                <p>
-                    ✍️ ${monster.creator}
-                </p>
+                    <p>
+                        ${categoryIcons[category] || "🌍"}
+                        ${monster.universe}
+                    </p>
 
-                <span class="threat ${monster.threat.toLowerCase()}">
-                    ${monster.threat}
-                </span>
+                    <p>
+                        ✍️ ${monster.creator}
+                    </p>
 
-                <div class="button">
-                    View Profile →
+                    <span
+                        class="threat ${monster.threat.toLowerCase()}">
+
+                        ${monster.threat}
+
+                    </span>
+
+                    <div class="button">
+                        View Profile →
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+        </a>
 
-    </a>
     `;
 
 }
@@ -332,41 +560,30 @@ function displayMonsters(list) {
     }
 
 
-    /*
-        Homepage / All Monsters
-    */
 
-    if (
-        currentCategory === "All" &&
-        search.value.trim() === ""
-    ) {
-
-        list = monsters;
-
-    }
-
-
-    /*
-        No results.
-    */
 
     if (list.length === 0) {
 
         grid.innerHTML = `
+
             <div style="
                 grid-column:1/-1;
                 text-align:center;
                 padding:60px;
             ">
 
-                <h2>No monsters found</h2>
+                <h2>
+                    No monsters found
+                </h2>
 
                 <p>
                     Try another search or category.
                 </p>
 
             </div>
+
         `;
+
 
         updatePagination(0);
 
@@ -375,15 +592,16 @@ function displayMonsters(list) {
     }
 
 
-    /*
-        Pagination.
-    */
+
 
     const start =
-        (currentPage - 1) * monstersPerPage;
+        (currentPage - 1) *
+        monstersPerPage;
+
 
     const end =
         start + monstersPerPage;
+
 
     const pageItems =
         list.slice(start, end);
@@ -391,12 +609,15 @@ function displayMonsters(list) {
 
     pageItems.forEach(monster => {
 
-        grid.innerHTML += createCard(monster);
+        grid.innerHTML +=
+            createCard(monster);
 
     });
 
 
-    updatePagination(list.length);
+    updatePagination(
+        list.length
+    );
 
 }
 
@@ -415,70 +636,73 @@ function showDropdown(list) {
         list.length === 0
     ) {
 
-        results.style.display = "none";
+        results.style.display =
+            "none";
 
         return;
 
     }
 
 
-    list.slice(0, 6).forEach(monster => {
+    list.slice(0, 6)
+        .forEach(monster => {
 
-        results.innerHTML += `
+            results.innerHTML += `
 
-            <div
-                class="search-item"
-                data-id="${monster.id}">
+                <div
+                    class="search-item"
+                    data-id="${monster.id}">
 
-                <img
-                    src="${monster.image}"
-                    alt="${monster.name}">
+                    <img
+                        src="${monster.image}"
+                        alt="${monster.name}">
 
-                <div>
+                    <div>
 
-                    <h4>
-                        ${monster.name}
-                    </h4>
+                        <h4>
+                            ${monster.name}
+                        </h4>
 
-                    <p>
-                        ${monster.category}
-                    </p>
+                        <p>
+                            ${getCategory(monster)}
+                        </p>
+
+                    </div>
 
                 </div>
 
-            </div>
+            `;
 
-        `;
-
-    });
+        });
 
 
-    results.style.display = "block";
+    results.style.display =
+        "block";
 
 
     document
         .querySelectorAll(".search-item")
         .forEach(item => {
 
-            item.addEventListener("click", () => {
+            item.addEventListener(
+                "click",
+                () => {
 
-                const sound =
-                    clickSound.cloneNode();
-
-                sound.volume =
-                    clickSound.volume;
-
-                sound.play().catch(() => {});
+                    clickSound
+                        .cloneNode()
+                        .play()
+                        .catch(() => {});
 
 
-                setTimeout(() => {
+                    setTimeout(() => {
 
-                    window.location.href =
-                        `monster.html?id=${item.dataset.id}`;
+                        window.location.href =
+                            `monster.html?id=${item.dataset.id}`;
 
-                }, 100);
+                    }, 100);
 
-            });
+                }
+            );
 
         });
 
@@ -489,7 +713,9 @@ function showDropdown(list) {
    FILTER MONSTERS
 ================================================== */
 
-function filterMonsters(resetPage = true) {
+function filterMonsters(
+    resetPage = true
+) {
 
     if (resetPage) {
         currentPage = 1;
@@ -497,49 +723,62 @@ function filterMonsters(resetPage = true) {
 
 
     const term =
-        search.value.toLowerCase().trim();
+        search.value
+            .toLowerCase()
+            .trim();
 
 
-    const filtered = monsters.filter(monster => {
+    const filtered =
+        monsters.filter(monster => {
 
-        const text = [
+            const text = [
 
-            monster.name,
-            monster.category,
-            monster.type || "",
-            monster.creator,
-            monster.universe,
-            monster.description,
+                monster.name,
 
-            ...(monster.abilities || []),
-            ...(monster.weaknesses || [])
+                getCategory(monster),
 
-        ]
-        .join(" ")
-        .toLowerCase();
+                monster.category,
 
+                monster.type || "",
 
-        const matchesSearch =
-            text.includes(term);
+                monster.creator,
 
+                monster.universe,
 
-        const matchesCategory =
-            currentCategory === "All" ||
-            monster.category === currentCategory;
+                monster.description,
 
+                ...(monster.abilities || []),
 
-        const matchesType =
-            currentType === "All" ||
-            getMonsterType(monster) === currentType;
+                ...(monster.weaknesses || [])
+
+            ]
+            .join(" ")
+            .toLowerCase();
 
 
-        return (
-            matchesSearch &&
-            matchesCategory &&
-            matchesType
-        );
+            const matchesSearch =
+                text.includes(term);
 
-    });
+
+            const matchesCategory =
+                currentCategory === "All" ||
+                getCategory(monster) ===
+                currentCategory;
+
+
+            const matchesType =
+                currentType === "All" ||
+                getMonsterType(monster) ===
+                currentType;
+
+
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesType
+            );
+
+        });
 
 
     displayMonsters(filtered);
@@ -550,14 +789,7 @@ function filterMonsters(resetPage = true) {
 
 
 /* ==================================================
-   INITIAL DISPLAY
-================================================== */
-
-displayMonsters(monsters);
-
-
-/* ==================================================
-   SEARCH INPUT
+   SEARCH
 ================================================== */
 
 search.addEventListener(
@@ -570,15 +802,14 @@ search.addEventListener(
 );
 
 
-/* ==================================================
-   SEARCH KEYBOARD SOUNDS
-================================================== */
+
 
 search.addEventListener(
     "keydown",
     function(e) {
 
-        if (![
+        const ignoredKeys = [
+
             "Shift",
             "Control",
             "Alt",
@@ -590,7 +821,11 @@ search.addEventListener(
             "ArrowRight",
             "ArrowUp",
             "ArrowDown"
-        ].includes(e.key)) {
+
+        ];
+
+
+        if (!ignoredKeys.includes(e.key)) {
 
             const sound =
                 keySounds[
@@ -599,6 +834,7 @@ search.addEventListener(
                         keySounds.length
                     )
                 ].cloneNode();
+
 
             sound.volume = 0.15;
 
@@ -610,18 +846,17 @@ search.addEventListener(
         if (e.key === "Enter") {
 
             const first =
-                document.querySelector(".search-item");
+                document.querySelector(
+                    ".search-item"
+                );
 
 
             if (first) {
 
-                const sound =
-                    clickSound.cloneNode();
-
-                sound.volume =
-                    clickSound.volume;
-
-                sound.play().catch(() => {});
+                clickSound
+                    .cloneNode()
+                    .play()
+                    .catch(() => {});
 
 
                 setTimeout(() => {
@@ -639,15 +874,15 @@ search.addEventListener(
 );
 
 
-/* ==================================================
-   SEARCH FOCUS
-================================================== */
+
 
 search.addEventListener(
     "focus",
     () => {
 
-        if (search.value.trim() !== "") {
+        if (
+            search.value.trim() !== ""
+        ) {
 
             filterMonsters();
 
@@ -657,9 +892,7 @@ search.addEventListener(
 );
 
 
-/* ==================================================
-   CLOSE SEARCH DROPDOWN
-================================================== */
+
 
 document.addEventListener(
     "click",
@@ -681,75 +914,67 @@ document.addEventListener(
 
 
 /* ==================================================
-   MAIN CATEGORY FILTERING
+   MAIN CATEGORY EVENTS
 ================================================== */
 
-categories.forEach(category => {
+function attachCategoryEvents() {
 
-    category.addEventListener(
-        "click",
-        () => {
-
-            /*
-                Play click.
-            */
-
-            clickSound
-                .cloneNode()
-                .play()
-                .catch(() => {});
+    const categoryButtons =
+        document.querySelectorAll(
+            ".category"
+        );
 
 
-            /*
-                Active category.
-            */
+    categoryButtons.forEach(
+        category => {
 
-            categories.forEach(c =>
-                c.classList.remove("active")
+            category.addEventListener(
+                "click",
+                () => {
+
+                    clickSound
+                        .cloneNode()
+                        .play()
+                        .catch(() => {});
+
+
+                    categoryButtons.forEach(
+                        button =>
+                            button.classList.remove(
+                                "active"
+                            )
+                    );
+
+
+                    category.classList.add(
+                        "active"
+                    );
+
+
+                    currentCategory =
+                        category.dataset.category;
+
+
+
+
+                                    currentType = "All";
+
+                    currentPage = 1;
+
+
+
+
+                    createTypeFilters();
+
+                    filterMonsters();
+
+                }
             );
-
-            category.classList.add("active");
-
-
-            /*
-                Set category.
-            */
-
-            currentCategory =
-                category.dataset.category;
-
-
-            /*
-                Reset type.
-            */
-
-            currentType = "All";
-
-
-            /*
-                Reset page.
-            */
-
-            currentPage = 1;
-
-
-            /*
-                Create subcategories.
-            */
-
-            createTypeFilters();
-
-
-            /*
-                Display monsters.
-            */
-
-            filterMonsters();
 
         }
     );
 
-});
+}
 
 
 /* ==================================================
@@ -757,28 +982,44 @@ categories.forEach(category => {
 ================================================== */
 
 const randomButton =
-    document.getElementById("random-monster");
+    document.getElementById(
+        "random-monster"
+    );
 
 const encounter =
-    document.getElementById("encounter-screen");
+    document.getElementById(
+        "encounter-screen"
+    );
 
 const encounterText =
-    document.getElementById("encounter-text");
+    document.getElementById(
+        "encounter-text"
+    );
 
 const encounterImage =
-    document.getElementById("encounter-image");
+    document.getElementById(
+        "encounter-image"
+    );
 
 const encounterName =
-    document.getElementById("encounter-name");
+    document.getElementById(
+        "encounter-name"
+    );
 
 const encounterButton =
-    document.getElementById("encounter-button");
+    document.getElementById(
+        "encounter-button"
+    );
 
 const loadingFill =
-    document.querySelector(".loading-fill");
+    document.querySelector(
+        ".loading-fill"
+    );
 
 const scanPercent =
-    document.getElementById("scan-percent");
+    document.getElementById(
+        "scan-percent"
+    );
 
 
 const encounterMessages = [
@@ -1015,7 +1256,9 @@ document.addEventListener(
 ================================================== */
 
 const eyes =
-    document.querySelector(".monster-eyes");
+    document.querySelector(
+        ".monster-eyes"
+    );
 
 
 if (eyes) {
@@ -1038,7 +1281,9 @@ if (eyes) {
 
 
             const logo =
-                document.querySelector(".logo");
+                document.querySelector(
+                    ".logo"
+                );
 
 
             if (logo) {
@@ -1061,7 +1306,9 @@ if (eyes) {
         () => {
 
             const logo =
-                document.querySelector(".logo");
+                document.querySelector(
+                    ".logo"
+                );
 
 
             if (logo) {
@@ -1220,13 +1467,21 @@ if (nextPageButton) {
                     const text = [
 
                         monster.name,
+
+                        getCategory(monster),
+
                         monster.category,
+
                         monster.type || "",
+
                         monster.creator,
+
                         monster.universe,
+
                         monster.description,
 
                         ...(monster.abilities || []),
+
                         ...(monster.weaknesses || [])
 
                     ]
@@ -1240,7 +1495,7 @@ if (nextPageButton) {
 
                     const matchesCategory =
                         currentCategory === "All" ||
-                        monster.category ===
+                        getCategory(monster) ===
                         currentCategory;
 
 
@@ -1266,7 +1521,10 @@ if (nextPageButton) {
                 );
 
 
-            if (currentPage < totalPages) {
+            if (
+                currentPage <
+                totalPages
+            ) {
 
                 currentPage++;
 
@@ -1278,3 +1536,12 @@ if (nextPageButton) {
     );
 
 }
+
+
+/* ==================================================
+   START
+================================================== */
+
+createMainCategories();
+
+displayMonsters(monsters);
