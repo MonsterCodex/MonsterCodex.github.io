@@ -3080,8 +3080,43 @@ weaknesses:[
         "Unknown",
         "Physical vulnerability"
     ]
-}
+},
+
+{
+    id: "chucky",
+    name: "Chucky",
+    category: "Movies",
+    film: "Child's Play",
+    creator: "Don Mancini",
+    year: "1988",
+    universe: "Child's Play",
+    origin: "Chicago, Illinois",
+    height: "2 ft 8 in (81 cm)",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Hostile",
+    image: "images/monsters/childs-play/chucky/profile.png",
+    description: "A serial killer who uses a voodoo ritual to transfer his soul into a Good Guy doll. Despite his small size, Chucky is an intelligent, relentless and highly dangerous killer.",
+    abilities: [
+        "Voodoo magic",
+        "Soul transference",
+        "Supernatural strength",
+        "Enhanced durability",
+        "Immortality",
+        "Weapon proficiency",
+        "Stealth",
+        "Manipulation"
+    ],
+    weaknesses: [
+        "Heart destruction",
+        "Severe physical damage",
+        "Fire",
+        "Voodoo counter-rituals"
+    ]
+},
 
 ];
+
+
 
 
