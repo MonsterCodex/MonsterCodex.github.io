@@ -2696,7 +2696,7 @@ weaknesses:[
         "Immobilisation"
     ],
     image: "images/monsters/maniac-cop/profile.png"
-}
+},
 
 {
     id: "huggy-wuggy",
