@@ -2698,4 +2698,390 @@ weaknesses:[
     image: "images/monsters/maniac-cop/profile.png"
 }
 
+{
+    id: "huggy-wuggy",
+    name: "Huggy Wuggy",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2021",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Over 10 ft",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/huggy-wuggy/profile.png",
+    description: "A towering blue toy experiment with extremely long limbs and a terrifying tooth-filled mouth. Huggy Wuggy was created as one of Playtime Co.'s most recognisable mascots before becoming a deadly threat within the abandoned factory.",
+    abilities: [
+        "Superhuman strength",
+        "Extreme agility",
+        "Enhanced durability",
+        "Long-range reach",
+        "Climbing",
+        "Stealth",
+        "Powerful bite"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Falls",
+        "Unknown"
+    ]
+},
+
+{
+    id: "mommy-long-legs",
+    name: "Mommy Long Legs",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2022",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/mommy-long-legs/profile.png",
+    description: "A pink spider-like experiment with incredibly elastic limbs. Mommy Long Legs controls the Game Station and forces the Player through a series of deadly games.",
+    abilities: [
+        "Extreme elasticity",
+        "Superhuman strength",
+        "Enhanced agility",
+        "Wall crawling",
+        "Long-range reach",
+        "Stealth"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Industrial machinery",
+        "Immobilisation"
+    ]
+},
+
+{
+    id: "bunzo-bunny",
+    name: "Bunzo Bunny",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2022",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co.",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/bunzo-bunny/profile.png",
+    description: "A yellow rabbit toy that attacks the Player during Mommy Long Legs' deadly musical memory game.",
+    abilities: [
+        "Enhanced agility",
+        "Sharp teeth",
+        "Stealth",
+        "Climbing",
+        "Ambush attacks"
+    ],
+    weaknesses: [
+        "Physical damage",
+        "Electric machinery"
+    ]
+},
+
+{
+    id: "pj-pug-a-pillar",
+    name: "PJ Pug-a-Pillar",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2022",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co.",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/pj-pug-a-pillar/profile.png",
+    description: "A strange combination of a pug and a caterpillar that hunts the Player through the Statues obstacle course.",
+    abilities: [
+        "High-speed movement",
+        "Enhanced agility",
+        "Climbing",
+        "Tracking",
+        "Ambush attacks",
+        "Biting"
+    ],
+    weaknesses: [
+        "Physical damage",
+        "Environmental hazards"
+    ]
+},
+
+{
+    id: "catnap",
+    name: "CatNap",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2024",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/catnap/profile.png",
+    description: "A purple feline experiment and devoted follower of the Prototype. CatNap uses a mysterious red gas to induce sleep and terrorise the inhabitants of Playcare.",
+    abilities: [
+        "Red Smoke generation",
+        "Superhuman strength",
+        "Enhanced agility",
+        "Stealth",
+        "Climbing",
+        "Fear manipulation",
+        "Sleep induction"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Fire",
+        "Respiratory vulnerability"
+    ]
+},
+
+{
+    id: "dogday",
+    name: "DogDay",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2024",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Smiling Critters",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Neutral",
+    image: "images/monsters/poppy-playtime/dogday/profile.png",
+    description: "The leader of the Smiling Critters and one of Playcare's most recognisable experiments. DogDay becomes a tragic victim of CatNap and the Prototype.",
+    abilities: [
+        "Enhanced strength",
+        "Enhanced endurance",
+        "Agility",
+        "Leadership",
+        "Survival instinct"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Red Smoke",
+        "Immobilisation"
+    ]
+},
+
+{
+    id: "miss-delight",
+    name: "Miss Delight",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2024",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Playcare Schoolhouse",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/miss-delight/profile.png",
+    description: "A former teacher stationed inside Playcare's Schoolhouse. Miss Delight becomes increasingly unstable and hunts the Player while wielding her weapon, Barb.",
+    abilities: [
+        "Enhanced strength",
+        "High intelligence",
+        "Stealth",
+        "Weapon proficiency",
+        "Tracking",
+        "Enhanced endurance"
+    ],
+    weaknesses: [
+        "Physical damage",
+        "Severe trauma",
+        "Immobilisation"
+    ]
+},
+
+{
+    id: "boxy-boo",
+    name: "Boxy Boo",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2022",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co.",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/boxy-boo/profile.png",
+    description: "A spring-loaded toy monster concealed inside a jack-in-the-box. Boxy Boo uses its extendable limbs to launch itself at victims and attack from unexpected angles.",
+    abilities: [
+        "Extreme jumping",
+        "Extendable limbs",
+        "Superhuman strength",
+        "Enhanced agility",
+        "Ambush attacks",
+        "Stealth"
+    ],
+    weaknesses: [
+        "Physical damage",
+        "Limited attack range"
+    ]
+},
+
+{
+    id: "kissy-missy",
+    name: "Kissy Missy",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2021",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Over 10 ft",
+    weight: "Unknown",
+    status: "Unknown",
+    alignment: "Friendly",
+    image: "images/monsters/poppy-playtime/kissy-missy/profile.png",
+    description: "A pink counterpart to Huggy Wuggy. Although similar in appearance and physical capabilities, Kissy Missy has demonstrated a willingness to help the Player.",
+    abilities: [
+        "Superhuman strength",
+        "Enhanced agility",
+        "Long-range reach",
+        "Climbing",
+        "Enhanced durability"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Unknown"
+    ]
+},
+
+{
+    id: "the-prototype",
+    name: "The Prototype",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2022",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Experiment 1006",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/the-prototype/profile.png",
+    description: "Experiment 1006 and the mysterious leader behind the rebellion against Playtime Co. The Prototype is highly intelligent and manipulates other experiments while collecting parts from fallen toys.",
+    abilities: [
+        "Extreme intelligence",
+        "Superhuman strength",
+        "Enhanced durability",
+        "Strategic planning",
+        "Mechanical engineering",
+        "Climbing"
+    ],
+    weaknesses: [
+        "Unknown",
+        "Severe physical damage"
+    ]
+},
+
+{
+    id: "yarnaby",
+    name: "Yarnaby",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2025",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/yarnaby/profile.png",
+    description: "A monstrous Bigger Body experiment resembling a large toy lion. Yarnaby is fiercely loyal to the Prototype and relentlessly hunts those he considers enemies.",
+    abilities: [
+        "Superhuman strength",
+        "Enhanced speed",
+        "Enhanced durability",
+        "Climbing",
+        "Tracking",
+        "Stealth",
+        "Powerful bite"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Fire",
+        "Immobilisation"
+    ]
+},
+
+{
+    id: "doey-the-doughman",
+    name: "Doey the Doughman",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2025",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Bigger Bodies Initiative",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Deceased",
+    alignment: "Hostile",
+    image: "images/monsters/poppy-playtime/doey-the-doughman/profile.png",
+    description: "A dough-like experiment capable of manipulating its body into different forms. Doey becomes a dangerous threat within Safe Haven.",
+    abilities: [
+        "Shape-shifting",
+        "Body manipulation",
+        "Superhuman strength",
+        "Regeneration",
+        "Enhanced durability",
+        "Stretching"
+    ],
+    weaknesses: [
+        "Severe physical damage",
+        "Fire",
+        "Extreme trauma"
+    ]
+},
+
+{
+    id: "poppy",
+    name: "Poppy",
+    category: "Games",
+    game: "Poppy Playtime",
+    creator: "Mob Entertainment",
+    year: "2021",
+    universe: "Poppy Playtime",
+    origin: "Playtime Co. / Experiment 814",
+    height: "Unknown",
+    weight: "Unknown",
+    status: "Active",
+    alignment: "Unknown",
+    image: "images/monsters/poppy-playtime/poppy/profile.png",
+    description: "A highly intelligent living doll created by Playtime Co. Poppy appears to assist the Player while pursuing her own plans within the abandoned factory.",
+    abilities: [
+        "High intelligence",
+        "Strategic planning",
+        "Manipulation",
+        "Knowledge of Playtime Co.",
+        "Psychological influence",
+        "Survival instinct"
+    ],
+    weaknesses: [
+        "Unknown",
+        "Physical vulnerability"
+    ]
+}
+
 ];
+
+
