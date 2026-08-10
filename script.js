@@ -488,8 +488,23 @@ function createTypeFilters() {
 
 function createCard(monster) {
 
-    const category =
-        getCategory(monster);
+    const category = getCategory(monster);
+
+    // Get the title the monster comes from
+    let sourceTitle = "";
+
+    if (category === "Movies") {
+        sourceTitle = monster.film || "";
+    }
+    else if (category === "Games") {
+        sourceTitle = monster.game || "";
+    }
+    else if (category === "Television") {
+        sourceTitle = monster.television || monster.tv || "";
+    }
+    else {
+        sourceTitle = monster.source || "";
+    }
 
 
     return `
@@ -510,21 +525,39 @@ function createCard(monster) {
                         ${monster.name}
                     </h3>
 
+
+                    ${
+                        sourceTitle
+                        ? `
+                            <p class="monster-source">
+                                ${category === "Movies" ? "🎬" :
+                                  category === "Games" ? "🎮" :
+                                  category === "Television" ? "📺" : "📖"}
+                                ${sourceTitle}
+                            </p>
+                          `
+                        : ""
+                    }
+
+
                     <p>
                         ${categoryIcons[category] || "🌍"}
-                        ${monster.universe}
+                        ${category}
                     </p>
+
 
                     <p>
-                        ✍️ ${monster.creator}
+                        ✍️ ${monster.creator || "Unknown"}
                     </p>
 
-                    <span
-                        class="threat ${monster.threat.toLowerCase()}">
 
-                        ${monster.threat}
+                    <span
+                        class="threat ${(monster.threat || "unknown").toLowerCase()}">
+
+                        ${monster.threat || "Unknown"}
 
                     </span>
+
 
                     <div class="button">
                         View Profile →
@@ -537,7 +570,6 @@ function createCard(monster) {
         </a>
 
     `;
-
 }
 
 

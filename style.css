@@ -1365,3 +1365,10 @@ html {
 .profile-right .monster-intro {
     margin-bottom: 10px;
 }
+
+/* Monster source title on cards */
+
+.monster-source {
+    font-weight: 600;
+    margin: 6px 0;
+}
