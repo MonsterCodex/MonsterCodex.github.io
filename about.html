@@ -1,8 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | MonsterCodex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
 <!-- =========================
-     ABOUT MONSTERCODEX
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="monster-eyes">
+            <span class="eye"></span>
+            <span class="eye"></span>
+        </div>
+
+        <a href="index.html">
+            👁 MonsterCodex
+        </a>
+
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                🏠 Home
+            </a>
+        </li>
+
+        <li>
+            <a href="monsters.html">
+                👹 Monsters
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="random-monster">
+                🎲 Random
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                ℹ️ About
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     ABOUT PAGE
 ========================= -->
 
 <main class="about-page">
+
+
+    <!-- INTRO -->
 
     <section class="about-hero">
 
@@ -24,9 +105,7 @@
 
 
 
-    <!-- =========================
-         WHAT IS MONSTERCODEX
-    ========================= -->
+    <!-- WHAT IS MONSTERCODEX -->
 
     <section class="about-section">
 
@@ -41,17 +120,15 @@
 
         <p>
             Each monster has its own profile containing information
-            about its origins, appearances, abilities, weaknesses and
-            other notable characteristics.
+            about its origins, appearances, abilities, weaknesses
+            and other notable characteristics.
         </p>
 
     </section>
 
 
 
-    <!-- =========================
-         EXPLORE
-    ========================= -->
+    <!-- EXPLORE DIFFERENT UNIVERSES -->
 
     <section class="about-section">
 
@@ -66,6 +143,7 @@
 
 
         <div class="about-grid">
+
 
             <div class="about-card">
 
@@ -169,15 +247,14 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
 
-    <!-- =========================
-         MONSTER PROFILES
-    ========================= -->
+    <!-- MONSTER PROFILES -->
 
     <section class="about-section">
 
@@ -186,12 +263,13 @@
         </h2>
 
         <p>
-            Every monster profile is designed to give you a quick but
-            detailed overview of the creature.
+            Every monster profile is designed to give you a quick
+            but detailed overview of the creature.
         </p>
 
 
         <div class="about-grid profile-features">
+
 
             <div class="about-card">
 
@@ -263,15 +341,14 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
 
-    <!-- =========================
-         VS MODE
-    ========================= -->
+    <!-- VS MODE -->
 
     <section class="about-section">
 
@@ -300,9 +377,7 @@
 
 
 
-    <!-- =========================
-         GROWING DATABASE
-    ========================= -->
+    <!-- GROWING DATABASE -->
 
     <section class="about-section about-final">
 
@@ -324,4 +399,91 @@
 
     </section>
 
+
 </main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        MonsterCodex © 2026
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     RANDOM ENCOUNTER
+========================= -->
+
+<div id="encounter-screen">
+
+    <div class="encounter-box">
+
+        <div class="scan-header">
+            ███████████████████
+        </div>
+
+        <h2>
+            MONSTERCODEX
+        </h2>
+
+        <h3>
+            CLASSIFIED DATABASE
+        </h3>
+
+        <p id="encounter-text">
+            Initialising secure scan...
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-fill"></div>
+
+        </div>
+
+        <div id="scan-percent">
+            0%
+        </div>
+
+        <img
+            id="encounter-image"
+            src=""
+            alt=""
+            style="display:none;"
+        >
+
+        <h2
+            id="encounter-name"
+            style="display:none;"
+        ></h2>
+
+        <button
+            id="encounter-button"
+            style="display:none;"
+        >
+            ACCESS FILE
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
