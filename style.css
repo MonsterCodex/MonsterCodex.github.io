@@ -1691,7 +1691,7 @@ html {
     gap: 20px;
     align-items: stretch;
     margin-top: 20px;
-    
+
     width: 100%;
 }
 
@@ -1777,12 +1777,15 @@ html {
 
 
 .related-side .card img {
+    
 
     width: 100%;
-
     height: 80px;
+    object-fit: contain;
+    display: block;
+    background: #000;
 
-    object-fit: cover;
+
 
 }
 
