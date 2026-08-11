@@ -1372,3 +1372,113 @@ html {
     font-weight: 600;
     margin: 6px 0;
 }
+
+/* =========================================
+   PROFILE LEFT COLUMN
+========================================= */
+
+.profile-left {
+    align-self: flex-start;
+}
+
+
+/* =========================================
+   ABILITIES + WEAKNESSES UNDER IMAGE
+========================================= */
+
+.profile-left .profile-bottom {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+}
+
+
+/* Individual boxes */
+
+.profile-left .profile-section {
+
+    margin: 0;
+
+    padding: 12px;
+
+    min-width: 0;
+
+    height: auto;
+
+}
+
+
+/* Headings */
+
+.profile-left .profile-section h2 {
+
+    font-size: 0.9rem;
+
+    margin: 0 0 8px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+/* Lists */
+
+.profile-left .profile-section ul {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+/* List items */
+
+.profile-left .profile-section li {
+
+    font-size: 0.8rem;
+
+    padding: 4px 0;
+
+}
+
+
+/* Icons */
+
+.profile-left .ability-icon,
+.profile-left .weakness-icon {
+
+    width: 22px;
+
+    display: inline-block;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .profile-left .profile-bottom {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

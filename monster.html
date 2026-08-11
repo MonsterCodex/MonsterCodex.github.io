@@ -91,16 +91,19 @@
 <main class="monster-profile">
 
 
-    <!-- =========================
-         TOP PROFILE
-    ========================= -->
+    
 
     <div class="profile-top">
 
 
-        <!-- LEFT COLUMN -->
+        <!-- =========================
+             LEFT COLUMN
+        ========================= -->
 
         <div class="profile-left">
+
+
+            <!-- MONSTER IMAGE -->
 
             <img
                 id="monster-image"
@@ -108,17 +111,64 @@
                 alt=""
             >
 
+
+            <!-- =========================
+                 ABILITIES / WEAKNESSES
+            ========================= -->
+
+            <div class="profile-bottom">
+
+
+                <!-- ABILITIES -->
+
+                <section class="profile-section">
+
+                    <h2>
+                        ⚡ Abilities
+                    </h2>
+
+                    <ul id="monster-abilities">
+                    </ul>
+
+                </section>
+
+
+                <!-- WEAKNESSES -->
+
+                <section class="profile-section">
+
+                    <h2>
+                        ⚠️ Weaknesses
+                    </h2>
+
+                    <ul id="monster-weaknesses">
+                    </ul>
+
+                </section>
+
+
+            </div>
+
+
         </div>
 
 
-        <!-- RIGHT COLUMN -->
+
+        <!-- =========================
+             RIGHT COLUMN
+        ========================= -->
 
         <div class="profile-right">
-            
+
+
+            <!-- MONSTER NAME -->
+
             <h1 id="monster-name">
                 Loading Monster...
             </h1>
 
+
+            <!-- DESCRIPTION -->
 
             <p
                 id="monster-description"
@@ -128,11 +178,13 @@
             </p>
 
 
+
             <!-- =========================
                  INFORMATION TABLE
             ========================= -->
 
             <table class="monster-table">
+
 
                 <tr>
 
@@ -237,54 +289,13 @@
 
                 </tr>
 
+
             </table>
+
 
         </div>
 
-    </div>
 
-
-
-    <!-- =========================
-         ABILITIES / WEAKNESSES
-    ========================= -->
-
-    <div class="profile-bottom">
-
-
-        <!-- ABILITIES -->
-
-        <section class="profile-section">
-    
-
-            <h2>
-                ⚡ Abilities
-            </h2>
-
-            <ul id="monster-abilities">
-
-            </ul>
-
-        </section>
-
-
-        <!-- WEAKNESSES -->
-
-        <section class="profile-section">
-
-
-
-            <h2>
-                ⚠️ Weaknesses
-            </h2>
-
-            <ul id="monster-weaknesses">
-
-            </ul>
-
-        </section>
-
-        
     </div>
 
 
@@ -301,7 +312,8 @@
         <h2>
             👹 Related Monsters
         </h2>
-        
+
+
         <div
             id="related-monsters"
             class="related-grid"
@@ -309,9 +321,10 @@
 
         </div>
 
+
     </section>
 
-    
+
 </main>
 
 
@@ -364,6 +377,7 @@
             0%
         </div>
 
+
         <img
             id="encounter-image"
             src=""
@@ -371,11 +385,13 @@
             style="display:none;"
         >
 
+
         <h2
             id="encounter-name"
             style="display:none;"
         >
         </h2>
+
 
         <button
             id="encounter-button"
