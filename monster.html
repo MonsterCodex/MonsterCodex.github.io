@@ -33,7 +33,7 @@
     <div class="logo">
 
         <div class="monster-eyes">
-
+            
             <span class="eye"></span>
             <span class="eye"></span>
 
@@ -49,33 +49,23 @@
     <ul class="nav-links">
 
         <li>
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
         </li>
 
         <li>
-            <a href="monsters.html">
-                Monsters
-            </a>
+            <a href="monsters.html">Monsters</a>
         </li>
 
         <li>
-            <a href="vs.html">
-                ⚔️ VS Mode
-            </a>
+            <a href="vs.html">⚔️ VS Mode</a>
         </li>
 
         <li>
-            <a href="#" id="random-monster">
-                🎲 Random
-            </a>
+            <a href="#" id="random-monster">🎲 Random</a>
         </li>
 
         <li>
-            <a href="about.html">
-                ℹ️ About
-            </a>
+            <a href="about.html">ℹ️ About</a>
         </li>
 
     </ul>
@@ -97,7 +87,7 @@
 
 
         <!-- =========================
-             LEFT COLUMN
+             LEFT SIDE
         ========================= -->
 
         <div class="profile-left">
@@ -113,13 +103,13 @@
 
 
             <!-- =========================
-                 ABILITIES / WEAKNESSES
+                 ABILITIES + WEAKNESSES
             ========================= -->
 
             <div class="profile-bottom">
 
 
-                <!-- ABILITIES -->
+
 
                 <section class="profile-section">
 
@@ -127,13 +117,12 @@
                         ⚡ Abilities
                     </h2>
 
-                    <ul id="monster-abilities">
-                    </ul>
+                    <ul id="monster-abilities"></ul>
 
                 </section>
 
 
-                <!-- WEAKNESSES -->
+
 
                 <section class="profile-section">
 
@@ -141,8 +130,7 @@
                         ⚠️ Weaknesses
                     </h2>
 
-                    <ul id="monster-weaknesses">
-                    </ul>
+                    <ul id="monster-weaknesses"></ul>
 
                 </section>
 
@@ -155,116 +143,117 @@
 
 
         <!-- =========================
-             RIGHT COLUMN
+             RIGHT SIDE
         ========================= -->
 
         <div class="profile-right">
 
-    <div class="profile-main-info">
 
-        <h1 id="monster-name">
-            Loading Monster...
-        </h1>
+            <!-- NAME -->
 
-        <p
-            id="monster-description"
-            class="monster-intro"
-        >
-            Loading monster information...
-        </p>
-
-        <table class="monster-table">
-
-            <tr>
-                <th>Creator</th>
-                <td id="monster-creator">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>First Appearance</th>
-                <td id="monster-year">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Universe</th>
-                <td id="monster-universe">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Origin</th>
-                <td id="monster-origin">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Height</th>
-                <td id="monster-height">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Weight</th>
-                <td id="monster-weight">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Status</th>
-                <td id="monster-status">Unknown</td>
-            </tr>
-
-            <tr>
-                <th>Alignment</th>
-                <td id="monster-alignment">Unknown</td>
-            </tr>
-
-        </table>
-
-    </div>
+            <h1 id="monster-name">
+                Loading Monster...
+            </h1>
 
 
-    <!-- SEPARATE RELATED MONSTERS CARD -->
+            <!-- DESCRIPTION -->
 
-    <div class="related-side">
-
-        <h2>
-            👹 Related Monsters
-        </h2>
-
-        <div
-            id="related-monsters"
-            class="related-grid"
-        ></div>
-
-    </div>
-
-</div>
+            <p
+                id="monster-description"
+                class="monster-intro"
+            >
+                Loading monster information...
+            </p>
 
 
+            <!-- =========================
+                 INFORMATION + RELATED
+            ========================= -->
 
-            
-
-
-    <!-- =========================
-         RELATED MONSTERS
-    ========================= -->
-
-    <section
-        class="profile-section"
-        style="margin-top:20px;"
-    >
-
-        <h2>
-            👹 Related Monsters
-        </h2>
+            <div class="info-related-row">
 
 
-        <div
-            id="related-monsters"
-            class="related-grid"
-        >
+                <!-- =========================
+                     INFORMATION CARD
+                ========================= -->
+
+                <div class="info-card">
+
+                    <table class="monster-table">
+
+                        <tr>
+                            <th>Creator</th>
+                            <td id="monster-creator">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>First Appearance</th>
+                            <td id="monster-year">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Universe</th>
+                            <td id="monster-universe">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Origin</th>
+                            <td id="monster-origin">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Height</th>
+                            <td id="monster-height">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Weight</th>
+                            <td id="monster-weight">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Status</th>
+                            <td id="monster-status">Unknown</td>
+                        </tr>
+
+                        <tr>
+                            <th>Alignment</th>
+                            <td id="monster-alignment">Unknown</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RELATED MONSTERS CARD
+                ========================= -->
+
+                <div class="related-side">
+
+                    <h2>
+                        👹 Related Monsters
+                    </h2>
+
+
+                    <div
+                        id="related-monsters"
+                        class="related-grid"
+                    >
+                    </div>
+
+                </div>
+
+
+            </div>
+
 
         </div>
 
 
-    </section>
+    </div>
 
 
 </main>

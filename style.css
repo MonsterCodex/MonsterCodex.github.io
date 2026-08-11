@@ -1639,3 +1639,226 @@ html {
     }
 
 }
+
+/* =========================================
+   CLEAN MONSTER PROFILE LAYOUT
+========================================= */
+
+
+/* Keep image exactly on the left */
+
+.profile-left {
+    align-self: flex-start;
+}
+
+
+/* Abilities + weaknesses underneath image */
+
+.profile-left .profile-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+/* Name and description stay at the top */
+
+.profile-right #monster-name {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   INFO + RELATED ROW
+========================================= */
+
+.info-related-row {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 180px;
+
+    gap: 20px;
+
+    align-items: start;
+
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   INFORMATION CARD
+========================================= */
+
+.info-card {
+    width: 100%;
+}
+
+
+/* Keep table inside its own card */
+
+.info-card .monster-table {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* =========================================
+   RELATED MONSTERS CARD
+========================================= */
+
+.related-side {
+
+    width: 180px;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    margin: 0;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    align-self: start;
+}
+
+
+/* Related heading */
+
+.related-side h2 {
+
+    margin: 0 0 12px;
+
+    padding-bottom: 8px;
+
+    font-size: 1rem;
+
+    border-bottom: 2px solid var(--red);
+
+}
+
+
+/* Vertical related monsters */
+
+.related-side .related-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+/* Related cards */
+
+.related-side .card {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+
+/* Related images */
+
+.related-side .card img {
+
+    width: 100%;
+
+    height: 80px;
+
+    object-fit: cover;
+
+}
+
+
+/* Related card text */
+
+.related-side .card-content {
+
+    padding: 7px;
+
+}
+
+
+.related-side .card-content h3 {
+
+    margin: 0;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* Hide extra information from related cards */
+
+.related-side .card-content p,
+
+.related-side .card-content .button,
+
+.related-side .threat {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .info-related-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .related-side {
+
+        width: 100%;
+
+    }
+
+    .related-side .related-grid {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .profile-left .profile-bottom {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
