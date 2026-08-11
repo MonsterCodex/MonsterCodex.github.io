@@ -1481,4 +1481,161 @@ html {
 
     }
 
+}/* =========================================
+   MONSTER PROFILE - INFO + RELATED LAYOUT
+   Keeps profile image exactly where it is
+========================================= */
+
+/* Keep the existing profile layout */
+.profile-top {
+    align-items: start;
+}
+
+
+/* LEFT SIDE - DO NOT MOVE IMAGE */
+
+.profile-left {
+    align-self: start;
+}
+
+
+/* Abilities + Weaknesses remain underneath image */
+
+.profile-left .profile-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.profile-right {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 20px;
+    align-items: start;
+}
+
+
+/* Name + description stay at top */
+
+.profile-main-info {
+    min-width: 0;
+}
+
+
+/* =========================================
+   INFORMATION TABLE CARD
+========================================= */
+
+.profile-main-info .monster-table {
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   RELATED MONSTERS - SEPARATE CARD
+========================================= */
+
+.related-side {
+    width: 180px;
+    margin-top: 165px;
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    align-self: start;
+}
+
+
+/* Related heading */
+
+.related-side h2 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+
+    font-size: 1rem;
+
+    border-bottom: 2px solid var(--red);
+}
+
+
+/* Vertical monster list */
+
+.related-side .related-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Related monster cards */
+
+.related-side .card {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* Related monster images */
+
+.related-side .card img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+}
+
+
+/* Related monster text */
+
+.related-side .card-content {
+    padding: 8px;
+}
+
+
+.related-side .card-content h3 {
+    margin: 0;
+
+    font-size: 0.8rem;
+}
+
+
+/* Hide unnecessary card information */
+
+.related-side .card-content p,
+.related-side .card-content .button,
+.related-side .threat {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .profile-right {
+        grid-template-columns: 1fr;
+    }
+
+    .related-side {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .related-side .related-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
