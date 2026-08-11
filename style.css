@@ -2136,3 +2136,27 @@ html {
     }
 
 }
+
+/* =========================================
+   ABOUT DISCLAIMER
+========================================= */
+
+.about-disclaimer {
+    margin-top: 50px;
+    padding: 25px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+.about-disclaimer h2 {
+    margin-top: 0;
+}
+
+.about-disclaimer p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
