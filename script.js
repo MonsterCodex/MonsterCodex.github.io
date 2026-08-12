@@ -977,6 +977,33 @@ function attachCategoryEvents() {
                     currentCategory =
                         category.dataset.category;
 
+                        currentCategory =
+    category.dataset.category;
+
+
+const listTitle =
+    document.getElementById("monster-list-title");
+
+if (listTitle) {
+
+    if (currentCategory === "All") {
+
+        listTitle.textContent = "All Entries";
+
+    } else {
+
+        listTitle.textContent =
+            currentCategory;
+
+    }
+
+}
+
+
+currentType = "All";
+
+currentPage = 1;
+
 
 
 
