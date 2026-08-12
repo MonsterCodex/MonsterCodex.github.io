@@ -2190,3 +2190,12 @@ html {
     flex-shrink: 0;
     white-space: nowrap;
 }
+
+.monster-source {
+    display: block;
+    margin: 6px 0;
+    line-height: 1.3;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
