@@ -320,12 +320,11 @@ margin:0 auto;
 padding:20px;
 }
 
-.monster-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:22px;
-padding:0 20px;
-box-sizing:border-box;
+.monster-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 280px);
+    gap: 22px;
+    justify-content: center;
 }
 
 /*==================================================
