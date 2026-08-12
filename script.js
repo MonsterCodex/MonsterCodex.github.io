@@ -517,6 +517,13 @@ function createCard(monster) {
     }
 
 
+    const sourceIcon =
+        category === "Movies" ? "🎬" :
+        category === "Games" ? "🎮" :
+        category === "Television" ? "📺" :
+        "📖";
+
+
     return `
 
         <a
@@ -531,24 +538,26 @@ function createCard(monster) {
 
                 <div class="card-content">
 
-                    <h3>
-                        ${monster.name}
-                    </h3>
+
+                    <!-- NAME + THREAT -->
+
+                    <div class="card-title-row">
+
+                        <h3>
+                            ${monster.name}
+                        </h3>
+
+                        <span
+                            class="threat ${(monster.threat || "unknown").toLowerCase()}">
+
+                            ${monster.threat || "Unknown"}
+
+                        </span>
+
+                    </div>
 
 
-                    ${
-                        sourceTitle
-                        ? `
-                            <p class="monster-source">
-                                ${category === "Movies" ? "🎬" :
-                                  category === "Games" ? "🎮" :
-                                  category === "Television" ? "📺" : "📖"}
-                                ${sourceTitle}
-                            </p>
-                          `
-                        : ""
-                    }
-
+                    <!-- CATEGORY -->
 
                     <p>
                         ${categoryIcons[category] || "🌍"}
@@ -556,22 +565,31 @@ function createCard(monster) {
                     </p>
 
 
+                    <!-- CREATOR -->
+
                     <p>
                         ✍️ ${monster.creator || "Unknown"}
                     </p>
 
 
-                    <span
-                        class="threat ${(monster.threat || "unknown").toLowerCase()}">
+                    <!-- GAME / FILM / TV -->
 
-                        ${monster.threat || "Unknown"}
-
-                    </span>
+                    ${
+                        sourceTitle
+                        ? `
+                            <p class="monster-source">
+                                ${sourceIcon}
+                                ${sourceTitle}
+                            </p>
+                          `
+                        : ""
+                    }
 
 
                     <div class="button">
                         View Profile →
                     </div>
+
 
                 </div>
 

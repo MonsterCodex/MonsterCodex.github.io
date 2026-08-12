@@ -2166,3 +2166,27 @@ html {
     font-size: 0.85rem;
     line-height: 1.7;
 }
+
+/* =========================================
+   MONSTER CARD TITLE + THREAT
+========================================= */
+
+.card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.card-title-row h3 {
+    margin: 0;
+    flex: 1;
+}
+
+
+.card-title-row .threat {
+    position: static;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
