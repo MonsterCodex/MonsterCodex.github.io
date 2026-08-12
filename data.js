@@ -1124,7 +1124,7 @@ weaknesses:[
 {
 id:"medusa",
 name:"Medusa",
-category:"Folklore",
+category:"Mythology",
 universe:"Greek Mythology",
 creator:"Greek Myth",
 firstAppearance:"8th Century BC",
@@ -1453,7 +1453,7 @@ weaknesses:[
 {
 id:"minotaur",
 name:"Minotaur",
-category:"Folklore",
+category:"Mythology",
 universe:"Greek Mythology",
 creator:"Greek Myth",
 firstAppearance:"Ancient Greece",
