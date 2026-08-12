@@ -48,7 +48,7 @@ const categoryIcons = {
 const mainCategories = [
     {
         name: "All",
-        label: "All Monsters",
+        label: "All Entries",
         icon: "🌍"
     },
     {
