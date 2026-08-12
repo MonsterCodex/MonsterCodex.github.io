@@ -177,8 +177,12 @@ function getCategory(monster) {
     */
 
     if (oldCategory === "Folklore") {
-        return "Folklore / Mythological";
-    }
+    return "Folklore";
+}
+
+if (oldCategory === "Mythology") {
+    return "Mythology";
+}
 
 
     /*
