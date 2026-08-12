@@ -3,7 +3,7 @@ const monsters = [
 {
 id:"siren-head",
 name:"Siren Head",
-category: "Creepypasta",
+category: "Internet Horror",
 type: "Monster",
 creator: "Trevor Henderson",
 year: "2018",
