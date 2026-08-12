@@ -39,7 +39,8 @@ const categoryIcons = {
     Movies: "🎬",
     Games: "🎮",
     Television: "📺",
-    "Folklore / Mythological": "🧙",
+    Folklore: "🧙",
+    Mythology: "🏛️",
     Creepypasta: "👻",
     Aliens: "👽"
 };
@@ -67,10 +68,15 @@ const mainCategories = [
         icon: "📺"
     },
     {
-        name: "Folklore / Mythological",
-        label: "Folklore / Mythological",
-        icon: "🧙"
-    },
+    name: "Folklore",
+    label: "Folklore",
+    icon: "🧙"
+},
+{
+    name: "Mythology",
+    label: "Mythology",
+    icon: "🏛️"
+},
     {
         name: "Creepypasta",
         label: "Creepypasta",
