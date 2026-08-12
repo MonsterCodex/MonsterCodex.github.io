@@ -1,33 +1,34 @@
 const monsters = [
 
 {
-    id:"siren-head",
-    name:"Siren Head",
-    category: "Internet Horror",
-    creator: "Trevor Henderson",
-    year: "2018",
-    threat: "Extreme",
-    universe: "Trevor Henderson Universe",
-    origin: "Canada",
-    height: "40 ft (12m)",
-    weight: "Unknown",
-    status: "Active",
-    alignment: "Hostile",
-    image: "images/monsters/siren-head/profile.png",
-    description: "A towering humanoid creature with two sirens for a head that mimics voices and emergency broadcasts to lure victims.",
+id:"siren-head",
+name:"Siren Head",
+category: "Creepypasta",
+type: "Monster",
+creator: "Trevor Henderson",
+year: "2018",
+threat: "Extreme",
+universe: "Trevor Henderson Universe",
+origin: "Canada",
+height: "40 ft (12m)",
+weight: "Unknown",
+status: "Active",
+alignment: "Hostile",
+image: "images/monsters/siren-head/profile.png",
+description: "A towering humanoid creature with two sirens for a head that mimics voices and emergency broadcasts to lure victims.",
 
-    abilities:[
-        "Voice Mimicry",
-        "Super Strength",
-        "Extreme Height",
-        "Camouflage"
-    ],
+abilities:[
+    "Voice Mimicry",
+    "Super Strength",
+    "Extreme Height",
+    "Camouflage"
+],
 
-    weaknesses:[
-        "Unknown"
-    ],
+weaknesses:[
+    "Unknown"
+],
 
-    },
+},
 
 {
     id:"cartoon-cat",
